@@ -1,0 +1,91 @@
+
+.title{
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: larger;
+    margin-left: 600px;
+
+}
+
+
+.contentd{
+    position: relative;
+    min-height: 90vh; 
+}
+
+.containerd .contentd .cardsd{
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.containerd .contentd .cardsd .cardd{
+    width: 250px;
+    height: 150px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+}
+
+h3{
+    color: #999; 
+}
+
+
+.containerd .contentd .content-2d{
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.containerd .contentd .content-2d .recent-paymentsd {
+    min-height: 50vh;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.containerd .contentd .content-2d .new-studentsd{
+    flex: 2;
+    background: white;
+    min-height: 50vh;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.titled{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #999;
+    padding: 15px 10px;
+
+}
+
+.table{
+    padding: 10px;
+
+}
+
+th,td{
+    text-align: left;
+    padding: 8px;
+}
+
+
+
