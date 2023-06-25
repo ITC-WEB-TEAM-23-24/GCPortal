@@ -1,6 +1,7 @@
 /* Sidebar */
 .sidebar {
-    background: rgb(0, 7, 61);
+    background: #2c2f28;
+    /* background: rgb(0, 7, 61); */
     color: white;
     height: 100vh;
     overflow-y: auto;

@@ -1,0 +1,12 @@
+.header{
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+.header_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
