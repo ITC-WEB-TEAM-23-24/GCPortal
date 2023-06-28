@@ -1,21 +1,20 @@
 import { NavLink } from "react-router-dom";
-import { FaBuilding , FaBars} from "react-icons/fa";
+import { FaBuilding, FaBars } from "react-icons/fa";
 import { MdMessage } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { MdLeaderboard } from "react-icons/md";
 import { SiCoveralls } from "react-icons/si";
-import { BsFillTrophyFill, BsFillFileEarmarkRuledFill} from "react-icons/bs";
-
+import { BsFillTrophyFill, BsFillFileEarmarkRuledFill } from "react-icons/bs";
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
-import '../../src/sidebar.css' 
+import "../../src/sidebar.css";
 const routes = [
   {
     path: "/",
     name: "Leaderboards",
-    icon: < MdLeaderboard/>,
+    icon: <MdLeaderboard />,
     subRoutes: [
       {
         path: "/Overall",
@@ -23,17 +22,17 @@ const routes = [
         icon: <SiCoveralls />,
       },
       {
-        path: "/s",
+        path: "/Genre1",
         name: "Genre-1",
         // icon: < />,
       },
       {
-        path: "/s",
+        path: "/Genre2",
         name: "Genre-2",
         // icon: < />,
       },
       {
-        path: "/s",
+        path: "/Genre3",
         name: "Genre-3",
         // icon: < />,
       },
@@ -47,10 +46,9 @@ const routes = [
   {
     path: "/users",
     name: "Rules",
-    icon: < BsFillFileEarmarkRuledFill/>,
+    icon: <BsFillFileEarmarkRuledFill />,
   },
-  
-  
+
   {
     path: "/s",
     name: "GCs",
@@ -83,8 +81,6 @@ const routes = [
     name: "Logout",
     icon: <BiLogOut />,
   },
-  
-  
 ];
 
 const SideBar = ({ children }) => {
@@ -133,7 +129,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  Tech GC 23-24
+                  {/* Tech GC 23-24 */}
                 </motion.h1>
               )}
             </AnimatePresence>
