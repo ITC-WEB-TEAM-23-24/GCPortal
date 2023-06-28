@@ -1,19 +1,29 @@
 import React from "react";
 import "../header.css"
 import {BiUserCircle} from "react-icons/bi"
+import itclogo from "../assets/itclogo.png"
+
 
 function Header(){
     return(
         <div className="header">
             <div className="header_left">
-                <img className="logo" src="C:\Users\ishan\Web team itc\GCPortal\my-app\public\ITClogoWhite (1) edited.png"/>
+            <img
+              className="image"
+              alt="logo"
+              src={itclogo}
+            />
             </div>
             <div className="header_center">
                 <h1>Tech GC 23-24</h1>
             </div>
             <div className="header_right">
-                <h2>Full_name</h2>
+            <div className="profilelogo">
+                <h3>Full_name</h3>
+                <div className="logo">
                 <BiUserCircle/>
+                </div>
+                </div>
             </div>
         </div>
     )
