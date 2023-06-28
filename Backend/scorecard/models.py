@@ -14,8 +14,8 @@ class GCEvent(models.Model):
     name = models.CharField(max_length=100, blank=False)
     description = models.TextField()
     poster = models.ImageField(blank=False, null=True)
-    start_timeline = models.DateTimeField(default=now, blank=True)
-    end_timeline = models.DateTimeField(default=now, blank=True)
+    start_timeline = models.DateTimeField(default=now)
+    end_timeline = models.DateTimeField(default=now)
     genre = models.CharField(max_length=50, null=True, blank=False)
 
     def __str__(self):

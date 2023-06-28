@@ -20,29 +20,6 @@ def enter_score(request):
 
 
 @api_view(['GET'])
-def individualgc(request, id):
-    gc = GCEvent.objects.get(id=id)
-    # if gc.end_timeline <= datetime.datetime.now():
-    if 2 > 1:
-        # fetch scores of particular GC and show
-        scores = Score.objects.filter(event=gc)
-        serializer = scoreSerializer(scores, many=True)
-        return Response(serializer.data)
-    else:
-        return HttpResponse("NO SCORE TO SHOW YET")  # GC has not yet ended
-
-
-@api_view(['GET'])
-def hostel_scorecard(request, name):
-    hostels = Hostel.objects.get(name=name)
-    scores = Score.objects.filter(hostel=hostels)
-    serializer = scoreSerializer(scores, many=True)
-    print(type(serializer.data))
-
-    return Response(serializer.data)
-
-
-@api_view(['GET'])
 def overall(request):
     hostels = Hostel.objects.all()
     scorecard = hostels.values('name')
@@ -74,3 +51,26 @@ def genrewise_scorecard(request, genre):
         item['Total score'] = total
     data = list(scorecard)
     return JsonResponse(data, safe=False)
+
+
+@api_view(['GET'])
+def individualgc(request, id):
+    gc = GCEvent.objects.get(id=id)
+    # if gc.timeline <= datetime.datetime.now():
+    if 2 > 1:
+        # fetch scores of particular GC and show
+        scores = Score.objects.filter(event=gc)
+        serializer = scoreSerializer(scores, many=True)
+        return Response(serializer.data)
+    else:
+        return HttpResponse("NO SCORE TO SHOW YET")  # GC has not yet ended
+
+
+@api_view(['GET'])
+def hostel_scorecard(request, name):
+    hostels = Hostel.objects.get(name=name)
+    scores = Score.objects.filter(hostel=hostels)
+    serializer = scoreSerializer(scores, many=True)
+    print(type(serializer.data))
+
+    return Response(serializer.data)
