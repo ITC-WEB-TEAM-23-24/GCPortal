@@ -8,6 +8,7 @@ function Header(){
     return(
         <div className="header">
             <div className="header_left">
+                
             <img
               className="image"
               alt="logo"
