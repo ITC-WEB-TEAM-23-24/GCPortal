@@ -1,5 +1,5 @@
 """
-WSGI config for GC project.
+WSGI config for GCPortalnew project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'GC.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'GCPortalnew.settings')
 
 application = get_wsgi_application()
