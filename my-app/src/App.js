@@ -8,6 +8,7 @@ import Genre1 from "./pages/Genre1";
 import Genre2 from "./pages/Genre2";
 import Genre3 from "./pages/Genre3";
 import Hostel from "./Components/Hostel";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/Genre2" element={<Genre2 />} />
             <Route path="/Genre3" element={<Genre3 />} />
             <Route path='/Hostel' element={<Hostel/>} />
+            <Route path='/Dashboard' element={<Dashboard/>} />
           </Routes>
         </SideBar>
       </div>
