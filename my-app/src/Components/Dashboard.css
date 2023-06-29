@@ -133,7 +133,8 @@
 }
 
 .appointments td i{
-    padding: 7px;
+    
+    padding: 7px ;
     color: #fff;
     border-radius: 550px;
 }
@@ -148,13 +149,16 @@
     white-space: nowrap ;
 }
 .fa-eye{
+    margin: 4px;
     background: #32bea5;
 }
 
 .fa-edit{
+    margin: 4px;
     background: #63b4f4;
 }
 .fa-trash-alt{
+    margin: 4px;
   background: #ed5564;
 }
 
