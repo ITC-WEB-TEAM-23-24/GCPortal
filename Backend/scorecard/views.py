@@ -8,15 +8,24 @@ from .models import GCEvent, Hostel, Score
 from .forms import ScoreForm
 
 
-def enter_score(request):
-    # event = GCEvent.objects.get(id=eventid)
-    form = ScoreForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    context = {
-        'form': form
-    }
-    return render(request, "enter_scores.html", context)
+def backendgc(request):
+    events = GCEvent.objects.all()
+    context = {'events' : events}
+    return render(request, "backendgc.html", context)
+
+def backendgcscore(request,id):
+    event = GCEvent.objects.get(id=id)
+    hostels = Hostel.objects.all()
+    context = {'events' : event,
+               'hostels':hostels
+            }
+    
+    if request.method == 'POST':
+        for hostel in hostels:
+            value = request.POST[hostel.name]
+            Score.objects.create(event=event,hostel=hostel,score=value)
+        return HttpResponse("Success")
+    return render(request, "backendscore.html", context)
 
 
 @api_view(['GET'])
