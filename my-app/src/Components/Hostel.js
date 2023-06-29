@@ -9,9 +9,43 @@ import hostel5 from './hostel5.jpg'
 import pluto from './pluto.jpg'
 
 
+
 export default function Hostel() {
   return (
     <>
+    <div className="background">
+    <div className="sidebarhs">
+            <ul>
+                <li>
+                    <a href="/">
+                    <i className="fas fa-clinic-medical"></i>
+                    <div className="title">Genre Name</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                    <i className="fas fa-th-large"></i>
+                    <div className="title">Genre 1 </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                    <i className="fas fa-stethoscope"></i>
+                    <div className="title">Genre 2</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                    <i className="fas fa-user-md"></i>
+                    <div className="title">Genre 3</div>
+                    </a>
+                </li>
+               
+               
+            </ul>
+            
+
+        </div>
     <div className='containers hostelbody'>
         <input type="radio" name='slider' id="s1" checked/>
         <input type="radio" name='slider' id='s2' />
@@ -40,7 +74,7 @@ export default function Hostel() {
                             <i className='fa-regular fa-heart'></i>
                             <i className='fa-regular fa-bookmart'></i>
                             <i className='fa-solid fa-share-nodes'></i>
-                            <i class="bi bi-0-circle bg-primary"></i>
+                            <i className="bi bi-0-circle bg-primary"></i>
                         </div>
                     </div>
                 </div>
@@ -142,6 +176,7 @@ export default function Hostel() {
                 </div>
             </label>
         </div>
+    </div>
     </div>
     
     </>
