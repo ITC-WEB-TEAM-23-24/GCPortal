@@ -128,6 +128,102 @@ function Overall() {
           <span>Score</span>
         </div>
       </div>
+      <div className="General">
+        <div className="position">
+          <h4>xth</h4>
+        </div>
+        <div className="image">
+          <img alt="img_hostel" />
+        </div>
+        <div className="name">
+          <h3 className="name text-dark">Hostel_number</h3>
+          <div className="span">Hostel_name</div>
+        </div>
+
+        <div className="score">
+          <span>Score</span>
+        </div>
+      </div>
+      <div className="General">
+        <div className="position">
+          <h4>xth</h4>
+        </div>
+        <div className="image">
+          <img alt="img_hostel" />
+        </div>
+        <div className="name">
+          <h3 className="name text-dark">Hostel_number</h3>
+          <div className="span">Hostel_name</div>
+        </div>
+
+        <div className="score">
+          <span>Score</span>
+        </div>
+      </div>
+      <div className="General">
+        <div className="position">
+          <h4>xth</h4>
+        </div>
+        <div className="image">
+          <img alt="img_hostel" />
+        </div>
+        <div className="name">
+          <h3 className="name text-dark">Hostel_number</h3>
+          <div className="span">Hostel_name</div>
+        </div>
+
+        <div className="score">
+          <span>Score</span>
+        </div>
+      </div>
+      <div className="General">
+        <div className="position">
+          <h4>xth</h4>
+        </div>
+        <div className="image">
+          <img alt="img_hostel" />
+        </div>
+        <div className="name">
+          <h3 className="name text-dark">Hostel_number</h3>
+          <div className="span">Hostel_name</div>
+        </div>
+
+        <div className="score">
+          <span>Score</span>
+        </div>
+      </div>
+      <div className="General">
+        <div className="position">
+          <h4>xth</h4>
+        </div>
+        <div className="image">
+          <img alt="img_hostel" />
+        </div>
+        <div className="name">
+          <h3 className="name text-dark">Hostel_number</h3>
+          <div className="span">Hostel_name</div>
+        </div>
+
+        <div className="score">
+          <span>Score</span>
+        </div>
+      </div>
+      <div className="General">
+        <div className="position">
+          <h4>xth</h4>
+        </div>
+        <div className="image">
+          <img alt="img_hostel" />
+        </div>
+        <div className="name">
+          <h3 className="name text-dark">Hostel_number</h3>
+          <div className="span">Hostel_name</div>
+        </div>
+
+        <div className="score">
+          <span>Score</span>
+        </div>
+      </div>
     </div>
   );
 }
