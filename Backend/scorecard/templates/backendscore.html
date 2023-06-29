@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Scores</title>
+</head>
+<body>
+    
+<form action="" method="POST">
+{% csrf_token %}
+{% for hostel in hostels %}
+    <input type="text" name="{{hostel.name}}" placeholder="{{hostel.name}}" title=""> <br>
+{% endfor %}
+    <input type="submit" value="Enter">
+</form>
+    
+</body>
+</html>

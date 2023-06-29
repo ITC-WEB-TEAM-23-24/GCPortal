@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import individualgc, overall, hostel_scorecard, genrewise_scorecard, enter_score
+from .views import *
 
 urlpatterns = [
-    path('enterscore/', enter_score, name='enter_scores'),
+    path('backend/score', backendgc, name='backend-gc'),
+    path('backend/score/<int:id>', backendgcscore, name='backend-gc-scores'),
     path('overall/', overall, name='OverallGC'),
     path('genre<str:genre>/', genrewise_scorecard, name='Genre_scorecard'),
     path('GC<int:id>/', individualgc, name='IndividualGC'),
