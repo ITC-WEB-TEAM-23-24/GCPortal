@@ -23,9 +23,9 @@ class GCEvent(models.Model):
 
 
 class Score(models.Model):
-    hostel = models.ForeignKey(Hostel, on_delete=models.CASCADE)
+    hostel = models.ForeignKey(Hostel, on_delete=models.CASCADE,null=True)
     event = models.ForeignKey(GCEvent, on_delete=models.CASCADE)
-    score = models.IntegerField()
+    score = models.IntegerField(null=True)
 
     def __str__(self):
         return f"{self.hostel} - {self.event}: {self.score}"
