@@ -6,12 +6,14 @@ from rest_framework.decorators import api_view
 from django.shortcuts import render, redirect
 from .models import GCEvent, Hostel, Score
 from .forms import gcForm
+from django.utils.timezone import now
 
 
 def creategc(request):
     myform = gcForm(request.POST, request.FILES or None)
     if myform.is_valid():
         myform.save()
+        return HttpResponse("Success")
     context = {
         'form': myform,
     }
@@ -78,7 +80,6 @@ def individualgc(request, id):  # GC ke details return
     gc = GCEvent.objects.get(id=id)
     # if gc.timeline <= datetime.datetime.now():
     if 2 > 1:
-        # fetch scores of particular GC and show
         scores = Score.objects.filter(event=gc)
         serializer = scoreSerializer(scores, many=True)
         return Response(serializer.data)
@@ -91,6 +92,5 @@ def hostel_scorecard(request, name):
     hostels = Hostel.objects.get(name=name)
     scores = Score.objects.filter(hostel=hostels)
     serializer = scoreSerializer(scores, many=True)
-    # print(type(serializer.data))
 
     return Response(serializer.data)
