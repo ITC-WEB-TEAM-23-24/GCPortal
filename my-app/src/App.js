@@ -4,9 +4,9 @@ import SideBar from "./Components/sideBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Components/header";
 import Overall from "./pages/Overall";
-import Genre1 from "./pages/Genre1";
 import Genre2 from "./pages/Genre2";
 import Genre3 from "./pages/Genre3";
+import Genre1 from "./pages/Genre1";
 import Gc from "./pages/Gc";
 import Hostel from "./Components/Hostel";
 
