@@ -39,7 +39,7 @@ const routes = [
     ],
   },
   {
-    path: "/s",
+    path: "/Hostel",
     name: "Hostels",
     icon: <FaBuilding />,
   },
@@ -55,12 +55,12 @@ const routes = [
     icon: <BsFillTrophyFill />,
     subRoutes: [
       {
-        path: "/s",
+        path: "/Gc",
         name: "Upcoming ",
         // icon: < />,
       },
       {
-        path: "/s",
+        path: "/OngoingGC",
         name: "Ongoing",
         // icon: < />,
       },
@@ -129,7 +129,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  {/* Tech GC 23-24 */}
+                  Tech GC
                 </motion.h1>
               )}
             </AnimatePresence>
