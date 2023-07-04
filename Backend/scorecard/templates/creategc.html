@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create GC-event</title>
+  </head>
+  <body>
+    <h1>Create a GC-Event</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %} {{ form.as_p }}
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

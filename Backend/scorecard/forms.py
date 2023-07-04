@@ -1,12 +1,8 @@
 from django import forms
-# from django.forms import formset_factory
-from .models import Score
+from .models import GCEvent
 
 
-class ScoreForm(forms.ModelForm):
+class gcForm(forms.ModelForm):
     class Meta:
-        model = Score
-        fields = ['hostel', 'event', 'score']
-
-
-# ScoreFormSet = formset_factory(ScoreForm, extra=0)
+        model = GCEvent
+        fields = '__all__'

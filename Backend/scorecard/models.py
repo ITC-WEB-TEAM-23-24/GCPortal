@@ -11,19 +11,20 @@ class Hostel(models.Model):
 
 
 class GCEvent(models.Model):
-    name = models.CharField(max_length=100, blank=False)
+    name = models.CharField(max_length=100, blank=False, default="")
     description = models.TextField()
-    poster = models.ImageField(blank=False, null=True)
+    poster = models.ImageField(
+        upload_to='posters/', default="")
     start_timeline = models.DateTimeField(default=now)
     end_timeline = models.DateTimeField(default=now)
-    genre = models.CharField(max_length=50, null=True, blank=False)
+    genre = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return self.name
 
 
 class Score(models.Model):
-    hostel = models.ForeignKey(Hostel, on_delete=models.CASCADE,null=True)
+    hostel = models.ForeignKey(Hostel, on_delete=models.CASCADE, null=True)
     event = models.ForeignKey(GCEvent, on_delete=models.CASCADE)
     score = models.IntegerField(null=True)
 
