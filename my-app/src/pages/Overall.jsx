@@ -6,10 +6,16 @@ import axios from "axios";
 
 class Overall extends React.Component {
   state = { details: [] };
+  config = {
+    headers: {
+      'Content-Type': 'application/json',
+      // Add any other custom headers here
+    }
+  };
 
   componentDidMount() {
     axios
-      .get("http://localhost:8000")
+      .get("http://localhost:8000/overall/", this.config)
       .then((res) => {
         const data = res.data;
         this.setState({

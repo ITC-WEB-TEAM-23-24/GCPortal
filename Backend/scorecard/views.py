@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 from .models import GCEvent, Hostel, Score
 from .forms import gcForm
 from django.utils.timezone import now
+from django.views.decorators.csrf import csrf_exempt
 
 
 def creategc(request):
@@ -42,6 +43,7 @@ def backendgcscore(request, id):
 
 
 @api_view(['GET'])
+@csrf_exempt
 def overall(request):
     hostels = Hostel.objects.all()
     scorecard = hostels.values('name')
