@@ -5,18 +5,40 @@ from django import forms
 from rest_framework.decorators import api_view
 from django.shortcuts import render, redirect
 from .models import GCEvent, Hostel, Score
-from .forms import ScoreForm
+from .forms import gcForm
+from django.utils.timezone import now
 
 
-def enter_score(request):
-    # event = GCEvent.objects.get(id=eventid)
-    form = ScoreForm(request.POST or None)
-    if form.is_valid():
-        form.save()
+def creategc(request):
+    myform = gcForm(request.POST, request.FILES or None)
+    if myform.is_valid():
+        myform.save()
+        return HttpResponse("Success")
     context = {
-        'form': form
+        'form': myform,
     }
-    return render(request, "enter_scores.html", context)
+    return render(request, "creategc.html", context)
+
+
+def backendgc(request):
+    events = GCEvent.objects.all()
+    context = {'events': events}
+    return render(request, "backendgc.html", context)
+
+
+def backendgcscore(request, id):
+    event = GCEvent.objects.get(id=id)
+    hostels = Hostel.objects.all()
+    context = {'events': event,
+               'hostels': hostels
+               }
+
+    if request.method == 'POST':
+        for hostel in hostels:
+            value = request.POST[hostel.name]
+            Score.objects.create(event=event, hostel=hostel, score=value)
+        return HttpResponse("Success")
+    return render(request, "backendscore.html", context)
 
 
 @api_view(['GET'])
@@ -36,7 +58,7 @@ def overall(request):
 
 
 @api_view(['GET'])
-def genrewise_scorecard(request, genre):
+def genrewise_scorecard(request, genre):  # Return individual GC details
     Genre = GCEvent.objects.filter(genre=genre)
     hostels = Hostel.objects.all()
     scorecard = hostels.values('name')
@@ -54,11 +76,10 @@ def genrewise_scorecard(request, genre):
 
 
 @api_view(['GET'])
-def individualgc(request, id):
+def individualgc(request, id):  # GC ke details return
     gc = GCEvent.objects.get(id=id)
     # if gc.timeline <= datetime.datetime.now():
     if 2 > 1:
-        # fetch scores of particular GC and show
         scores = Score.objects.filter(event=gc)
         serializer = scoreSerializer(scores, many=True)
         return Response(serializer.data)
@@ -71,6 +92,5 @@ def hostel_scorecard(request, name):
     hostels = Hostel.objects.get(name=name)
     scores = Score.objects.filter(hostel=hostels)
     serializer = scoreSerializer(scores, many=True)
-    print(type(serializer.data))
 
     return Response(serializer.data)

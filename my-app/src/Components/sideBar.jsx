@@ -15,31 +15,9 @@ const routes = [
     path: "/",
     name: "Leaderboards",
     icon: <MdLeaderboard />,
-    subRoutes: [
-      {
-        path: "/Overall",
-        name: "Overall ",
-        icon: <SiCoveralls />,
-      },
-      {
-        path: "/Genre1",
-        name: "Genre-1",
-        // icon: < />,
-      },
-      {
-        path: "/Genre2",
-        name: "Genre-2",
-        // icon: < />,
-      },
-      {
-        path: "/Genre3",
-        name: "Genre-3",
-        // icon: < />,
-      },
-    ],
   },
   {
-    path: "/s",
+    path: "/Hostel",
     name: "Hostels",
     icon: <FaBuilding />,
   },
@@ -50,26 +28,9 @@ const routes = [
   },
 
   {
-    path: "/s",
+    path: "/Gc",
     name: "GCs",
     icon: <BsFillTrophyFill />,
-    subRoutes: [
-      {
-        path: "/s",
-        name: "Upcoming ",
-        // icon: < />,
-      },
-      {
-        path: "/s",
-        name: "Ongoing",
-        // icon: < />,
-      },
-      {
-        path: "/s",
-        name: "Past",
-        // icon: < />,
-      },
-    ],
   },
   {
     path: "/s",
@@ -129,7 +90,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  {/* Tech GC 23-24 */}
+                  Tech GC
                 </motion.h1>
               )}
             </AnimatePresence>

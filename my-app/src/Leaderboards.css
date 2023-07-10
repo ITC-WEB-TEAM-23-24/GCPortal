@@ -1,11 +1,16 @@
 .bg{
      background-image: url(../src/assets/meetings-page-bg.jpg);
 padding: 10px; 
+/* we can use gradient background */
 /* background-image: linear-gradient(to right, rgb(242,112,256),rgb(255,148,114)); */
-height: fit-content;
+/* height: 100%; */
+min-height: 100vh;
 } 
 
+
+
 h2 {
+    
     position: relative;
     font-size: 30px;
     color: rgb(161, 142, 142);
@@ -64,23 +69,26 @@ h2 {
   }
 
 .listing{
-     /* color: black; */
+     
      text-align: center;
-     /* background-color: azure; */
      width: 30%;
      /* padding-top: 20px; */
       margin-left: 20%; 
      /* height: 40px; */
      position: relative;
      /* border-radius: 2px; */
+     /* background-color: rgb(214 201 248); */
+     /* background-color: rgb(214 201 248); */
      background-color: #d1d5db;
  
-     /* You can use gradient background color such as */
+     /* Y  We can use gradient background color such as */
      /* background: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%); */
  
      /* Curved corners */
-     /* border-top-left-radius: 50% 40%;
-     border-top-right-radius: 50% 40%; */
+      border-bottom-left-radius: 10px;
+     border-bottom-right-radius: 10px; 
+      border-top-left-radius: 10px;
+     border-top-right-radius: 10px; 
  
      /* Size */
      height: 60px;
@@ -182,7 +190,7 @@ h2 {
     width: 100%;
 }
 .name_score_listing{
-    background-color: azure;
+    background-color: rgb(218, 214, 229);
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -266,3 +274,83 @@ h2 {
 h3{
     margin-top: 0px;
 }
+
+
+/* USE FOR CHANGING THE GENRE AND OVERALL LISTS TO BUTTONS  */
+/*.clickable {
+    background: #2d6a4f;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    color: #fff;
+    background: #52b788;
+  transform: translateY(-6px);
+}
+.clickable:active .front {
+  transform: translate(-2px);
+}
+.front{
+    
+    will-change: transform;
+    transition: transform 250ms;
+  }
+  .clickable:hover .front {
+    transform: translateY(-8px);
+  }
+  .clickable {
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    color: #fff;
+    background: #52b788;
+    transform: translateY(-4px);
+    will-change: transform;
+  transition: transform 250ms;
+}
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    transform: translateY(2px);
+    background: #ced4da;
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  background: #2d6a4f;
+}
+.clickable:hover .front {
+  transform: translateY(-6px);
+}
+.clickable:hover .shadow {
+  transform: translateY(4px);
+}
+.clickable:active .front {
+  transform: translate(-2px);
+}
+.clickable:active .shadow {
+  transform: translate(1px);
+} */
