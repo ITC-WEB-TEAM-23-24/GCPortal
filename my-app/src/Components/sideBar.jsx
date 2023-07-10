@@ -15,28 +15,6 @@ const routes = [
     path: "/",
     name: "Leaderboards",
     icon: <MdLeaderboard />,
-    subRoutes: [
-      {
-        path: "/Overall",
-        name: "Overall ",
-        icon: <SiCoveralls />,
-      },
-      {
-        path: "/Genre1",
-        name: "Genre-1",
-        // icon: < />,
-      },
-      {
-        path: "/Genre2",
-        name: "Genre-2",
-        // icon: < />,
-      },
-      {
-        path: "/Genre3",
-        name: "Genre-3",
-        // icon: < />,
-      },
-    ],
   },
   {
     path: "/Hostel",
@@ -50,26 +28,9 @@ const routes = [
   },
 
   {
-    path: "/s",
+    path: "/Gc",
     name: "GCs",
     icon: <BsFillTrophyFill />,
-    subRoutes: [
-      {
-        path: "/Gc",
-        name: "Upcoming ",
-        // icon: < />,
-      },
-      {
-        path: "/OngoingGC",
-        name: "Ongoing",
-        // icon: < />,
-      },
-      {
-        path: "/s",
-        name: "Past",
-        // icon: < />,
-      },
-    ],
   },
   {
     path: "/s",
