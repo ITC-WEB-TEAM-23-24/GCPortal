@@ -27,7 +27,7 @@
 }
 
 .cardsds .card{
-    background: linear-gradient(45deg, #47cebe,#ef4a82);
+    background: linear-gradient(45deg, #14025c,#18015e);
     padding: 20px;
     display: flex;
     align-items: center;
@@ -92,8 +92,9 @@
 
 .btnds{
     padding: 5px 10px;
-    background: linear-gradient(45deg,#47cebe,#ef4a82);
+    /* background: linear-gradient(45deg,#47cebe,#ef4a82); */
     color: #fff;
+    background: linear-gradient(45deg, #14025c,#18015e);
     text-decoration: none;
     text-align: center;
 }

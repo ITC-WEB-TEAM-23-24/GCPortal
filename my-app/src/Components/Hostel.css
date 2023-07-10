@@ -184,7 +184,7 @@
     margin-bottom: 10px;
 }
 
-.dots div:nth-child(1){
+/* .dots div:nth-child(1){
     background-color: var(--current-color1);
 }
 .dots div:nth-child(2){
@@ -192,7 +192,7 @@
 }
 .dots div:nth-child(3){
     background-color: #000;
-}
+} */
 
 .card .infos{
     display: block;

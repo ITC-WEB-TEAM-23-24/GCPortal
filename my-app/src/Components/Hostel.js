@@ -70,11 +70,11 @@ export default function Hostel() {
 
                        
                         <div className="actions">
-                            <i className='fa-solid fa-cart-shopping'></i>
+                            {/* <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
                             <i className='fa-regular fa-bookmart'></i>
                             <i className='fa-solid fa-share-nodes'></i>
-                            <i className="bi bi-0-circle bg-primary"></i>
+                            <i className="bi bi-0-circle bg-primary"></i> */}
                         </div>
                     </div>
                 </div>
@@ -95,10 +95,10 @@ export default function Hostel() {
 
                         
                         <div className="actions">
-                            <i className='fa-solid fa-cart-shopping'></i>
+                            {/* <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
                             <i className='fa-regular fa-bookmart'></i>
-                            <i className='fa-solid fa-share-nodes'></i>
+                            <i className='fa-solid fa-share-nodes'></i> */}
                         </div>
                     </div>
                 </div>
@@ -119,10 +119,10 @@ export default function Hostel() {
 
                         
                         <div className="actions">
-                            <i className='fa-solid fa-cart-shopping'></i>
+                            {/* <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
                             <i className='fa-regular fa-bookmart'></i>
-                            <i className='fa-solid fa-share-nodes'></i>
+                            <i className='fa-solid fa-share-nodes'></i> */}
                         </div>
                     </div>
                 </div>
@@ -143,10 +143,10 @@ export default function Hostel() {
 
                         
                         <div className="actions">
-                            <i className='fa-solid fa-cart-shopping'></i>
+                            {/* <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
                             <i className='fa-regular fa-bookmart'></i>
-                            <i className='fa-solid fa-share-nodes'></i>
+                            <i className='fa-solid fa-share-nodes'></i> */}
                         </div>
                     </div>
                 </div>
@@ -167,10 +167,10 @@ export default function Hostel() {
 
                         
                         <div className="actions">
-                            <i className='fa-solid fa-cart-shopping'></i>
+                            {/* <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
                             <i className='fa-regular fa-bookmart'></i>
-                            <i className='fa-solid fa-share-nodes'></i>
+                            <i className='fa-solid fa-share-nodes'></i> */}
                         </div>
                     </div>
                 </div>
