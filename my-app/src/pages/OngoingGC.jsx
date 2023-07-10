@@ -81,18 +81,6 @@ function Gctimeline() {
             <div class="filledbar_GC"></div>
           </div>
         </div>
-        {/* <div class="card_GC">
-          <h3 class="title_GC">Card_timeline 1 </h3>
-          <ul className="info_list_GC">
-            <li className="info_GC">Info1</li>
-            <li className="info_GC">Info2</li>
-            <li className="info_GC">Info3</li>
-          </ul>
-          <div class="bar_card_GC">
-            <div class="emptybar_GC"></div>
-            <div class="filledbar_GC"></div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
