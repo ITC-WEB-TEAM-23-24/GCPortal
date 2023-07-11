@@ -13,31 +13,31 @@ import pluto from './pluto.jpg'
 export default function Hostel() {
   return (
     <>
-    <div className="background">
+    <div className="backgroundhs">
     <div className="sidebarhs">
             <ul>
                 <li>
                     <a href="/">
                     <i className="fas fa-clinic-medical"></i>
-                    <div className="title">Genre Name</div>
+                    <div className="titles">Genre Name</div>
                     </a>
                 </li>
                 <li>
                     <a href="/">
                     <i className="fas fa-th-large"></i>
-                    <div className="title">Genre 1 </div>
+                    <div className="titles">Genre 1 </div>
                     </a>
                 </li>
                 <li>
                     <a href="/">
                     <i className="fas fa-stethoscope"></i>
-                    <div className="title">Genre 2</div>
+                    <div className="titles">Genre 2</div>
                     </a>
                 </li>
                 <li>
                     <a href="/">
                     <i className="fas fa-user-md"></i>
-                    <div className="title">Genre 3</div>
+                    <div className="titles">Genre 3</div>
                     </a>
                 </li>
       
@@ -45,7 +45,7 @@ export default function Hostel() {
             
 
         </div>
-    <div className='containers hostelbody'>
+    <div className='containerhs hostelbody'>
         <input type="radio" name='slider' id="s1" checked/>
         <input type="radio" name='slider' id='s2' />
         <input type="radio" name='slider' id='s3' />
