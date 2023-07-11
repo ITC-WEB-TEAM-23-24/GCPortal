@@ -24,7 +24,11 @@ function App() {
             <Route path="/Genre1" element={<Genre1 />} />
             <Route path="/Genre2" element={<Genre2 />} />
             <Route path="/Genre3" element={<Genre3 />} />
+            <Route path="/Gc" element={<Gc />} />
+            <Route path="/Hostel" element={<Hostel />} />
+            {/* <Route path="/OngoingGC" element={<OngoingGC />} /> */}
             <Route path='/Hostel' element={<Hostel/>} />
+            <Route path='/Dashboard' element={<Dashboard/>} />
           </Routes>
         </SideBar>
       </div>

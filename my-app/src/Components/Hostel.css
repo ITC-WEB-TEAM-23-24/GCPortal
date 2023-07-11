@@ -1,14 +1,94 @@
 
 
-hostelbody{
+.main-container{
+    height: 100vh;
+}
+
+.sidebarhs{
+    top: 100px;
+    position: relative;
+    width: 300px;
+    height: 50%;
+    /* background: linear-gradient(45deg, #47cebe,#ef4a82); */
+    background-image: linear-gradient(to right, rgb(12, 6, 64), rgb(6, 37, 47));
+    overflow-x: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0.2);
+    z-index: 2;
+    border-radius: 10px solid #0a023b;
+}
+.sidebarhs ul li{
+    width: 100%;
+    list-style: none;
+}
+.sidebarhs ul li:hover{
+    background:#0a023b ;
+}
+
+.sidebarhs ul li:first-child{
+    line-height: 60px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+}
+.sidebarhs ul li:first-child:hover{
+    background: none;
+    
+}
+.sidebarhs ul li a{
+   width: 100%;
+   text-decoration: none;
+   color: #fff;
+   height: 60px;
+   display: flex;
+   align-items: center;
+}
+.sidebarhs ul li a:hover{
+    color: #2790d6;
+}
+
+
+.sidebarhs ul li a i{
+    min-width: 60px;
+    font-size: 24px;
+    text-align: center;
+
+}
+
+.sidebarhs .title{
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.background{
+   
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     /* background-color: #2ae0d7; */
-    background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+    /* background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d); */
     /* background-image:  url(http://localhost:3000/static/media/meetings-page-bg.df31bdd….jpg); */
     overflow-x: 80vh;
     font-family: 'urbanist','sans-serif';
+    background-image: url(background.jpg);
+    /* background-repeat: no-repeat; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
 }
 
 
@@ -28,9 +108,11 @@ hostelbody{
     align-items: center;
     transform-style: preserve-3d;
     flex-direction: column;
-    margin-bottom: 100px;
-    margin-top: 80px;
+    /* margin-bottom: 100px;
+    margin-top: 80px; */
     margin-left: 280px;
+    position: relative;
+    top: 100px;
 
 }
 
@@ -58,11 +140,17 @@ hostelbody{
     position: relative;
     height: 100%;
     /* background-color: #21c6d8; */
-    background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
+    background-image: linear-gradient(to right, rgb(12, 6, 64), rgb(6, 37, 47));
     /* background-image:  url(http://localhost:3000/static/media/meetings-page-bg.df31bdd….jpg); */
+    
     border-radius: 10px;
     padding: 30px 35px;  
 }
+
+/* .cardsch .card:nth-child(1){
+    background-image: url(background.jpg);
+} */
+
 
 .cardsch .image{
     display: flex;
@@ -96,7 +184,7 @@ hostelbody{
     margin-bottom: 10px;
 }
 
-.dots div:nth-child(1){
+/* .dots div:nth-child(1){
     background-color: var(--current-color1);
 }
 .dots div:nth-child(2){
@@ -104,7 +192,7 @@ hostelbody{
 }
 .dots div:nth-child(3){
     background-color: #000;
-}
+} */
 
 .card .infos{
     display: block;
