@@ -1,4 +1,4 @@
-.main{
+.mainds{
     position: absolute;
     width: calc(100% - 45px);
     min-height: 50vh;
@@ -8,7 +8,7 @@
     z-index: -1;
 }
 
-.img{
+.imgds{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -35,20 +35,20 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-.number{
+.numberds{
     font-size: 35px;
     font-weight: 500;
     color: #fff;
 }
 
 .cardds-name{
-    color: #444;
+    color: #db2929;
     font-weight: 600;
 }
 
-.icon-box i{
+.icon-boxds i{
     font-size: 45px;
-    color: #444;
+    color: #db2929;
 }
 
 .tablesds {
@@ -83,7 +83,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.heading{
+.headingds{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -165,7 +165,7 @@
 
 @media(max-width:1090px){
     
-    .main{
+    .mainds{
         width: calc(100% - 60px);
         left: 60px;
     }
