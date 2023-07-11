@@ -5,41 +5,67 @@ from django import forms
 from rest_framework.decorators import api_view
 from django.shortcuts import render, redirect
 from .models import GCEvent, Hostel, Score
-from .forms import ScoreForm
+from .forms import gcForm
+from django.utils.timezone import now
+from django.db.models import Value,IntegerField
+from django.core import serializers
 
 
-def enter_score(request):
-    # event = GCEvent.objects.get(id=eventid)
-    form = ScoreForm(request.POST or None)
-    if form.is_valid():
-        form.save()
+def creategc(request):
+    myform = gcForm(request.POST, request.FILES or None)
+    if myform.is_valid():
+        myform.save()
+        return HttpResponse("Success")
     context = {
-        'form': form
+        'form': myform,
     }
-    return render(request, "enter_scores.html", context)
+    return render(request, "creategc.html", context)
+
+
+def backendgc(request):
+    events = GCEvent.objects.all()
+    context = {'events': events}
+    return render(request, "backendgc.html", context)
+
+
+def backendgcscore(request, id):
+    event = GCEvent.objects.get(id=id)
+    hostels = Hostel.objects.all()
+    context = {'events': event,
+               'hostels': hostels
+               }
+
+    if request.method == 'POST':
+        for hostel in hostels:
+            value = request.POST[hostel.name]
+            Score.objects.create(event=event, hostel=hostel, score=value)
+        return HttpResponse("Success")
+    return render(request, "backendscore.html", context)
 
 
 @api_view(['GET'])
 def overall(request):
-    hostels = Hostel.objects.all()
-    scorecard = hostels.values('name')
+    scorecard = list(Hostel.objects.all().values('name'))
+    
     for item in scorecard:
         value = item['name']
         host = Hostel.objects.get(name=value)
         scores = Score.objects.filter(hostel=host)
 
         total = sum(some.score for some in scores)
-        item['Total score'] = total
+        item['total_score'] = total
+    
+    scorecard = sorted(scorecard, key=lambda x: x['total_score'],reverse=True)
+    for rank, item in enumerate(scorecard, start=1):
+        item['rank'] = rank
 
-    data = list(scorecard)
-    return JsonResponse(data, safe=False)
+    return Response(scorecard)
 
 
 @api_view(['GET'])
-def genrewise_scorecard(request, genre):
+def genrewise_scorecard(request, genre):  # Return individual GC details
     Genre = GCEvent.objects.filter(genre=genre)
-    hostels = Hostel.objects.all()
-    scorecard = hostels.values('name')
+    scorecard=list(Hostel.objects.all().values('name'))
     for item in scorecard:
         value = item['name']
         host = Hostel.objects.get(name=value)
@@ -48,20 +74,32 @@ def genrewise_scorecard(request, genre):
             scores = Score.objects.filter(hostel=host, event=Event)
             subtotal = sum(some.score for some in scores)
             total = total+subtotal
-        item['Total score'] = total
-    data = list(scorecard)
-    return JsonResponse(data, safe=False)
+        item['total_score'] = total
+    
+    scorecard=sorted(scorecard,key=lambda x: x['total_score'],reverse=True)
+    
+    for rank,item in enumerate(scorecard, start=1):
+        item['rank']=rank
+
+    GC_details = Genre.values()
+    return Response({
+        "scorecard":scorecard,
+        "gc":GC_details
+    })
 
 
 @api_view(['GET'])
-def individualgc(request, id):
+def individualgc(request, id):  # GC ke details return
     gc = GCEvent.objects.get(id=id)
+    GC = GCEvent.objects.filter(id=id).values() #GC details to send to frontend
+
     # if gc.timeline <= datetime.datetime.now():
     if 2 > 1:
-        # fetch scores of particular GC and show
-        scores = Score.objects.filter(event=gc)
-        serializer = scoreSerializer(scores, many=True)
-        return Response(serializer.data)
+        scores = Score.objects.filter(event=gc).values()       
+        return Response({
+            "scores":scores,
+            "gc":GC
+        })
     else:
         return HttpResponse("NO SCORE TO SHOW YET")  # GC has not yet ended
 
@@ -71,6 +109,5 @@ def hostel_scorecard(request, name):
     hostels = Hostel.objects.get(name=name)
     scores = Score.objects.filter(hostel=hostels)
     serializer = scoreSerializer(scores, many=True)
-    print(type(serializer.data))
 
     return Response(serializer.data)

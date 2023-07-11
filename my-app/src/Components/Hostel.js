@@ -40,8 +40,7 @@ export default function Hostel() {
                     <div className="title">Genre 3</div>
                     </a>
                 </li>
-               
-               
+      
             </ul>
             
 
