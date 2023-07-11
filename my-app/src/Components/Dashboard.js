@@ -5,48 +5,48 @@ import image from './image.png'
 export default function Dashboard() {
   return (
     <>
-    <div className="main">
+    <div className="mainds">
     <div className="cardsds">
         <div className="card">
             <div className="card-contents">
-                <div className="number">1st</div>
-                <div className="card-name">Rank</div>
+                <div className="numberds">1st</div>
+                <div className="cardds-name">Rank</div>
             </div>
-            <div className="icon-box">
+            <div className="icon-boxds">
             <i className="fa-solid fa-trophy"></i>
             </div>
         </div>
         <div className="card">
             <div className="card-contents">
-                <div className="number">185</div>
+                <div className="numberds">185</div>
                 <div className="cardds-name">Points</div>
             </div>
-            <div className="icon-box">
+            <div className="icon-boxds">
             <i className="fa-brands fa-grunt"></i>
             </div>
         </div>
         <div className="card">
             <div className="card-contents">
-                <div className="number">2</div>
+                <div className="numberds">2</div>
                 <div className="cardds-name">Genre Rank</div>
             </div>
-            <div className="icon-box">
+            <div className="icon-boxds">
             <i class="fa-solid fa-ranking-star"></i>
             </div>
         </div>
         <div className="card">
             <div className="card-contents">
-                <div className="number">4</div>
+                <div className="numberds">4</div>
                 <div className="cardds-name">Total wins</div>
             </div>
-            <div className="icon-box">
+            <div className="icon-boxds">
                 <i className="fas fa-dollar-sign"></i>
             </div>
         </div>
       </div>
          <div className="tablesds">
             <div className="last-appointments">
-                <div className="heading">
+                <div className="headingds">
                     <h2>Results</h2>
                     <a href="/" className="btnds">view all</a>
                 </div>
@@ -103,7 +103,7 @@ export default function Dashboard() {
                 </table>
             </div>
             <div className="doctor-visiting">
-                <div className="heading">
+                <div className="headingds">
                     <h2>Winner-Team</h2>
                     <a href="/" className="btnds">view all</a>
                 </div>
@@ -118,7 +118,7 @@ export default function Dashboard() {
                         <tr>
                             <td>
                                 <div className="img-box-small">
-                                    <img className='img' src={image} alt=""/>
+                                    <img className='imgds' src={image} alt=""/>
                                 </div>
                             </td>
                             <td>Benjamin</td>
@@ -128,7 +128,7 @@ export default function Dashboard() {
                         <tr>
                             <td>
                                 <div className="img-box-small">
-                                    <img className='img' src={image} alt=""/>
+                                    <img className='imgds' src={image} alt=""/>
                                 </div>
                             </td>
                             <td>Benjamin</td>
@@ -138,7 +138,7 @@ export default function Dashboard() {
                         <tr>
                             <td>
                                 <div className="img-box-small">
-                                    <img className='img' src={image} alt=""/>
+                                    <img className='imgds' src={image} alt=""/>
                                 </div>
                             </td>
                             <td>Benjamin</td>
@@ -148,7 +148,7 @@ export default function Dashboard() {
                         <tr>
                             <td>
                                 <div className="img-box-small">
-                                    <img className='img' src={image} alt=""/>
+                                    <img className='imgds' src={image} alt=""/>
                                 </div>
                             </td>
                             <td>Benjamin</td>
