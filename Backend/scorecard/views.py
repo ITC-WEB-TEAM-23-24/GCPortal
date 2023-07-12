@@ -9,7 +9,6 @@ from .forms import gcForm
 from django.utils.timezone import now
 from django.db.models import Value, IntegerField
 from django.core import serializers
-import itertools
 import requests
 
 
