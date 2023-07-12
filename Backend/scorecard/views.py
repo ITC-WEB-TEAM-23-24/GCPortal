@@ -1,14 +1,16 @@
 from django.http import response, HttpResponse, JsonResponse
 from rest_framework.response import Response
-from .serializers import scoreSerializer
+from .serializers import scoreSerializer, gcserializer
 from django import forms
 from rest_framework.decorators import api_view
 from django.shortcuts import render, redirect
 from .models import GCEvent, Hostel, Score
 from .forms import gcForm
 from django.utils.timezone import now
-from django.db.models import Value,IntegerField
+from django.db.models import Value, IntegerField
 from django.core import serializers
+import itertools
+import requests
 
 
 def creategc(request):
@@ -46,7 +48,7 @@ def backendgcscore(request, id):
 @api_view(['GET'])
 def overall(request):
     scorecard = list(Hostel.objects.all().values('name'))
-    
+
     for item in scorecard:
         value = item['name']
         host = Hostel.objects.get(name=value)
@@ -54,8 +56,8 @@ def overall(request):
 
         total = sum(some.score for some in scores)
         item['total_score'] = total
-    
-    scorecard = sorted(scorecard, key=lambda x: x['total_score'],reverse=True)
+
+    scorecard = sorted(scorecard, key=lambda x: x['total_score'], reverse=True)
     for rank, item in enumerate(scorecard, start=1):
         item['rank'] = rank
 
@@ -63,9 +65,9 @@ def overall(request):
 
 
 @api_view(['GET'])
-def genrewise_scorecard(request, genre):  # Return individual GC details
+def genrewise_scorecard(request, genre):  # Don't Return individual GC details
     Genre = GCEvent.objects.filter(genre=genre)
-    scorecard=list(Hostel.objects.all().values('name'))
+    scorecard = list(Hostel.objects.all().values('name'))
     for item in scorecard:
         value = item['name']
         host = Hostel.objects.get(name=value)
@@ -75,30 +77,30 @@ def genrewise_scorecard(request, genre):  # Return individual GC details
             subtotal = sum(some.score for some in scores)
             total = total+subtotal
         item['total_score'] = total
-    
-    scorecard=sorted(scorecard,key=lambda x: x['total_score'],reverse=True)
-    
-    for rank,item in enumerate(scorecard, start=1):
-        item['rank']=rank
 
-    GC_details = Genre.values()
-    return Response({
-        "scorecard":scorecard,
-        "gc":GC_details
-    })
+    scorecard = sorted(scorecard, key=lambda x: x['total_score'], reverse=True)
+
+    for rank, item in enumerate(scorecard, start=1):
+        item['rank'] = rank
+
+    return Response(scorecard)
 
 
 @api_view(['GET'])
 def individualgc(request, id):  # GC ke details return
     gc = GCEvent.objects.get(id=id)
-    GC = GCEvent.objects.filter(id=id).values() #GC details to send to frontend
+    GCnew = GCEvent.objects.filter(id=id)
+    serializer = gcserializer(GCnew, many=True)
 
     # if gc.timeline <= datetime.datetime.now():
     if 2 > 1:
-        scores = Score.objects.filter(event=gc).values()       
+        scores = Score.objects.filter(event=gc).values().order_by('-score')
+        for rank, item in enumerate(scores, start=1):
+            item['rank'] = rank
+
         return Response({
-            "scores":scores,
-            "gc":GC
+            "scores": scores,
+            "gc": serializer.data
         })
     else:
         return HttpResponse("NO SCORE TO SHOW YET")  # GC has not yet ended
@@ -106,8 +108,45 @@ def individualgc(request, id):  # GC ke details return
 
 @api_view(['GET'])
 def hostel_scorecard(request, name):
-    hostels = Hostel.objects.get(name=name)
-    scores = Score.objects.filter(hostel=hostels)
-    serializer = scoreSerializer(scores, many=True)
+    hostel = Hostel.objects.get(name=name)
+    scores = Score.objects.filter(hostel=hostel)
+    scoresdict = scores.values('score', 'event')
+    scores_list = list(scoresdict)
 
+    for (obj, some) in zip(scores, scores_list):
+        event = obj.event
+        event_scores = Score.objects.filter(event=event).order_by('-score')
+        for rank, item in enumerate(event_scores, start=1):
+            if item.hostel == hostel:
+                some['rank'] = rank
+
+    details = {}
+    overall_rank = overall_score = 0
+    overall_url = 'http://127.0.0.1:8000/overall/'
+    overall_scorecard = requests.get(overall_url).json()
+    for rank, item in enumerate(overall_scorecard, start=1):
+        if item['name'] == name:
+            details["overall_score"] = item['total_score']
+            details["overall_rank"] = rank
+
+    genres = GCEvent.objects.distinct().values('genre')
+    for genre in genres:
+        genre_url = 'http://127.0.0.1:8000/genre' + genre['genre'] + '/'
+        genre_scorecard = requests.get(genre_url).json()
+        for rank, item in enumerate(genre_scorecard, start=1):
+            if item['name'] == name:
+                details[genre['genre'] + "_rank"] = rank
+                details[genre['genre'] + "_score"] = item['total_score']
+
+    return Response({
+        "details": details,
+        "scores": scores_list,
+    })
+
+
+# an api to return all events in a particular genre
+@api_view(['GET'])
+def gc_events(request, genre):
+    events = GCEvent.objects.filter(genre=genre)
+    serializer = gcserializer(events, many=True)
     return Response(serializer.data)
