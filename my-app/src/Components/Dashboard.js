@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     const link_url = window.location.href; // Get the current URL
-    const hostel = link_url.slice(-2); // Retrieve the hostel value from navigation param 
+    const hostel = link_url.slice(-2); // Retrieve the hostel value from navigation param
     console.log(hostel); // Check the value of hostel
     axios
       .get(`http://localhost:8000/${hostel}/`, this.config)
@@ -45,6 +45,7 @@ class Dashboard extends React.Component {
 
     return (
       <>
+        {/* <div className="bg"> */}
         <div className="mainds">
           <div className="cardsds">
             <div className="card_heading">
@@ -126,6 +127,7 @@ class Dashboard extends React.Component {
             </div>
           </div>
         </div>
+        {/* </div> */}
       </>
     );
   }

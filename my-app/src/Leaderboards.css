@@ -5,6 +5,8 @@ padding: 10px;
 /* background-image: linear-gradient(to right, rgb(242,112,256),rgb(255,148,114)); */
 /* height: 100%; */
 min-height: 100vh;
+/* z-index: -1; */
+position: relative;
 } 
 
 
@@ -202,7 +204,7 @@ h2::before{
 [class="1"] { 
  align-items: center;
  justify-content: space-between;
- background-color: gold;
+ /* background-color: gold; */
  display: flex;
  width: 70%;
  margin-left: 13%;
@@ -215,11 +217,26 @@ h2::before{
   height: 50px;
   border-style: solid;
   border-width: 0.25px;
+
+/* for divs with normal glow effect */
+  /* background-color: #ffd700;
+  background-image: linear-gradient(45deg, #ffd700 0%, #ffc800 100%);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+ position: relative; */
+  
+/* for shiny divs */
+ background-color: rgba(255, 215, 0, 0);
+  background-image: linear-gradient(180deg, #ffcc00 20%, #ffa500 80%);
+  box-shadow: 0 4px 12px  rgba(255, 215, 0, 0.8);
+  transition: all 0.5s ease;
+  
 }
+
+
 [class="2"]{
  align-items: center;
  justify-content: space-between;
- background-color: silver;
+ /* background-color: silver; */
  display: flex;
  width: 70%;
  margin-left: 13%;
@@ -232,11 +249,20 @@ h2::before{
   height: 50px;
   border-style: solid;
   border-width: 0.25px;
+  
+  /* background-color: #c0c0c0;
+  background-image: linear-gradient(45deg, #c0c0c0 0%, #a9a9a9 100%);
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.8); */
+
+  background-color: rgba(130, 185, 186, 0);
+    background-image: linear-gradient(180deg, #fefefe 20%, #9f9f9f 80%);
+    box-shadow: 0 4px 12px 0 #ffffff;
+    transition: all 0.5s ease;
 }
 [class="3"]{
  align-items: center;
  justify-content: space-between;
- background-color: #CD7F32;
+ /* background-color: #CD7F32; */
  display: flex;
  width: 70%;
  margin-left: 13%;
@@ -249,11 +275,22 @@ h2::before{
   height: 50px;
   border-style: solid;
   border-width: 0.25px;
+  background: linear-gradient(90deg, #d5a77c 0%, #efbf8f 45%, #7c5231 100%);
+  /* background-color: #cd7f32; */
+  /* background-image: linear-gradient(45deg, #cd7f32 0%, #8b4513 100%);
+  box-shadow: 0 0 10px rgba(205, 127, 50, 0.8); */
+
+
+  /* for shiny divs */
+  background-color: rgba(225, 152, 79, 0);
+  background-image: linear-gradient(180deg, #d58d45 20%, #9a4e17 80%);
+  box-shadow: 0 4px 12px 0 rgba(205, 127, 50, 0.8);
+  transition: all 0.5s ease;
 }
 [class="4"],[class="5"],[class="6"],[class="7"]{
  align-items: center;
  justify-content: space-between;
- background-color: beige;
+ /* background-color: beige; */
  display: flex;
  width: 70%;
  margin-left: 13%;
@@ -266,6 +303,11 @@ h2::before{
   height: 50px;
   border-style: solid;
   border-width: 0.25px;
+
+  background-color: rgba(245, 245, 220, 0);
+  background-image: linear-gradient(180deg, #f8f8de 20%, #cfc2af 80%);
+  box-shadow: 0 4px 10px 0 #ffffff;
+  transition: all 0.5s ease;
 }
 .span{
  margin-top: -20px;

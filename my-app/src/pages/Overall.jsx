@@ -79,34 +79,30 @@ class Overall extends React.Component {
 
           {this.state.details.map((output, id) => (
             <Link to={`/dashboard/${output.name}`}>
-            <div key={id}>
-              {/* <Link to="/dashboard"> */}
-              <ScoreboardAnimation id={output.rank}>
-                <div className={output.rank}>
-                  <div className="position">
-                    <h4>{output.rank}</h4>
-                  </div>
-                  <div className="image">
-                    <img alt="img_hostel" />
-                  </div>
-                  <div className="name" style={{textAlign: 'justify'}}>
-                    <h3 className="name text-dark">{output.number}</h3>
-                    <div className="span">Hostel_name</div>
-                  </div>
+              <div key={id}>
+                {/* <Link to="/dashboard"> */}
+                <ScoreboardAnimation id={output.rank}>
+                  <div className={output.rank}>
+                    <div className="position">
+                      <h4>{output.rank}</h4>
+                    </div>
+                    <div className="image">
+                      <img alt="img_hostel" />
+                    </div>
+                    <div className="name" style={{ textAlign: "justify" }}>
+                      <h3 className="name text-dark">{output.name}</h3>
+                      <div className="span">Hostel name</div>
+                    </div>
 
-                  <div className="score">
-                    <span>{output.total_score}</span>
+                    <div className="score">
+                      <span>{output.total_score}</span>
+                    </div>
                   </div>
-                </div>
-              </ScoreboardAnimation>
-              {/* </Link> */}
-            </div>
+                </ScoreboardAnimation>
+                {/* </Link> */}
+              </div>
             </Link>
           ))}
-        </div>
-        <div>
-          {/* Display the value of the hostel variable */}
-          <p>Selected Hostel: {hostel}</p>
         </div>
       </div>
     );
