@@ -19,7 +19,7 @@ class Overall extends React.Component {
       .then((res) => {
         const data = res.data;
         this.setState({
-          details: data.scorecard,
+          details: data,
         });
       })
       .catch((err) => {

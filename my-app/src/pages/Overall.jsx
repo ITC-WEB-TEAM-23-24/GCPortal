@@ -3,21 +3,15 @@ import { Link } from "react-router-dom";
 import "../Leaderboards.css";
 import ScoreboardAnimation from "../Animation";
 import axios from "axios";
-
-// class Overall extends React.Component {
-//   state = { details: [] };
-//   config = {
-//     headers: {
-//       "Content-Type": "application/json",
-//       // Add any other custom headers here
-//     },
-//   };
+// import Dashboard from "../Components/Dashboard";
+import { Navigate } from "react-router-dom";
 
 class Overall extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       details: [],
+      hostel: "", // Initialize the hostel variable in the component's state
     };
     this.config = {
       headers: {
@@ -26,6 +20,11 @@ class Overall extends React.Component {
       },
     };
   }
+
+  handleClick = (hostel) => {
+    this.setState({ hostel }); // Update the hostel variable in the component's state
+    console.log("Selected hostel:", hostel);
+  };
 
   componentDidMount() {
     axios
@@ -43,6 +42,7 @@ class Overall extends React.Component {
   }
 
   render() {
+    const { hostel } = this.state; // Retrieve the hostel variable from the component's state
     return (
       <div className="bg">
         <div className="leaderboard_heading">
@@ -76,7 +76,9 @@ class Overall extends React.Component {
           </div>
 
           {this.state.details.map((output, id) => (
-            <div key={id}>
+            <div key={id} onClick={() => this.handleClick(output.name)}>
+              {hostel && <Navigate to="/Dashboard" hostel={hostel} />}
+              {/* <Link to="/dashboard"> */}
               <ScoreboardAnimation id={output.rank}>
                 <div className={output.rank}>
                   <div className="position">
@@ -95,8 +97,13 @@ class Overall extends React.Component {
                   </div>
                 </div>
               </ScoreboardAnimation>
+              {/* </Link> */}
             </div>
           ))}
+        </div>
+        <div>
+          {/* Display the value of the hostel variable */}
+          <p>Selected Hostel: {hostel}</p>
         </div>
       </div>
     );
