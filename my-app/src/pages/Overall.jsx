@@ -5,6 +5,7 @@ import ScoreboardAnimation from "../Animation";
 import axios from "axios";
 // import Dashboard from "../Components/Dashboard";
 import { Navigate } from "react-router-dom";
+// import {navigation} from "react-router-dom";
 
 class Overall extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Overall extends React.Component {
   handleClick = (hostel) => {
     this.setState({ hostel }); // Update the hostel variable in the component's state
     console.log("Selected hostel:", hostel);
+    // this.props.navigation.navigate("/Dashboard", {hostel: hostel});
   };
 
   componentDidMount() {
@@ -76,8 +78,8 @@ class Overall extends React.Component {
           </div>
 
           {this.state.details.map((output, id) => (
-            <div key={id} onClick={() => this.handleClick(output.name)}>
-              {hostel && <Navigate to="/Dashboard" hostel={hostel} />}
+            <Link to={`/dashboard/${output.name}`}>
+            <div key={id}>
               {/* <Link to="/dashboard"> */}
               <ScoreboardAnimation id={output.rank}>
                 <div className={output.rank}>
@@ -87,8 +89,8 @@ class Overall extends React.Component {
                   <div className="image">
                     <img alt="img_hostel" />
                   </div>
-                  <div className="name">
-                    <h3 className="name text-dark">{output.name}</h3>
+                  <div className="name" style={{textAlign: 'justify'}}>
+                    <h3 className="name text-dark">{output.number}</h3>
                     <div className="span">Hostel_name</div>
                   </div>
 
@@ -99,6 +101,7 @@ class Overall extends React.Component {
               </ScoreboardAnimation>
               {/* </Link> */}
             </div>
+            </Link>
           ))}
         </div>
         <div>

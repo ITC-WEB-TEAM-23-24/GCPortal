@@ -59,7 +59,7 @@ def overall(request):
     scorecard = sorted(scorecard, key=lambda x: x['total_score'], reverse=True)
     for rank, item in enumerate(scorecard, start=1):
         item['rank'] = rank
-
+    print(scorecard)
     return Response(scorecard)
 
 

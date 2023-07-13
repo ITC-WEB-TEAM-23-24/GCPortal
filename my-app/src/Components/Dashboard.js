@@ -18,10 +18,12 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    const { hostel } = this.props; // Retrieve the hostel value from props
-
+    const link_url = window.location.href; // Get the current URL
+    const hostel = link_url.slice(-2); // Retrieve the hostel value from navigation param 
+    console.log(hostel); // Check the value of hostel
     axios
       .get(`http://localhost:8000/${hostel}/`, this.config)
+      // .get(`http://localhost:8000/h1/`, this.config)
       .then((res) => {
         const { details, scores } = res.data; // Destructure the "details" and "scores" objects from the API response
         console.log(details); // Check the structure of the "details" object
@@ -38,7 +40,8 @@ class Dashboard extends React.Component {
 
   render() {
     const { details, scores } = this.state;
-    const { hostel } = this.props; // Access the hostel prop
+    const link_url = window.location.href; // Get the current URL
+    const hostel = link_url.slice(-1); // Access the hostel prop
 
     return (
       <>
