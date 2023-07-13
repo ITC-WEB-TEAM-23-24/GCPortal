@@ -3,21 +3,37 @@ import { Link } from "react-router-dom";
 import "../Leaderboards.css";
 import ScoreboardAnimation from "../Animation";
 import axios from "axios";
+// import Dashboard from "../Components/Dashboard";
+import { Navigate } from "react-router-dom";
+// import {navigation} from "react-router-dom";
 
 class Overall extends React.Component {
-  state = { details: [] };
-  config = {
-    headers: {
-      "Content-Type": "application/json",
-      // Add any other custom headers here
-    },
+  constructor(props) {
+    super(props);
+    this.state = {
+      details: [],
+      hostel: "", // Initialize the hostel variable in the component's state
+    };
+    this.config = {
+      headers: {
+        "Content-Type": "application/json",
+        // Add any other custom headers here
+      },
+    };
+  }
+
+  handleClick = (hostel) => {
+    this.setState({ hostel }); // Update the hostel variable in the component's state
+    console.log("Selected hostel:", hostel);
+    // this.props.navigation.navigate("/Dashboard", {hostel: hostel});
   };
 
   componentDidMount() {
     axios
-      .get("http://localhost:8000/genre1/", this.config)
+      .get("http://localhost:8000/genre3/", this.config)
       .then((res) => {
         const data = res.data;
+        console.log(data); // Check the structure of the API response
         this.setState({
           details: data,
         });
@@ -28,6 +44,7 @@ class Overall extends React.Component {
   }
 
   render() {
+    const { hostel } = this.state; // Retrieve the hostel variable from the component's state
     return (
       <div className="bg">
         <div className="leaderboard_heading">
@@ -61,26 +78,30 @@ class Overall extends React.Component {
           </div>
 
           {this.state.details.map((output, id) => (
-            <div key={id}>
-              <ScoreboardAnimation id={output.rank}>
-                <div className={output.rank}>
-                  <div className="position">
-                    <h4>{output.rank}</h4>
-                  </div>
-                  <div className="image">
-                    <img alt="img_hostel" />
-                  </div>
-                  <div className="name">
-                    <h3 className="name text-dark">{output.name}</h3>
-                    <div className="span">Hostel_name</div>
-                  </div>
+            <Link to={`/dashboard/${output.name}`}>
+              <div key={id}>
+                {/* <Link to="/dashboard"> */}
+                <ScoreboardAnimation id={output.rank}>
+                  <div className={output.rank}>
+                    <div className="position">
+                      <h4>{output.rank}</h4>
+                    </div>
+                    <div className="image">
+                      <img alt="img_hostel" />
+                    </div>
+                    <div className="name" style={{ textAlign: "justify" }}>
+                      <h3 className="name text-dark">{output.name}</h3>
+                      <div className="span">Hostel name</div>
+                    </div>
 
-                  <div className="score">
-                    <span>{output.total_score}</span>
+                    <div className="score">
+                      <span>{output.total_score}</span>
+                    </div>
                   </div>
-                </div>
-              </ScoreboardAnimation>
-            </div>
+                </ScoreboardAnimation>
+                {/* </Link> */}
+              </div>
+            </Link>
           ))}
         </div>
       </div>
