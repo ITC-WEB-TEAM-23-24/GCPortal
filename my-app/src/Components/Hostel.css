@@ -10,18 +10,21 @@
     width: 300px;
     height: 50%;
     /* background: linear-gradient(45deg, #47cebe,#ef4a82); */
-    background-image: linear-gradient(to right, rgb(12, 6, 64), rgb(6, 37, 47));
+    /* background-image: linear-gradient(to right, rgb(12, 6, 64), rgb(6, 37, 47)); */
+    /* background-color: #6E6E6E; */
+
     overflow-x: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0,1);
     z-index: 2;
-    border-radius: 10px solid #0a023b;
+    border-radius: 20px solid #0a023b;
 }
 .sidebarhs ul li{
     width: 100%;
     list-style: none;
 }
 .sidebarhs ul li:hover{
-    background:#0a023b ;
+    /* background:#0a023b ; */
+    background: #c6c6c6;
 }
 
 .sidebarhs ul li:first-child{
@@ -37,13 +40,18 @@
 .sidebarhs ul li a{
    width: 100%;
    text-decoration: none;
-   color: #fff;
+   color: #6e6e6e;
+   /* color: #fff; */
    height: 60px;
    display: flex;
    align-items: center;
+   font-weight: 7.2px;
+   font-size: 17.2px;
+   font-weight: bold;
 }
 .sidebarhs ul li a:hover{
-    color: #2790d6;
+    /* color: #2790d6; */
+    color: black;
 }
 
 
@@ -72,15 +80,15 @@
     /* background-image:  url(http://localhost:3000/static/media/meetings-page-bg.df31bdd….jpg); */
     overflow-x: 80vh;
     font-family: 'urbanist','sans-serif';
-    background-image: url(background.jpg);
+    /* background-image: url(background.jpg); */
+    background-image:url(/src/assets/meetings-page-bg.jpg);
+    /* background-image:url(back1.jpg); */
+
     /* background-repeat: no-repeat; */
     width: 100%;
     height: 100%;
-    position: relative;
-    
+    position: relative;  
 }
-
-
 
 .hostelbody input{
     display: none;
@@ -101,14 +109,16 @@
     margin-top: 80px; */
     margin-left: 280px;
     position: relative;
-    top: 100px;
+    top: 130px;
 
 }
 
 .cardsch{
     position: relative;
-    height: 500px;
-    width: 430px;
+    /* height: 500px; */
+    height: 300px;
+    width: 330px;
+    /* width: 430px; */
     margin-bottom: 20px;
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -116,13 +126,15 @@
 
 .cardsch label{
     position: absolute;
-    width: 430px;
+    width: 300px;
+    /* width: 430px; */
     left: 0;
     right: 0;
     margin: auto;
     cursor: pointer;
     transition:  transform .55s ease;
-    height: 500px;
+    height: 300px;
+    /* height: 500px; */
 }
 
 .cardsch .card{
@@ -130,6 +142,8 @@
     height: 100%;
     /* background-color: #21c6d8; */
     background-image: linear-gradient(to right, rgb(12, 6, 64), rgb(6, 37, 47));
+    /* background: #2b2b2c; */
+    background: #2B3035;
     /* background-image:  url(http://localhost:3000/static/media/meetings-page-bg.df31bdd….jpg); */
     
     border-radius: 10px;
@@ -152,7 +166,8 @@
     box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);
     margin-top: 23px;
     width: 86%;
-    height: 220px;
+    height: 150px;
+    /* height: 220px; */
     object-fit: cover;
     transition: all .7s;
 }
@@ -191,6 +206,9 @@
 
 .card .infos span{
     display: block;
+    color: #6e6e6e;
+    font-size: medium;
+    font-weight: bold;
 
 }
 
@@ -252,8 +270,10 @@
 #s3:checked~.cardsch #slide1,
 #s4:checked~.cardsch #slide2,
 #s5:checked~.cardsch #slide3{
-     box-shadow: 0 15px 30px rgba(0, 0, 0, 45%);
-     transform: translate3d(-70%,0,-220px);
+     /* box-shadow: 0 15px 30px rgba(0, 0, 0, 45%); */
+     /* transform: translate3d(-70%,0,-220px); */
+     transform: translate3d(-70%,-70%,-220px);
+    
      --current-color1:#eceaed;
      --currente-color2:#404457;
 }
@@ -262,8 +282,10 @@
 #s3:checked~.cardsch #slide2,
 #s4:checked~.cardsch #slide3,
 #s5:checked~.cardsch #slide4{
-     box-shadow: 0 20px 40px rgba(0, 0, 0, 45%);
-     transform: translate3d(-35%,0,-120px);
+     /* box-shadow: 0 20px 40px rgba(0, 0, 0, 45%); */
+     /* transform: translate3d(-35%,0,-120px); */
+     transform: translate3d(-35%,-35%,-120px);
+    
      --current-color1:#eceaed;
      --currente-color2:#404457;
 }
@@ -272,8 +294,10 @@
 #s3:checked~.cardsch #slide3,
 #s4:checked~.cardsch #slide4,
 #s5:checked~.cardsch #slide5{
-     box-shadow: 0 25px 50px rgba(0, 0, 0, 50%);
+     /* box-shadow: 0 25px 50px rgba(0, 0, 0, 50%); */
      transform: translate3d(0,0,0px);
+    
+    
      --current-color1:#fad00c;
      --currente-color2:#eceaed;
 }
@@ -282,8 +306,10 @@
 #s3:checked~.cardsch #slide4,
 #s4:checked~.cardsch #slide5,
 #s5:checked~.cardsch #slide1{
-     box-shadow: 0 20px 40px rgba(0, 0, 0, 45%);
-     transform: translate3d(35%,0,-120px);
+     /* box-shadow: 0 20px 40px rgba(0, 0, 0, 45%); */
+     /* transform: translate3d(35%,0,-120px); */
+     transform: translate3d(35%,35%,-120px);
+    
      --current-color1:#eceaed;
      --currente-color2:#404457;
 }
@@ -292,8 +318,10 @@
 #s3:checked~.cardsch #slide5,
 #s4:checked~.cardsch #slide1,
 #s5:checked~.cardsch #slide2{
-     box-shadow: 0 15px 30px rgba(0, 0, 0, 45%);
-     transform: translate3d(70%,0,-220px);
+     /* box-shadow: 0 15px 30px rgba(0, 0, 0, 45%); */
+     /* transform: translate3d(70%,0,-220px); */
+     transform: translate3d(70%,70%,-220px);
+    
      --current-color1:#eceaed;
      --currente-color2:#404457;
 }
@@ -320,11 +348,18 @@
      }
     
 }
+
+@media(max-width:1182px){
+    
+}
 @media(max-width:1084px){
     
     
     .cardsch label{
         width: 200px;
+    }
+    .infos{
+        display: none;
     }
     .card .infos span{
         display: none;
@@ -388,10 +423,8 @@
     .sidebarhs{
         width: 40%;
         margin-right: 60px;
-        
         position: relative;
-        left: 20px;
-
+        left: 70px;
      }
      .containerhs{
         margin-left: 0px;
@@ -405,19 +438,22 @@
         width: 110%;
         list-style: none;
     }
-    .backgroundhs{
+    /* .backgroundhs{
         display: flex;
         flex-direction: column;
-    }
+    } */
+
+     
     .sidebarhs{
         position: relative;
-        right: 120px;
-        top: 10px;
+        right: 20px;
+        top: 50px;
+        min-width: 200px;
     }
     .containerhs{
         position: relative;
-        left: -120px;
-        top: 30px;
+        left: -20px;
+        top: 120px;
     }
 
 
@@ -433,6 +469,15 @@
     .containerhs{
         position: relative;
         right: 130px;
+        top: 150px;
+    }
+    .cardsch label{
+        width: 150px;
+        height: 230px;
+    }
+    .cardsch .image img{
+        width: 80px;
+        height: 110px;
     }
 
 }
@@ -444,13 +489,15 @@
     .sidebarhs{
         position: relative;
         right: 120px;
-        top: 10px;
+        top: 70px;
+        min-width: 200px;
     }
     .containerhs{
         position: relative;
-        left: -120px;
-        top: 30px;
+        right: 130px;
+        top: 150px;
     }
+   
 
 }
 

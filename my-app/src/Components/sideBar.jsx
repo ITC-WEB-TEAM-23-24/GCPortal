@@ -17,7 +17,7 @@ const routes = [
     icon: <MdLeaderboard />,
   },
   {
-    path: "/Hostel",
+    path: "/Dashboard",
     name: "Hostels",
     icon: <FaBuilding />,
   },
@@ -28,7 +28,7 @@ const routes = [
   },
 
   {
-    path: "/Gc",
+    path: "/Hostel",
     name: "GCs",
     icon: <BsFillTrophyFill />,
   },

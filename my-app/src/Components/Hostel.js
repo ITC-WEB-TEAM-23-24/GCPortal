@@ -19,7 +19,7 @@ export default function Hostel() {
                 <li>
                     <a href="/">
                     <i className="fas fa-clinic-medical"></i>
-                    <div className="titles">Genre Name</div>
+                    <div className="titles genre">Genre Name</div>
                     </a>
                 </li>
                 <li>
@@ -65,7 +65,7 @@ export default function Hostel() {
                     </div>
                     <div className="infos">
                         
-                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
+                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint </span>
 
                        
                         <div className="actions">
@@ -90,7 +90,7 @@ export default function Hostel() {
                     </div>
                     <div className="infos">
                        
-                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
+                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint.</span>
 
                         
                         <div className="actions">
@@ -114,7 +114,7 @@ export default function Hostel() {
                     </div>
                     <div className="infos">
                         
-                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
+                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint </span>
 
                         
                         <div className="actions">
@@ -138,7 +138,7 @@ export default function Hostel() {
                     </div>
                     <div className="infos">
                       
-                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
+                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint </span>
 
                         
                         <div className="actions">
@@ -162,7 +162,7 @@ export default function Hostel() {
                     </div>
                     <div className="infos">
                        
-                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
+                        <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint </span>
 
                         
                         <div className="actions">

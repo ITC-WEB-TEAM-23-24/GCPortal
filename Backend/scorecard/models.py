@@ -5,6 +5,7 @@ from django.utils.timezone import now
 class Hostel(models.Model):
     name = models.CharField(max_length=100)
     number = models.IntegerField()
+    image = models.ImageField(upload_to='hostel_img/', default="")
 
     def __str__(self):
         return self.name
