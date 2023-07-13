@@ -57,11 +57,11 @@ export default function Hostel() {
                 <div className="card">
                     <div className="image">
                         <img src={hostel6} alt="hostel 6" />
-                        <div className="dots">
+                        {/* <div className="dots">
                             <div></div>
                             <div></div>
                             <div></div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="infos">
                         
@@ -82,11 +82,11 @@ export default function Hostel() {
                 <div className="card">
                     <div className="image">
                         <img src={hostel2} alt="hostel 6" />
-                        <div className="dots">
+                        {/* <div className="dots">
                             <div></div>
                             <div></div>
                             <div></div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="infos">
                        
@@ -106,11 +106,11 @@ export default function Hostel() {
                 <div className="card">
                     <div className="image">
                         <img src={hostel5} alt="hostel 6" />
-                        <div className="dots">
+                        {/* <div className="dots">
                             <div></div>
                             <div></div>
                             <div></div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="infos">
                         
@@ -130,11 +130,11 @@ export default function Hostel() {
                 <div className="card">
                     <div className="image">
                         <img src={pluto} alt="hostel 6" />
-                        <div className="dots">
+                        {/* <div className="dots">
                             <div></div>
                             <div></div>
                             <div></div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="infos">
                       
@@ -154,11 +154,11 @@ export default function Hostel() {
                 <div className="card">
                     <div className="image">
                         <img src={hostel3} alt="hostel 6" />
-                        <div className="dots">
+                        {/* <div className="dots">
                             <div></div>
                             <div></div>
                             <div></div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="infos">
                        
