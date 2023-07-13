@@ -23,9 +23,9 @@ class Overall extends React.Component {
       .get("http://localhost:8000/genre1/", this.config)
       .then((res) => {
         const data = res.data;
-        console.log(data.scorecard); // Check the structure of the API response
+        console.log(data); // Check the structure of the API response
         this.setState({
-          details: data.scorecard,
+          details: data,
         });
       })
       .catch((err) => {

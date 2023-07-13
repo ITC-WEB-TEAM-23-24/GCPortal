@@ -4,7 +4,7 @@ import SideBar from "./Components/sideBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Components/header";
 import Overall from "./pages/Overall";
-import Genre1 from  './pages/Genre1';
+import Genre1 from "./pages/Genre1";
 import Genre2 from "./pages/Genre2";
 import Genre3 from "./pages/Genre3";
 import OngoingGC from "./pages/OngoingGC";
@@ -25,10 +25,10 @@ function App() {
             <Route path="/Genre2" element={<Genre2 />} />
             <Route path="/Genre3" element={<Genre3 />} />
             <Route path="/Gc" element={<Gc />} />
-            <Route path="/Hostel" element={<Hostel />} />
+            <Route path="/Hostel/" element={<Hostel />} />
             {/* <Route path="/OngoingGC" element={<OngoingGC />} /> */}
-            <Route path='/Hostel' element={<Hostel/>} />
-            <Route path='/Dashboard' element={<Dashboard/>} />
+            {/* <Route path="/Hostel" element={<Hostel />} /> */}
+            <Route path="/Dashboard/:name" element={<Dashboard />} />
           </Routes>
         </SideBar>
       </div>
