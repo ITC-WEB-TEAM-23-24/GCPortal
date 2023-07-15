@@ -11,6 +11,8 @@ import Genre3 from "./pages/Genre3";
 import Gc from "./pages/Gc";
 import Hostel from "./Components/Hostel";
 import Dashboard from "./Components/Dashboard";
+import Card from "./Components/Card";
+import Card2 from "./Components/Card2";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <Route path="/Genre3" element={<Genre3 />} />
             <Route path="/Gc" element={<Gc />} />
             <Route path="/Hostel/" element={<Hostel />} />
+            <Route path="/Card" element={<Card />} />
+            <Route path="/Card2" element={<Card2 />} />
             {/* <Route path="/OngoingGC" element={<OngoingGC />} /> */}
             {/* <Route path="/Hostel" element={<Hostel />} /> */}
             <Route path="/Dashboard/:name" element={<Dashboard />} />

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.backgroundhs{
+    background-image:url(/src/assets/meetings-page-bg.jpg);
+    display: grid;
+    justify-content: space-around;
+    padding: 2rem 2rem;
+    grid-template-columns: 1fr 3fr;
+}
+.sidebarhs{
+     position: relative;
+    top: -100px; 
+    width: 70% !important;
+     height: 50%;   
+    overflow-x: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0,1);
+    z-index: 2;
+    border-radius: 10px;
+    margin: auto;
+    align-items: center;
+}
+.genre{
+    display: inline;
+}
+.sidebarhs ul li{
+    text-align: center;
+    padding-left: 10%;
+    width: 100%;
+    list-style: none;
+}
+.sidebarhs ul li:hover{  
+    background: #c6c6c6;
+}
+.sidebarhs ul li:first-child{
+    width: 100%;
+    line-height: 40px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    border-bottom: 1px solid #fff;
+}
+.sidebarhs ul li:first-child:hover{
+    background: none;
+}
+.sidebarhs ul{
+    padding-left: 0;
+}
+.sidebarhs ul li a{
+   width: 100%;
+   text-decoration: none;
+   color: #6e6e6e;
+   /* color: #fff; */
+   height: 3rem;
+   display: flex;
+   align-items: center;
+   font-weight: 7.2px;
+   font-size: 17.2px;
+   font-weight: bold;
+}
+.sidebarhs ul li a:hover{
+    /* color: #2790d6; */
+    color: black;
+}
+.sidebarhs a{
+    text-align: center !important;
+}
+.sidebarhs ul li a i{
+    min-width: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+.sidebarhs .titles{
+    padding: 0 10px;
+    font-size: 20px;
+    /* display: inline; */
+}
+@media(max-width:990px){ 
+    .sidebarhs{
+        position: relative;
+        left: 120px;
+        top: -90px;
+    } 
+}
+@media(max-width:910px){
+     .sidebarhs{
+        width: 200px;
+        margin-right: 50px;
+        position: relative;
+        top: -80px;
+     }
+     .containerhs{
+        margin-left: 0px;
+     }   
+}
+@media(max-width:1084px){  
+    .sidebarhs{
+        position: relative;
+        left: 70px;
+        width: 50%;
+        top: -90px;
+    } 
+}
+@media(max-width:867px){
+    .sidebarhs ul li a i{
+        display: none;
+    }
+    .sidebarhs{
+        width: 40%;
+        margin-right: 60px;
+        position: relative;
+        left: 70px;
+        top: -90px;
+     }
+}
+@media(max-width:770px){
+    .sidebarhs ul li{
+        width: 110%;
+        list-style: none;
+    } 
+    .sidebarhs{
+        position: relative;
+        right: 20px;
+        top: -90px;
+        min-width: 200px;
+    }
+}
+
+
+
+
+
+
+
+.react-multi-carousel-list{
+    height: 90vh;  
+  }
+
+  .react-multi-carousel-track{
+    position: relative;
+    left: 70px; 
+    display: grid;
+    grid-template-columns: auto;
+    position: relative;
+    top: -70px;
+   
+  }
+
+  .react-multi-carousel-item--active{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .react-multi-carousel-dot-list{
+     bottom: 180px;
+  }
+
+  .react-multi-carousel-dot--active button {
+    background: fff;
+}

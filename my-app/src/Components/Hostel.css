@@ -149,7 +149,7 @@
     right: 0;
     margin: auto;
     cursor: pointer;
-    transition:  transform .55s ease;
+    transition:  transform .45s ease;
     height: 300px;
     /* height: 500px; */
 }
@@ -190,11 +190,11 @@
     height: 100%;
     /* height: 220px; */
     object-fit: cover;
-    transition: all .7s;
+    transition: all .4s;
 }
 
 .cardsch .image img:hover{
-    transform: scale(1.09)
+    transform: scale(1.59)
 }
 
 /* .cardsch .image .dots{
@@ -239,7 +239,7 @@
     letter-spacing: 8px;
     margin-bottom: 20px;
     padding-left: 25%;
-    transition: all .6s ease;
+    transition: all .4s ease;
 }
 
 .card .lorem{
@@ -275,75 +275,54 @@
     padding-top: 20px;
 }
 
-.actions i{
-    font-size: 24px;
-    transition:all .7s ease ;
-    color: var(--currente-color2);
-}
 
-.actions:hover i{
-    transform:scale(1.3);
-} 
-
-#s2:checked~.cardsch #slide5,
-#s3:checked~.cardsch #slide1,
+#s2:checked~.cardsch #slide16,
+#s3:checked~.cardsch #slide5,
 #s4:checked~.cardsch #slide2,
 #s1:checked~.cardsch #slide4,
 #s5:checked~.cardsch #slide3{
-     /* box-shadow: 0 15px 30px rgba(0, 0, 0, 45%); */
-     /* transform: translate3d(-70%,0,-220px); */
-     transform: translate3d(-70%,-70%,-220px);
     
-     --current-color1:#eceaed;
-     --currente-color2:#404457;
-}
-#s2:checked~.cardsch #slide1,
+     transform: translate3d(-70%,-70%,-180px);
+   
+    
+    }
+/* #s2:checked~.cardsch #slide16,
 #s3:checked~.cardsch #slide2,
 #s1:checked~.cardsch #slide5,
 #s4:checked~.cardsch #slide3,
 #s5:checked~.cardsch #slide4{
-     /* box-shadow: 0 20px 40px rgba(0, 0, 0, 45%); */
-     /* transform: translate3d(-35%,0,-120px); */
+   
      transform: translate3d(-35%,-35%,-120px);
     
-     --current-color1:#eceaed;
-     --currente-color2:#404457;
-}
-#s1:checked~.cardsch #slide1,
+} */
+#s1:checked~.cardsch #slide16,
 #s2:checked~.cardsch #slide2,
 #s3:checked~.cardsch #slide3,
 #s4:checked~.cardsch #slide4,
 #s5:checked~.cardsch #slide5{
-     /* box-shadow: 0 25px 50px rgba(0, 0, 0, 50%); */
+  
      transform: translate3d(0,0,0px);
     
     
-     --current-color1:#fad00c;
-     --currente-color2:#eceaed;
+     
 }
-#s1:checked~.cardsch #slide2,
-#s2:checked~.cardsch #slide3,
+/* #s2:checked~.cardsch #slide2,
+#s1:checked~.cardsch #slide3,
 #s3:checked~.cardsch #slide4,
 #s4:checked~.cardsch #slide5,
-#s5:checked~.cardsch #slide1{
-     /* box-shadow: 0 20px 40px rgba(0, 0, 0, 45%); */
-     /* transform: translate3d(35%,0,-120px); */
+#s5:checked~.cardsch #slide16{
+  
      transform: translate3d(35%,35%,-120px);
-    
-     --current-color1:#eceaed;
-     --currente-color2:#404457;
-}
-#s1:checked~.cardsch #slide3,
+   
+} */
+#s1:checked~.cardsch #slide2,
 #s2:checked~.cardsch #slide4,
 #s3:checked~.cardsch #slide5,
-#s4:checked~.cardsch #slide1,
+#s4:checked~.cardsch #slide16,
 #s5:checked~.cardsch #slide2{
-     /* box-shadow: 0 15px 30px rgba(0, 0, 0, 45%); */
-     /* transform: translate3d(70%,0,-220px); */
-     transform: translate3d(70%,70%,-220px);
     
-     --current-color1:#eceaed;
-     --currente-color2:#404457;
+     transform: translate3d(70%,70%,-180px);
+
 }
 
 
@@ -571,3 +550,18 @@
      } */
 /* } */ 
 
+
+
+/* card 2 csss */
+.react-multi-carousel-list{
+    background-image:url(/src/assets/meetings-page-bg.jpg);
+    height: 100vh;
+  }
+
+  .react-multi-carousel-track{
+    width: 50%;
+  }
+
+  .react-multi-carousel-item--active{
+      width: 220px;
+  }
