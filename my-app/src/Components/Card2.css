@@ -1,7 +1,7 @@
 
   *{
   padding: 0rem;
-  font-family: "Lexend Deca Light";
+  
   }
 
 
@@ -20,6 +20,7 @@
     justify-content:center;
     text-align: center;
     width: fit-content;  
+    font-family: "Lexend Deca Light";
   }
   .wrappercd {
     width: auto;
