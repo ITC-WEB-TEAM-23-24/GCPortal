@@ -1,25 +1,55 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../gc.css";
 import gc from "../assets/gc.png";
-function Gc(){
+import axios from "axios";
+import {motion} from 'framer-motion'
+
+class Gc extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            scoresdata: [],
+            gcdata : [], // Initialize the hostel variable in the component's state
+        };
+        this.config = {
+            headers: {
+                "Content-Type": "application/json",
+            // Add any other custom headers here
+            },
+        };
+    }
+
+    componentDidMount() {
+        axios
+          .get('http://localhost:8000/GC2/', this.config)
+          .then((res) => {
+            const { gc, scores } = res.data; 
+            this.setState({
+                gcdata: gc[0],
+                scoresdata: scores,
+            });
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+
+    render(){
+    const { gcdata , scoresdata } = this.state;
     return(
         <div className="gc body">
             <div className="main">
                 <div className="left">
                     <div className="left-top card">
                         <div class="container">
-                            <div className="title">Jhatka Genral Championship</div>
+                            <div className="title">{gcdata.name}</div>
                             <hr/>   
                             <div className="discription-container">
                                 <div className="regdate">Registration Deadline: 23 March 11:59 PM</div>
                                 <div className="description p-text">
                                     <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit similique, reiciendis quaerat modi animi ratione, amet ipsum provident rem earum vero repellat! Omnis suscipit fuga, unde inventore iure magni dolores!
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta distinctio quasi tempora labore dolorum quam error, temporibus aliquam harum? Totam facere ipsam consequuntur deserunt commodi ducimus modi hic reiciendis tenetur!
-                                        Libero quaerat, sapiente, laboriosam odio impedit possimus in explicabo nobis officiis ullam facilis sequi! Dolorem natus repellendus sunt porro qui necessitatibus exercitationem deleniti. Temporibus quibusdam, voluptate praesentium aspernatur pariatur quas.
-                                        Nisi modi eaque necessitatibus aut incidunt maxime in facilis tempora soluta id ad minus, iste doloremque, molestiae, labore harum dolorum quos cumque. Provident, laudantium aut deserunt nulla veritatis sint sequi?
-                                        Nam repellat accusantium ipsa nesciunt, minima illum temporibus error cumque tempore doloremque exercitationem aut perferendis pariatur reprehenderit neque quisquam, aliquam quidem numquam earum, necessitatibus accusamus at? Itaque non perspiciatis eaque?
+                                       {gcdata.description}
                                     </p>
                                 </div>
                                 <div className="submmitionlink">
@@ -34,36 +64,18 @@ function Gc(){
                             <hr/>
                             <div className="hl"></div>
                             <div className="hostel-score">
-                                <div className="hostel hd2">
-                                    <div className="hostname">Hostel 1</div>
-                                    <div className="hosteldata">5th</div>
-                                    <div className="hostelscore">2 Points</div>
+                            {scoresdata.map((output, id) => (       
+                                <div className="hostel hd2" key={id}>
+                                    <div className="hostname">Hostel {output.hostel_id}</div>
+                                    <motion.div
+                                        initial={{width:0}}
+                                        animate={{width:output.score*8+"%"}}
+                                        transition={{duration:output.score*2/9}}
+                                        className="hosteldata"
+                                    ></motion.div>
+                                    <div className="hostelscore">{output.score} Points</div>
                                 </div>
-                                <div className="hostel hd10">
-                                    <div className="hostname">Hostel 2</div>
-                                    <div className="hosteldata">1st</div>
-                                    <div className="hostelscore">10 Points</div>
-                                </div>
-                                <div className="hostel hd8">
-                                    <div className="hostname">Hostel 3</div>
-                                    <div className="hosteldata ">2nd</div>
-                                    <div className="hostelscore">8 Points</div>
-                                </div>
-                                <div className="hostel hd4">
-                                    <div className="hostname">Hostel 5</div>
-                                    <div className="hosteldata">4th</div>
-                                    <div className="hostelscore">4 Points</div>
-                                </div>
-                                <div className="hostel hd6">
-                                    <div className="hostname">Hostel 6</div>
-                                    <div className="hosteldata">3rd</div>
-                                    <div className="hostelscore">6 Points</div>
-                                </div>
-                                <div className="hostel hd0">
-                                    <div className="hostname">Hostel 9</div>
-                                    <div className="hosteldata">6th</div>
-                                    <div className="hostelscore">0 Points</div>
-                                </div>
+                            ))}
                             </div>
                         </div>
                     </div>
@@ -75,11 +87,12 @@ function Gc(){
                             <li><span>Maths n Physics Club</span></li>
                             <li>High Prep GC</li>
                             <li>Hardware Probably</li>
+                            <li>{gcdata.genre}</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    );
+    );}
 }
 export default Gc;
