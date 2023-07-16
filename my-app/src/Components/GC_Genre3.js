@@ -6,8 +6,9 @@ import Card2 from "./Card2";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 
-class Hostel extends React.Component {
+class GC_Genre3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +24,7 @@ class Hostel extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8000/gc/genre2/")
+      .get("http://localhost:8000/gc/genre3/")
       .then((res) => {
         this.setState({
           Mydata: res.data,
@@ -81,7 +82,7 @@ class Hostel extends React.Component {
       },
       tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2
+        items: 1
       },
       mobile: {
         breakpoint: { max: 464, min: 0 },
@@ -107,26 +108,26 @@ class Hostel extends React.Component {
               </li> */}
               <li>
                 <div className="display">
-                <a href="/">
+                <Link to="/GC/Genre1">
                   <i className="fas fa-th-large"></i>
                   <button className="titles .btnhs">Genre 1 </button>
-                </a>
+                </Link>
                 </div>
               </li>
               <li>
               <div className="display">
-                <a href="/">
+                <Link to="/GC/Genre2">
                   <i className="fas fa-stethoscope"></i>
                   <button className="titles ">Genre 2</button>
-                </a>
+                </Link>
                 </div>
               </li>
               <li>
                 <div className="display">
-                <a href="/">
+                <Link to="/GC/Genre3">
                   <i className="fas fa-user-md"></i>
                   <button className="titles">Genre 3</button>
-                </a>
+                </Link>
                 </div>
               </li>
               
@@ -154,7 +155,9 @@ class Hostel extends React.Component {
                 return (
                   <> 
                  {/* <Card   id={id} name={name} description={description} /> */}  
-                    <Card2   id={id} name={name} description={description} />
+                 <Link to={`/GC/Genre3/${name}`}>
+                    <Card2 id={id} name={name} description={description} />
+                 </Link>
                   </>
                 );
                    
@@ -166,4 +169,4 @@ class Hostel extends React.Component {
   }
 }
 
-export default Hostel;
+export default GC_Genre3;
