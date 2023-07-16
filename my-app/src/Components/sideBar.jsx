@@ -28,7 +28,7 @@ const routes = [
   },
 
   {
-    path: "/Hostel",
+    path: "/GC/Genre1",
     name: "GCs",
     icon: <BsFillTrophyFill />,
   },

@@ -17,12 +17,14 @@
     align-items: center;
     justify-content:center;
     text-align: center;
-    width: fit-content;  
+    width: fit-content;
+    /* width: 50%; */
     transition: all 0.5s ease;
   }
 
   .containercd:hover{
-    transform: scale(1.5);
+    cursor: pointer;
+    /* transform: scale(1.1); */
   }
   .wrappercd {
     width: auto;
