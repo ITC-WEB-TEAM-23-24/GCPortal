@@ -83,14 +83,14 @@
 }
 
 .doctor-visiting{
-    min-height: 350px;
+    max-height: 350px;
     background: #fff;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .last-appointments{
-    min-height: 350px;
+    max-height: 350px;
     background: #fff;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
