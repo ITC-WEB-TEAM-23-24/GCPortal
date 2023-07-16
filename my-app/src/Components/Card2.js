@@ -20,13 +20,12 @@ class Card2 extends React.Component {
             <img className="imagecd" src={hostel6} alt='image'></img>
           </figure>
         </div>
-        <h1 className='h1'>{description}</h1>
-        <p className='p'>{name}</p>
+        <div className="box">
+        <h1 className='h1cd'>{description}</h1>
+        <p className='pcd'>{name}</p>
+        </div>
        </div>
      </div>
-   
-
-
      </>
    
        
