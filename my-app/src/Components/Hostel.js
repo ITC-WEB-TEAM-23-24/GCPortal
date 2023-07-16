@@ -5,7 +5,7 @@ import Card from "./Card";
 import Card2 from "./Card2";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
+import Nav from "./Nav";
 
 class Hostel extends React.Component {
   constructor(props) {
@@ -32,15 +32,42 @@ class Hostel extends React.Component {
       .catch((err) => {
         console.error(err);
       });
+
+      // const hamburger = document.getElementById('hamburger')
+      // const close = document.getElementById('close')
+      // const ul = document.getElementById('ul')
+
+      // const display = Array.from(document.getElementsByClassName('display'))
+      // hamburger.addEventListener('click',()=>{
+      //     ul.style.display='flex';
+      //     ul.style.flexDirection='column'
+      //     hamburger.style.display = 'none'
+      //     hamburger.style.left='0'
+      //     close.style.display= 'block' 
+      //     display.forEach((e)=>{
+      //       e.style.display='block'
+      //     })               
+      // })
+      // close.addEventListener('click',()=>{
+      //   hamburger.style.display = 'block'
+      //   close.style.display= 'none'   
+      //   ul.style.display='flex';
+      //     ul.style.flexDirection='row'
+      //     display.forEach((e)=>{
+      //       e.style.display='none'
+      //     })  
+      //     hamburger.style.left='-100px'
+      // })
+
   }
   
 
   
-
-
+  
   render() {
     const { Mydata } = this.state;
     console.log(Mydata);
+   
 
     const responsive = {
       superLargeDesktop: {
@@ -50,7 +77,7 @@ class Hostel extends React.Component {
       },
       desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3
+        items: 2
       },
       tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -70,31 +97,47 @@ class Hostel extends React.Component {
         <div className="backgroundhs">
         
           <div className="sidebarhs">
-            <ul>
-              <li>
+            <ul id="ul">
+            
+              {/* <li>
                 <a href="/">
                   <i className="fas fa-clinic-medical"></i>
                   <div className="titles genre">Genre Name</div>
                 </a>
-              </li>
+              </li> */}
               <li>
+                <div className="display">
                 <a href="/">
                   <i className="fas fa-th-large"></i>
-                  <div className="titles">Genre 1 </div>
+                  <button className="titles .btnhs">Genre 1 </button>
                 </a>
+                </div>
               </li>
               <li>
+              <div className="display">
                 <a href="/">
                   <i className="fas fa-stethoscope"></i>
-                  <div className="titles">Genre 2</div>
+                  <button className="titles ">Genre 2</button>
                 </a>
+                </div>
               </li>
               <li>
+                <div className="display">
                 <a href="/">
                   <i className="fas fa-user-md"></i>
-                  <div className="titles">Genre 3</div>
+                  <button className="titles">Genre 3</button>
                 </a>
+                </div>
               </li>
+              
+              {/* <li id="hamburger">
+                <i className="fa-solid fa-bars"></i>
+              </li>
+             
+              <li id="close">
+              <i class="fa-solid fa-xmark"></i>
+              </li> */}
+             
             </ul>
           </div>
       {/* //     <div className="containerhs hostelbody">
@@ -104,7 +147,7 @@ class Hostel extends React.Component {
       //       <input type="radio" name="slider" id="s4" />
       //       <input type="radio" name="slider" id="s5" />
               */}
-
+            
             <Carousel responsive={responsive} showDots={true}   keyBoardControl={true}>
               {Mydata.map((post) => {
                 const { id, name, description } = post;

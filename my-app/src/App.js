@@ -13,6 +13,7 @@ import Hostel from "./Components/Hostel";
 import Dashboard from "./Components/Dashboard";
 import Card from "./Components/Card";
 import Card2 from "./Components/Card2";
+import Nav from './Components/Nav';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/Hostel/" element={<Hostel />} />
             <Route path="/Card" element={<Card />} />
             <Route path="/Card2" element={<Card2 />} />
+            <Route path="/Nav" element={<Nav />} />
             {/* <Route path="/OngoingGC" element={<OngoingGC />} /> */}
             {/* <Route path="/Hostel" element={<Hostel />} /> */}
             <Route path="/Dashboard/:name" element={<Dashboard />} />
