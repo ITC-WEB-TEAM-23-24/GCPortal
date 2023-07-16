@@ -122,7 +122,7 @@ class GC_Genre3 extends React.Component {
                 </Link>
                 </div>
               </li>
-              <li>
+              <li id="active-genre-page">
                 <div className="display">
                 <Link to="/GC/Genre3">
                   <i className="fas fa-user-md"></i>
@@ -155,7 +155,7 @@ class GC_Genre3 extends React.Component {
                 return (
                   <> 
                  {/* <Card   id={id} name={name} description={description} /> */}  
-                 <Link to={`/GC/Genre3/${name}`}>
+                 <Link to={`/GC/Genre3/${id}`}>
                     <Card2 id={id} name={name} description={description} />
                  </Link>
                   </>
