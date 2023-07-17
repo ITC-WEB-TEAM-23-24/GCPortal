@@ -22,8 +22,11 @@ class Gc extends React.Component {
     }
 
     componentDidMount() {
+        const link_url = window.location.href; // Get the current URL
+        const gc_id = link_url.split('/'); // Retrieve the hostel value from navigation param
+        const id = gc_id[gc_id.length -1]; // Check the value of hostel
         axios
-          .get('http://localhost:8000/GC2/', this.config)
+          .get(`http://localhost:8000/GC${id}/`, this.config)
           .then((res) => {
             const { gc, scores } = res.data; 
             this.setState({

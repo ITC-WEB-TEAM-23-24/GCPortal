@@ -47,6 +47,10 @@
     margin: 0 10px 0 40px;
 }
 .sidebarhs ul li:hover{  
+    background: #272C31;
+}
+
+#active-genre-page{
     background: #c6c6c6;
 }
 /* .sidebarhs ul li:first-child{
@@ -75,7 +79,7 @@
 }
 .sidebarhs ul li a:hover{
     /* color: #2790d6; */
-    color: black;
+    /* color: black; */
 }
 .sidebarhs a{
     text-align: center !important;
