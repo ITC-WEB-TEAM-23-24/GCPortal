@@ -10,7 +10,8 @@ class Gc extends React.Component {
         super(props);
         this.state = {
             scoresdata: [],
-            gcdata : [], // Initialize the hostel variable in the component's state
+            gcdata : [],
+            maxscore: [] 
         };
         this.config = {
             headers: {
@@ -28,6 +29,7 @@ class Gc extends React.Component {
             this.setState({
                 gcdata: gc[0],
                 scoresdata: scores,
+                maxscore: scores[0]
             });
           })
           .catch((err) => {
@@ -36,14 +38,15 @@ class Gc extends React.Component {
       }
 
     render(){
-    const { gcdata , scoresdata } = this.state;
+    const { gcdata , scoresdata,maxscore } = this.state;
     return(
         <div className="gc body">
             <div className="main">
                 <div className="left">
                     <div className="left-top card">
-                        <div class="container">
-                            <div className="title">{gcdata.name}</div>
+                        <div className="container">
+                            <div className="title">
+                                {gcdata.name}</div>
                             <hr/>   
                             <div className="discription-container">
                                 <div className="regdate">Registration Deadline: 23 March 11:59 PM</div>
@@ -60,7 +63,7 @@ class Gc extends React.Component {
                     </div>
                     <div className="left-bottom card">
                         <div className="container">
-                            <div class="scoreboard"><h3>Score Board</h3></div>
+                            <div className="scoreboard"><h3>Score Board</h3></div>
                             <hr/>
                             <div className="hl"></div>
                             <div className="hostel-score">
@@ -69,8 +72,8 @@ class Gc extends React.Component {
                                     <div className="hostname">Hostel {output.hostel_id}</div>
                                     <motion.div
                                         initial={{width:0}}
-                                        animate={{width:output.score*8+"%"}}
-                                        transition={{duration:output.score*2/9}}
+                                        animate={{width:output.score*55/(maxscore.score)+"%"}}
+                                        transition={{duration:output.score*2/(maxscore.score)}}
                                         className="hosteldata"
                                     ></motion.div>
                                     <div className="hostelscore">{output.score} Points</div>
@@ -81,7 +84,7 @@ class Gc extends React.Component {
                     </div>
                 </div>
                 <div className="right card">
-                    <img src={gc} alt="" srcset=""/>
+                    <img src={gc} alt="" srcSet=""/>
                     <div className="gc-details p-text">
                         <ul>
                             <li><span>Maths n Physics Club</span></li>
