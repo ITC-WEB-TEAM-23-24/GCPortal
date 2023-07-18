@@ -3,7 +3,7 @@
   background: #2B3035;
   /* background: rgb(0, 7, 61); */
   color: white;
-  height: 100vh;
+  min-height: 100vh;
   /* overflow-y: auto; */
 
   /* min-height: 100%; */

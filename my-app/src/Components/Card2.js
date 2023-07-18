@@ -21,8 +21,8 @@ class Card2 extends React.Component {
           </figure>
         </div>
         <div className="box">
-        <h1 className='h1cd'>{description}</h1>
-        <p className='pcd'>{name}</p>
+        <h1 className='h1cd'>{name}</h1>
+        <p className='pcd'>{description}</p>
         </div>
        </div>
      </div>

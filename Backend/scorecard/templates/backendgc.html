@@ -27,7 +27,7 @@
         <div class="col-md-4">
           <div class="card">
             <img
-              src="../../media/posters/{{event.poster}}"
+              src="../../media/{{event.poster}}"
               class="card-img-top"
               alt="image"
             />
@@ -37,7 +37,7 @@
               <p class="card-text">START TIMELINE : {{event.start_timeline}}</p>
               <p class="card-text">END TIMELINE : {{event.end_timeline}}</p>
               <p>
-                <a href="score/{{event.id}}" class="btn btn-primary"
+                <a href="{{event.id}}" class="btn btn-primary"
                   >Enter score</a
                 >
               </p>
