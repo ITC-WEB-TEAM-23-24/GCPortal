@@ -30,7 +30,7 @@ class Overall extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8000/genre1/", this.config)
+      .get("http://localhost:8000/genregenre1/", this.config)
       .then((res) => {
         const data = res.data;
         console.log(data); // Check the structure of the API response
