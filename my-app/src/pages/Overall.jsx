@@ -91,7 +91,7 @@ class Overall extends React.Component {
                     </div>
                     <div className="name" style={{ textAlign: "justify" }}>
                       <h3 className="name text-dark">{output.name}</h3>
-                      {/* <div className="span">Hostel name</div> */}
+                      {/* <div className="span"></div> */}
                     </div>
 
                     <div className="score">
