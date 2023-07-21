@@ -9,6 +9,7 @@ urlpatterns = [
     path('overall/', overall, name='OverallGC'),
     path('genre<str:genre>/', genrewise_scorecard, name='Genre_scorecard'),
     path('GC<int:id>/', individualgc, name='IndividualGC'),
+    path('gc/<str:genre>/', gc_events, name='gc_events'),
+    path('hostels/', HostelList.as_view(), name='hostellist'),
     path('<str:name>/', hostel_scorecard, name='Hostel_scorecard'),
-    path('gc/<str:genre>/', gc_events, name='gc_events')
 ]
