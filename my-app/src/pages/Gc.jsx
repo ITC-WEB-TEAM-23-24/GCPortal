@@ -42,6 +42,7 @@ class Gc extends React.Component {
 
     render(){
     const { gcdata , scoresdata,maxscore } = this.state;
+    const imgurl = "http://127.0.0.1:8000/"+ gcdata.poster
     return(
         <div className="gc body">
             <div className="main">
@@ -87,7 +88,7 @@ class Gc extends React.Component {
                     </div>
                 </div>
                 <div className="right card">
-                    <img src={gc} alt="" srcSet=""/>
+                    <img src={imgurl} alt="" srcSet=""/>
                     <div className="gc-details p-text">
                         <ul>
                             <li><span>Maths n Physics Club</span></li>
