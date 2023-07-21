@@ -1,5 +1,6 @@
 import React from 'react'
 import hostel6 from "./hostel6.jpg";
+
 // import styled from "styled-components"
 import './Card2.css'
 
