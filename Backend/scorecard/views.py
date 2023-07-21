@@ -1,6 +1,7 @@
 from django.http import response, HttpResponse, JsonResponse
 from rest_framework.response import Response
-from .serializers import scoreSerializer, gcserializer
+from rest_framework.generics import ListAPIView
+from .serializers import scoreSerializer, gcserializer, hostelserializer
 from django import forms
 from rest_framework.decorators import api_view
 from django.shortcuts import render, redirect
@@ -149,3 +150,8 @@ def gc_events(request, genre):
     events = GCEvent.objects.filter(genre=genre)
     serializer = gcserializer(events, many=True)
     return Response(serializer.data)
+
+
+class HostelList(ListAPIView):
+    queryset = Hostel.objects.all()
+    serializer_class = hostelserializer

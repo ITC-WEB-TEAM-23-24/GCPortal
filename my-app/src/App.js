@@ -16,6 +16,8 @@ import Nav from './Components/Nav';
 import GC_Genre1 from "./Components/GC_Genre1";
 import GC_Genre2 from "./Components/GC_Genre2";
 import GC_Genre3 from "./Components/GC_Genre3";
+import Hostlellist from "./pages/hostellist";
+import Instuctions from "./pages/instuctions";
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
             <Route path="/Card" element={<Card />} />
             <Route path="/Card2" element={<Card2 />} />
             <Route path="/Nav" element={<Nav />} />
+            <Route path="/instuctions" element={<Instuctions/>}/>
+            <Route path="/hostels" element={<Hostlellist />} />
             {/* <Route path="/OngoingGC" element={<OngoingGC />} /> */}
             {/* <Route path="/Hostel" element={<Hostel />} /> */}
             <Route path="/Dashboard/:name" element={<Dashboard />} />

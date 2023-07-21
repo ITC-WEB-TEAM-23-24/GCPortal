@@ -1,6 +1,5 @@
 import React from "react";
-import "../gc.css";
-import gc from "../assets/gc.png";
+import "../assets/css/gc.css";
 import axios from "axios";
 import {motion} from 'framer-motion'
 
