@@ -1,12 +1,14 @@
 /* Sidebar */
+
 .sidebar {
   background: #2B3035;
   /* background: rgb(0, 7, 61); */
   color: white;
-  height: auto;
-  overflow-y: auto;
+  min-height: 100vh;
 
-  min-height: 100%;
+  /* overflow-y: auto; */
+
+  /* min-height: 100%; */
 }
 
 .top_section {
@@ -73,6 +75,7 @@
   gap: 10px;
 }
 .menu_container {
+  position: sticky;
   display: flex;
   flex-direction: column;
 }

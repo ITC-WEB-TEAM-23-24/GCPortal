@@ -17,18 +17,18 @@ const routes = [
     icon: <MdLeaderboard />,
   },
   {
-    path: "/Dashboard",
+    path: "/hostels",
     name: "Hostels",
     icon: <FaBuilding />,
   },
   {
-    path: "/users",
+    path: "/instuctions",
     name: "Rules",
     icon: <BsFillFileEarmarkRuledFill />,
   },
 
   {
-    path: "/Hostel",
+    path: "/GC/Genre1",
     name: "GCs",
     icon: <BsFillTrophyFill />,
   },

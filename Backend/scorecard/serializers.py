@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Score, GCEvent
+from .models import Score, GCEvent, Hostel
 
 
 class scoreSerializer(serializers.ModelSerializer):
@@ -11,4 +11,9 @@ class scoreSerializer(serializers.ModelSerializer):
 class gcserializer(serializers.ModelSerializer):
     class Meta:
         model = GCEvent
+        fields = '__all__'
+
+class hostelserializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hostel
         fields = '__all__'

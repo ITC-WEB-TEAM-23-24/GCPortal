@@ -3,16 +3,14 @@ import { Link } from "react-router-dom";
 import "../Leaderboards.css";
 import ScoreboardAnimation from "../Animation";
 import axios from "axios";
-// import Dashboard from "../Components/Dashboard";
-import { Navigate } from "react-router-dom";
-// import {navigation} from "react-router-dom";
 
 class Overall extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       details: [],
-      hostel: "", // Initialize the hostel variable in the component's state
+      hostel: "",
+      hostelData: [], // Initialize the state variable to store hostel data
     };
     this.config = {
       headers: {
@@ -23,19 +21,34 @@ class Overall extends React.Component {
   }
 
   handleClick = (hostel) => {
-    this.setState({ hostel }); // Update the hostel variable in the component's state
+    this.setState({ hostel });
     console.log("Selected hostel:", hostel);
     // this.props.navigation.navigate("/Dashboard", {hostel: hostel});
   };
 
   componentDidMount() {
+    // Fetch data for leaderboard
     axios
       .get("http://localhost:8000/overall/", this.config)
       .then((res) => {
         const data = res.data;
-        console.log(data); // Check the structure of the API response
+        console.log(data);
         this.setState({
           details: data,
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    // Fetch data for hostel images and names
+    axios
+      .get("http://localhost:8000/hostels/", this.config) // Replace the URL with the actual API endpoint for hostel data
+      .then((res) => {
+        const hostelData = res.data;
+        console.log(hostelData);
+        this.setState({
+          hostelData,
         });
       })
       .catch((err) => {
@@ -44,7 +57,13 @@ class Overall extends React.Component {
   }
 
   render() {
-    const { hostel } = this.state; // Retrieve the hostel variable from the component's state
+    // const { hostel } = this.state;
+    const { hostelData } = this.state; // Retrieve the hostel data from the state
+
+    // Check if hostelData is not fetched yet
+    if (hostelData.length === 0) {
+      return <div>Loading...</div>; // You can show a loading message or a spinner here
+    }
     return (
       <div className="bg">
         <div className="leaderboard_heading">
@@ -71,38 +90,47 @@ class Overall extends React.Component {
           <div className="name_score">
             <ul className="name_score_listing">
               <li className="name_score_style">Position</li>
-              <li className="name_score_style">Hostel image</li>
-              <li className="name_score_style">Hostel Name</li>
+              {/* <li className="name_score_style">Hostel image</li> */}
+              <li className="name_score_style">Hostel</li>
               <li className="name_score_style">Score</li>
             </ul>
           </div>
 
-          {this.state.details.map((output, id) => (
-            <Link to={`/dashboard/${output.name}`}>
-              <div key={id}>
-                {/* <Link to="/dashboard"> */}
-                <ScoreboardAnimation id={output.rank}>
-                  <div className={output.rank}>
-                    <div className="position">
-                      <h4>{output.rank}</h4>
-                    </div>
-                    <div className="image">
-                      <img alt="img_hostel" />
-                    </div>
-                    <div className="name" style={{ textAlign: "justify" }}>
-                      <h3 className="name text-dark">{output.name}</h3>
-                      <div className="span">Hostel name</div>
-                    </div>
+          {this.state.details.map((output, id) => {
+            // Find the corresponding hostel data based on hostel name
+            const hostelInfo = hostelData.find(
+              (hostelInfo) => hostelInfo.name === output.name
+            );
+            return (
+              <Link to={`/dashboard/${output.name}`} key={id}>
+                <div>
+                  <ScoreboardAnimation id={output.rank}>
+                    <div className={output.rank}>
+                      <div className="position" style={{ width: 20 }}>
+                        <h4>{output.rank}</h4>
+                      </div>
+                      <div className="hello">
+                        <div className="image_leaderboard">
+                          {/* Render hostel image */}
+                          <img src={hostelInfo?.image} alt="img_hostel" />
+                        </div>
+                        <div className="name" style={{ width: 240 }}>
+                          <h3 className="name text-dark" style={{ margin: 0 }}>
+                            {output.name}-{hostelInfo?.tittle}
+                          </h3>
+                          {/* <div className="span"></div> */}
+                        </div>
+                      </div>
 
-                    <div className="score">
-                      <span>{output.total_score}</span>
+                      <div className="score">
+                        <span>{output.total_score}</span>
+                      </div>
                     </div>
-                  </div>
-                </ScoreboardAnimation>
-                {/* </Link> */}
-              </div>
-            </Link>
-          ))}
+                  </ScoreboardAnimation>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     );
