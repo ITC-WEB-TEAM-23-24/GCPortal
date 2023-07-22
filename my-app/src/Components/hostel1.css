@@ -4,25 +4,21 @@
     background-image:url(/src/assets/meetings-page-bg.jpg);
     /* display: grid; */
     /* justify-content: space-around; */
-    padding: 0rem 2rem;
-    height: auto;
+    padding: 0rem 2yrem;
+    height: 100%;
     /* grid-template-columns: 1fr 3fr; */
 }
 .sidebarhs{
     position: relative;
-    /* top: 10px;  */
-    width: 70% !important;
-     /* height: 50%;    */
+    top: 10px;
+    width: min-content;
+    margin: auto;
+     /* height: 50%;    */ 
     overflow-x: hidden;
     margin-bottom: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0,1);
     z-index: 2;
     border-radius: 10px;
-    margin: auto;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    justify-content: center;
     /* text-align: center; */
 }
 /* .genre{
@@ -30,22 +26,16 @@
 } */
 
 .sidebarhs ul{
-    display: grid;
-    grid-template-columns: inherit;
-    justify-content: space-around;
-    position: relative;
-    left: 70px;
-    gap: 10px;
+    display:flex;
+    justify-content: center;
+    width: 100%;
 }
 .sidebarhs ul li{
-    /* text-align: center; */
-    padding-left: 10%;
-    /* width: 100%; */
     list-style: none;
     border-radius: 10px;
     width: auto;
     padding: 10px;
-    margin: 0 10px 0 40px;
+    margin: 0 25px 0 15px;
 }
 .sidebarhs ul li:hover{  
     background: #272C31;
@@ -66,7 +56,7 @@
 } */
 
 .sidebarhs ul li a{
-   width: 200%;
+   width:100%;
    text-decoration: none;
    color: #6e6e6e;
    /* color: #fff; */
@@ -140,27 +130,12 @@
         display: none;
         
     }
-    .sidebarhs{
-        position: relative;
-        left: 10px;
-        width: 50%;
-    } 
-
-    .sidebarhs ul{
-        align-items: center;
-        justify-content: center;
-    }
 }
 @media(max-width:1084px){  
     #hamburger{
         display: none;
        
     }
-    .sidebarhs{
-        position: relative;
-        left: 20px;
-        width: 50%;
-    } 
 }
 
 
@@ -171,16 +146,7 @@
         display: none;
         
     }
-    .sidebarhs{
-        position: relative;
-        left: 0px;
-        width: 50%;   
-    } 
 
-    .sidebarhs ul{
-        display: grid;
-        grid-template-rows: max-content;
-    }
 }
 /* @media(max-width:910px){
      .sidebarhs{
@@ -199,9 +165,6 @@
 } */
 
 @media(max-width:867px){
-    .sidebarhs ul li a i{
-        display: none;
-    }
     
     #hamburger{
         display: block;
@@ -212,41 +175,14 @@
         position: relative;
        
     }
-    .sidebarhs{
-        width: 40%;
-        margin-right: 60px;
-        position: relative;
-        left: -50px;
-     }
-
-     .sidebarhs ul{
-        position: relative;
-        left: -30px;
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-     }
-    }
+}
 
 
-    .sidebarhs ul li{
-        margin: 0 25px 0 15px;
-    }
+    
     /* .display{
        display: none;
     } */
     @media(max-width:770px){
-        .sidebarhs ul li{
-        /* width: 50%; */
-        list-style: none;  
-        margin: 0 15px 0 15px;  
-    } 
-    .sidebarhs{
-        position: relative;
-        left: -20px;
-        min-width: 100px;
-        min-height: 100px;
-      
-    }
     /* .sidebarhs ul{
         display: flex;
         flex-direction: column;
@@ -254,23 +190,6 @@
 
 }
 
-@media(max-width:650px){
-
-    .sidebarhs ul li{
-        margin: 0 0px 0 0px; 
-        position: relative;
-        left: 20px;
-    }
-}
-@media(max-width:550px){
-
-    .sidebarhs ul li{
-        margin: 0 0px 0 0px; 
-        position: relative;
-        left: 30px;
-        padding: 0;
-    }
-}
 
 
 .react-multi-carousel-list{

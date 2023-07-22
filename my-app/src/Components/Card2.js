@@ -1,5 +1,4 @@
 import React from 'react'
-import hostel6 from "./hostel6.jpg";
 
 // import styled from "styled-components"
 import './Card2.css'
@@ -10,7 +9,7 @@ class Card2 extends React.Component {
    
 
     render(){
-        let{id,name,description}=this.props
+        let{id,name,description,image}=this.props
   return (
     <>
    
@@ -18,12 +17,12 @@ class Card2 extends React.Component {
        <div className="wrappercd">
         <div className="banner-imagecd">
           <figure>
-            <img className="imagecd" src={hostel6} alt='image'></img>
+            <img className="imagecd" src={"http://127.0.0.1:8000"+ image} alt='image'></img>
           </figure>
         </div>
         <div className="box">
-        <h1 className='h1cd'>{name}</h1>
-        <p className='pcd'>{description}</p>
+          <h1 className='h1cd'>{name}</h1>
+          <p className='pcd'>{description.slice(0,250)}...</p>
         </div>
        </div>
      </div>

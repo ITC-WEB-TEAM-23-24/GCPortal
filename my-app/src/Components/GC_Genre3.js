@@ -151,12 +151,12 @@ class GC_Genre3 extends React.Component {
             
             <Carousel responsive={responsive} showDots={true}   keyBoardControl={true}>
               {Mydata.map((post) => {
-                const { id, name, description } = post;
+                const { id, name, description ,poster} = post;
                 return (
                   <> 
                  {/* <Card   id={id} name={name} description={description} /> */}  
                  <Link to={`/GC/Genre3/${id}`}>
-                    <Card2 id={id} name={name} description={description} />
+                    <Card2 id={id} name={name} description={description} image={poster}/>
                  </Link>
                   </>
                 );
