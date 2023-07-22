@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./App.css";
 import SideBar from "./Components/sideBar";
@@ -13,9 +14,7 @@ import Dashboard from "./Components/Dashboard";
 import Card from "./Components/Card";
 import Card2 from "./Components/Card2";
 import Nav from './Components/Nav';
-import GC_Genre1 from "./Components/GC_Genre1";
-import GC_Genre2 from "./Components/GC_Genre2";
-import GC_Genre3 from "./Components/GC_Genre3";
+import {GC_Genre1, GC_Genre2, GC_Genre3} from "./pages/Gclist1";
 import Hostlellist from "./pages/hostellist";
 import Instuctions from "./pages/instuctions";
 

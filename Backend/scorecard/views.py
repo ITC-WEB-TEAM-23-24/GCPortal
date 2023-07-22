@@ -151,7 +151,10 @@ def gc_events(request, genre):
     serializer = gcserializer(events, many=True)
     return Response(serializer.data)
 
-
 class HostelList(ListAPIView):
     queryset = Hostel.objects.all()
     serializer_class = hostelserializer
+    
+class GCList(ListAPIView):
+    queryset = GCEvent.objects.all()
+    serializer_class = gcserializer
