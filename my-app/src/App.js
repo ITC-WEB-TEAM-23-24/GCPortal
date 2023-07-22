@@ -14,7 +14,7 @@ import Dashboard from "./Components/Dashboard";
 import Card from "./Components/Card";
 import Card2 from "./Components/Card2";
 import Nav from './Components/Nav';
-import {GC_Genre1, GC_Genre2, GC_Genre3} from "./pages/Gclist1";
+import {GC_Genre1, GC_Genre2, GC_Genre3} from "./pages/Gclist";
 import Hostlellist from "./pages/hostellist";
 import Instuctions from "./pages/instuctions";
 
