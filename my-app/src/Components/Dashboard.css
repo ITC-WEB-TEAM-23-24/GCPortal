@@ -20,9 +20,9 @@
 }
 
 .cardsds{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     width: 96%;
-    padding: 35px 20px;
+    padding: 10px 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
@@ -40,12 +40,14 @@
 .cardsds .card_heading{
     background: linear-gradient(45deg, #402f86,#5b4a8d);
     padding: 20px;
-    width: 400px;
+    
+    max-width: 300px;
     display: flex;
     margin-right: 200px;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    height: 100px;
 }
 
 .numberds{
@@ -83,17 +85,20 @@
 }
 
 .doctor-visiting{
-    max-height: 350px;
+    min-height: 350px;
     background: #fff;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-top:10px;
+
 }
 
 .last-appointments{
-    max-height: 350px;
+    min-height: 350px;
     background: #fff;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-top:10px;
 }
 
 .headingds{
@@ -121,9 +126,13 @@
 .appointments, .doctor-visiting thead td{
     font-weight: 600;
     color: #333;
+    
 }
 
-.appointments, .doctor-visiting table tr {
+ .doctor-visiting table tr {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.appointments td{
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -176,13 +185,19 @@
   background: #ed5564;
 }
 
-@media(max-width:1090px){
+/* @media(max-width:1090px){
     
     .mainds{
         width: calc(100% - 60px);
         left: 60px;
     }
     
+} */
+
+@media(max-width:2000px){
+    .card_heading{
+        width: 400px;
+      }
 }
 
 @media(max-width:860px){
@@ -192,14 +207,20 @@
       .tablesds{
         grid-template-columns: 1fr ;
       }
+      .card_heading{
+        width: 400px;
+      }
 }
-@media(max-width:530px){
+@media(max-width:600px){
       .cardsds{
         grid-template-columns: 1fr;
       }
     
       .last-appointments td:nth-child(4){
         display: none;
+      }
+      .card_heading{
+        width: 300px;
       }
 }
 @media(max-width:420px){
@@ -212,6 +233,14 @@
     .cardsds , .tablesds{
         padding: 10px;
     }
+    .card_heading{
+        width: 250px;
+      }
+}
+@media(max-width:350px){
+    .card_heading{
+        width: 219px;
+      }
 }
 
 a{
@@ -222,3 +251,35 @@ a{
 a:hover{
     cursor: pointer;
 }
+
+h2 {
+ 
+    position: relative;
+    font-size: 30px;
+    color: rgb(161, 142, 142);
+    -webkit-text-stroke: 0.1vw black;
+    text-transform: uppercase;
+   }
+   h2::before{
+    content: '';
+    position: absolute;
+    
+    width: 50px;
+    height: 3px;
+    background-color: rgb(235, 34, 78);
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+   } 
+   @keyframes animate{
+    0%{
+        width: 50px;
+    }
+    50%{
+        width: 130px;
+    }
+    100%{
+        width: 50px;
+    }
+   } 
