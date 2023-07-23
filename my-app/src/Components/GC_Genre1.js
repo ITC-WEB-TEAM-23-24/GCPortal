@@ -107,7 +107,7 @@ class GC_Genre1 extends React.Component {
                 </a>
               </li> */}
               <li id="active-genre-page">
-                <div className="display">
+                <div c  lassName="display">
                 <Link to="/GC/Genre1">
                   <i className="fas fa-th-large"></i>
                   <button className="titles .btnhs">Genre 1 </button>
@@ -151,12 +151,12 @@ class GC_Genre1 extends React.Component {
             
             <Carousel responsive={responsive} showDots={true}   keyBoardControl={true}>
               {Mydata.map((post) => {
-                const { id, name, description } = post;
+                const { id, name, description,poster } = post;
                 return (
                   <> 
                  {/* <Card   id={id} name={name} description={description} /> */}  
                  <Link to={`/GC/Genre1/${id}`}>
-                    <Card2 id={id} name={name} description={description} />
+                    <Card2 id={id} name={name} description={description} image={poster}/>
                  </Link>
                   </>
                 );
