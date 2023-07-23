@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import axios from "axios";
+import ScoreboardAnimation from "../Animation";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Dashboard extends React.Component {
       .get("http://localhost:8000/hostels/", this.config)
       .then((res) => {
         const hostelData = res.data; // Save the hostel data
-        console.log(hostelData );
+        console.log(hostelData);
         this.setState({
           hostelData, // Set the hostelData state once
         });
@@ -52,14 +53,14 @@ class Dashboard extends React.Component {
         console.error(err);
       });
 
-      // fetch gc data
-      axios
+    // fetch gc data
+    axios
       .get("http://localhost:8000/gclist/", this.config)
       .then((res) => {
         const gcData = res.data; // Save the hostel data
         console.log(gcData);
         this.setState({
-          gcData // Set the hostelData state once
+          gcData, // Set the hostelData state once
         });
       })
 
@@ -69,18 +70,15 @@ class Dashboard extends React.Component {
   }
 
   render() {
-
-
-    const { details, scores, gcData} = this.state;
+    const { details, scores, gcData } = this.state;
     const link_url = window.location.href;
     const gc_id = link_url.split("/"); // Retrieve the hostel value from navigation param
-    const hostel = gc_id[gc_id.length - 1]
+    const hostel = gc_id[gc_id.length - 1];
     // Find the corresponding hostel data based on hostel name
     const { hostelData } = this.state; // Retrieve the hostel data from the state
     const hostelInfo = hostelData.find(
       (hostelInfo) => hostelInfo.name === hostel
     ); // Access the hostel prop
-    
 
     const getGc = (gcid) => {
       const item = gcData.find((item) => item.id === gcid);
@@ -94,12 +92,8 @@ class Dashboard extends React.Component {
               <img src={hostelInfo?.image} alt="Hostel Image" />
             </div>
             <div className="card-contents">
-              <div className="numberds">
-                Hostel {hostel.slice(1)}
-              </div>
-              <div className="nameds">
-                {hostelInfo?.tittle}
-              </div>
+              <div className="numberds">Hostel {hostel.slice(1)}</div>
+              <div className="nameds">{hostelInfo?.tittle}</div>
             </div>
           </div>
         </div>
@@ -130,7 +124,7 @@ class Dashboard extends React.Component {
             </div>
             <table className="appointments">
               <thead>
-                <tr id="tableheading2"> 
+                <tr id="tableheading2">
                   <td>GC Event</td>
                   <td>Rank</td>
                   <td>Score</td>
@@ -138,14 +132,15 @@ class Dashboard extends React.Component {
               </thead>
               <tbody>
                 {scores.map((output, index) => (
-                    
+                  // <ScoreboardAnimation id={output.id}>
+                  // <div className="Animate_scores">
                   <tr key={index}>
-                    <td>
-                      {getGc(output.event).name}
-                    </td>
+                    <td>{getGc(output.event).name}</td>
                     <td>{output.rank}</td>
                     <td>{output.score}</td>
                   </tr>
+                  /* </div> */
+                  /* </ScoreboardAnimation> */
                 ))}
               </tbody>
             </table>
@@ -157,8 +152,8 @@ class Dashboard extends React.Component {
             <table className="visiting">
               <thead>
                 <tr id="tableheading1">
-                  <td>Name</td> 
-                  <td>Score</td>    
+                  <td>Name</td>
+                  <td>Score</td>
                   <td>Genre Rank</td>
                 </tr>
               </thead>
