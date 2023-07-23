@@ -57,10 +57,10 @@ class Dashboard extends React.Component {
     const gc_id = link_url.split("/"); // Retrieve the hostel value from navigation param
     const hostel = gc_id[gc_id.length - 1].slice(1); // Access the hostel prop
     const { hostelData } = this.state; // Retrieve the hostel data from the state
-
+    const host = gc_id[gc_id.length - 1];
     // Find the corresponding hostel data based on hostel name
     const hostelInfo = hostelData.find(
-      (hostelInfo) => hostelInfo.name === hostel
+      (hostelInfo) => hostelInfo.name === host
     );
 
     return (
