@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import axios from "axios";
+import ScoreboardAnimation from "../Animation";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -131,11 +132,15 @@ class Dashboard extends React.Component {
               </thead>
               <tbody>
                 {scores.map((output, index) => (
+                  // <ScoreboardAnimation id={output.id}>
+                  // <div className="Animate_scores">
                   <tr key={index}>
                     <td>{getGc(output.event).name}</td>
                     <td>{output.rank}</td>
                     <td>{output.score}</td>
                   </tr>
+                  /* </div> */
+                  /* </ScoreboardAnimation> */
                 ))}
               </tbody>
             </table>
