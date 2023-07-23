@@ -69,10 +69,10 @@ class Gc extends React.Component {
                             <div className="scoreboard"><h3>Score Board</h3></div>
                             <hr/>
                             <div className="hl"></div>
-                            <div className="hostel-score">
+                            <table className="hostel-score">
                             {scoresdata.map((output, id) => (       
-                                <div className="hostel hd2" key={id}>
-                                    <div className="hostname">Hostel {output.hostel_id}</div>
+                                <tr className="hostel hd2" key={id}>
+                                    <td className="hostname">Hostel {output.hostel_id}</td>
                                     <motion.div
                                         initial={{width:0}}
                                         animate={{width:output.score*55/(maxscore.score)+"%"}}
@@ -80,9 +80,9 @@ class Gc extends React.Component {
                                         className="hosteldata"
                                     ></motion.div>
                                     <div className="hostelscore">{output.score} Points</div>
-                                </div>
+                                </tr>
                             ))}
-                            </div>
+                            </table>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@
     /* background: url(../src/assets/meetings-page-bg.jpg); */
     margin-right: 10px;
     z-index: -1;
+    display: flex;
 }
 
 
@@ -21,7 +22,6 @@
 
 .cardsds{
     /* margin-top: 30px; */
-    width: 96%;
     padding: 10px 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -40,8 +40,7 @@
 .cardsds .card_heading{
     background: linear-gradient(45deg, #402f86,#5b4a8d);
     padding: 20px;
-    
-    max-width: 300px;
+    max-width: 500px;
     display: flex;
     margin-right: 200px;
     align-items: center;
@@ -55,7 +54,22 @@
     font-weight: 500;
     color: #fff;
 }
+.bg .image{
+    max-width: 55%;
+}
+.image img{
+    max-height: 125px;
+    max-width: 100%;
+}
 
+.card_heading .card-contents{
+    width: 40%;
+}
+.nameds{
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffffb5;
+}
 .cardds-name{
     color: #db2929;
     font-weight: 600;
@@ -125,7 +139,7 @@
 
 .appointments, .doctor-visiting thead td{
     font-weight: 600;
-    color: #333;
+    color:  #444;
     
 }
 
@@ -171,6 +185,13 @@
 .last-appointments table tbody td:last-child{
     white-space: nowrap ;
 }
+
+#tableheading1 *, #tableheading2 *{
+    font-weight: 700;
+    color: #02000070;
+    background-color: rgba(0,0,0,0.03);
+    
+}
 .fa-eye{
     margin: 4px;
     background: #32bea5;
@@ -193,6 +214,8 @@
     }
     
 } */
+
+
 
 @media(max-width:2000px){
     .card_heading{
