@@ -61,9 +61,9 @@ class Overall extends React.Component {
     const { hostelData } = this.state; // Retrieve the hostel data from the state
 
     // Check if hostelData is not fetched yet
-    if (hostelData.length === 0) {
-      return <div>Loading...</div>; // You can show a loading message or a spinner here
-    }
+    // if (hostelData.length === 0) {
+    //   return <div>Loading...</div>; // You can show a loading message or a spinner here
+    // }
     return (
       <div className="bg">
         <div className="leaderboard_heading">

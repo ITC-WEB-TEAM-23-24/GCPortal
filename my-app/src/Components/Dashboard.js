@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import axios from "axios";
+import ScoreboardAnimation from "../Animation";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Dashboard extends React.Component {
       details: {},
       scores: [],
       hostelData: [],
+      gcData: [],
     };
     this.config = {
       headers: {
@@ -36,6 +38,7 @@ class Dashboard extends React.Component {
       .catch((err) => {
         console.error(err);
       });
+
     // Fetch data for hostel images and names
     axios
       .get("http://localhost:8000/hostels/", this.config)
@@ -49,20 +52,38 @@ class Dashboard extends React.Component {
       .catch((err) => {
         console.error(err);
       });
+
+    // fetch gc data
+    axios
+      .get("http://localhost:8000/gclist/", this.config)
+      .then((res) => {
+        const gcData = res.data; // Save the hostel data
+        console.log(gcData);
+        this.setState({
+          gcData, // Set the hostelData state once
+        });
+      })
+
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   render() {
-    const { details, scores } = this.state;
+    const { details, scores, gcData } = this.state;
     const link_url = window.location.href;
     const gc_id = link_url.split("/"); // Retrieve the hostel value from navigation param
-    const hostel = gc_id[gc_id.length - 1].slice(1); // Access the hostel prop
-    const { hostelData } = this.state; // Retrieve the hostel data from the state
-
+    const hostel = gc_id[gc_id.length - 1];
     // Find the corresponding hostel data based on hostel name
+    const { hostelData } = this.state; // Retrieve the hostel data from the state
     const hostelInfo = hostelData.find(
       (hostelInfo) => hostelInfo.name === hostel
-    );
+    ); // Access the hostel prop
 
+    const getGc = (gcid) => {
+      const item = gcData.find((item) => item.id === gcid);
+      return item || null; // Return the item object if found, or null if not found
+    };
     return (
       <div className="bg">
         <div className="cardsds">
@@ -71,10 +92,8 @@ class Dashboard extends React.Component {
               <img src={hostelInfo?.image} alt="Hostel Image" />
             </div>
             <div className="card-contents">
-              <div className="numberds">
-                {/* Hostel {hostel} - {hostelData.tittle} */}
-                Hostel {hostel} - {hostelInfo && hostelInfo.title}
-              </div>
+              <div className="numberds">Hostel {hostel.slice(1)}</div>
+              <div className="nameds">{hostelInfo?.tittle}</div>
             </div>
           </div>
         </div>
@@ -105,7 +124,7 @@ class Dashboard extends React.Component {
             </div>
             <table className="appointments">
               <thead>
-                <tr>
+                <tr id="tableheading2">
                   <td>GC Event</td>
                   <td>Rank</td>
                   <td>Score</td>
@@ -113,11 +132,15 @@ class Dashboard extends React.Component {
               </thead>
               <tbody>
                 {scores.map((output, index) => (
+                  // <ScoreboardAnimation id={output.id}>
+                  // <div className="Animate_scores">
                   <tr key={index}>
-                    <td>{output.event}</td>
+                    <td>{getGc(output.event).name}</td>
                     <td>{output.rank}</td>
                     <td>{output.score}</td>
                   </tr>
+                  /* </div> */
+                  /* </ScoreboardAnimation> */
                 ))}
               </tbody>
             </table>
@@ -128,7 +151,7 @@ class Dashboard extends React.Component {
             </div>
             <table className="visiting">
               <thead>
-                <tr>
+                <tr id="tableheading1">
                   <td>Name</td>
                   <td>Score</td>
                   <td>Genre Rank</td>

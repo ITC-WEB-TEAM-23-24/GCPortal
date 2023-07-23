@@ -1,187 +1,206 @@
-.mainds{
-    position: absolute;
-    width: calc(100% - 45px);
-    min-height: 50vh;
-    left: 45px;
-    /* background: url(../src/assets/meetings-page-bg.jpg); */
-    margin-right: 10px;
-    z-index: -1;
+.mainds {
+  position: absolute;
+  width: calc(100% - 45px);
+  min-height: 50vh;
+  left: 45px;
+  /* background: url(../src/assets/meetings-page-bg.jpg); */
+  margin-right: 10px;
+  z-index: -1;
+  display: flex;
 }
 
-
-
-.imgds{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    object-fit: cover;
+.imgds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
-.cardsds{
-    /* margin-top: 30px; */
-    width: 96%;
-    padding: 10px 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+.cardsds {
+  /* margin-top: 30px; */
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
 }
 
-.cardsds .card{
-    background: linear-gradient(45deg, #14025c,#18015e);
-    padding: 20px;
-    display: flex;
-    width: 200px;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+.cardsds .card {
+  background: linear-gradient(45deg, #2a1874, #18015e);
+  padding: 20px;
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
-.cardsds .card_heading{
-    background: linear-gradient(45deg, #402f86,#5b4a8d);
-    padding: 20px;
-    
-    max-width: 300px;
-    display: flex;
-    margin-right: 200px;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    height: 100px;
-}
-
-.numberds{
-    font-size: 35px;
-    font-weight: 500;
-    color: #fff;
+.cardsds .card_heading {
+  background: linear-gradient(45deg, #402f86, #5b4a8d);
+  padding: 15px;
+  padding-block: 5px;
+  max-width: 500px;
+  display: flex;
+  margin-right: 200px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  min-height: 120px;
 }
 
-.cardds-name{
-    color: #db2929;
-    font-weight: 600;
+.numberds {
+  font-size: 35px;
+  font-weight: 500;
+  color: #fff;
+}
+.bg .image {
+  max-width: 55%;
+}
+.image img {
+  max-height: 125px;
+  max-width: 100%;
 }
 
-.icon-boxds i{
-    font-size: 45px;
-    color: #db2929;
+.card_heading .card-contents {
+  width: 40%;
+}
+.nameds {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffffb5;
+}
+.cardds-name {
+  color: #db2929;
+  font-weight: 600;
+}
+
+.icon-boxds i {
+  font-size: 45px;
+  color: #db2929;
 }
 
 .tablesds {
-    width: 96%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-    align-items: self-start;
-    padding: 0 20px 20px 20px;
+  width: 96%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  align-items: self-start;
+  padding: 0 20px 20px 20px;
 }
 
-.img-box-small{
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-
+.img-box-small {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.doctor-visiting{
-    min-height: 350px;
-    background: #fff;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    margin-top:10px;
-
+.doctor-visiting {
+  min-height: 350px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
 }
 
-.last-appointments{
-    min-height: 350px;
-    background: #fff;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    margin-top:10px;
+.last-appointments {
+  min-height: 350px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
 }
 
-.headingds{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #444;
+.headingds {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #444;
 }
 
-.btnds{
-    padding: 5px 10px;
-    /* background: linear-gradient(45deg,#47cebe,#ef4a82); */
-    color: #fff;
-    background: linear-gradient(45deg, #14025c,#18015e);
-    text-decoration: none;
-    text-align: center;
+.btnds {
+  padding: 5px 10px;
+  /* background: linear-gradient(45deg,#47cebe,#ef4a82); */
+  color: #fff;
+  background: linear-gradient(45deg, #14025c, #18015e);
+  text-decoration: none;
+  text-align: center;
 }
 
-.appointments, .doctor-visiting table{
-    margin-top: 10px;
-    width: 100%;
-    border-collapse: collapse;
+.appointments,
+.doctor-visiting table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.appointments, .doctor-visiting thead td{
-    font-weight: 600;
-    color: #333;
-    
+.appointments,
+.doctor-visiting thead td {
+  font-weight: 600;
+  color: #444;
 }
 
- .doctor-visiting table tr {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+.doctor-visiting table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.appointments td{
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.appointments tbody tr:hover{
-    background: #444;
-    color: #fff;
-}
-.doctor-visiting  tbody tr:hover{
-    background: #444;
-    color: #fff;
+.appointments td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.appointments, .doctor-visiting table tbody tr:last-child{
-    border-bottom: none;
+.appointments tbody tr:hover {
+  background: #444;
+  color: #fff;
 }
-.appointments td{
-    padding: 9px 5px;
-}
-.doctor-visiting td{
-    padding: 9px 5px;
-}
-
-.appointments td i{
-    
-    padding: 7px ;
-    color: #fff;
-    border-radius: 550px;
+.doctor-visiting tbody tr:hover {
+  background: #444;
+  color: #fff;
 }
 
-.doctor-visiting td i{
-    padding: 7px;
-    color: #fff;
-    border-radius: 550px;
+.appointments,
+.doctor-visiting table tbody tr:last-child {
+  border-bottom: none;
+}
+.appointments td {
+  padding: 9px 5px;
+}
+.doctor-visiting td {
+  padding: 9px 5px;
 }
 
-.last-appointments table tbody td:last-child{
-    white-space: nowrap ;
-}
-.fa-eye{
-    margin: 4px;
-    background: #32bea5;
+.appointments td i {
+  padding: 7px;
+  color: #fff;
+  border-radius: 550px;
 }
 
-.fa-edit{
-    margin: 4px;
-    background: #63b4f4;
+.doctor-visiting td i {
+  padding: 7px;
+  color: #fff;
+  border-radius: 550px;
 }
-.fa-trash-alt{
-    margin: 4px;
+
+.last-appointments table tbody td:last-child {
+  white-space: nowrap;
+}
+
+#tableheading1 *,
+#tableheading2 * {
+  font-weight: 700;
+  color: #02000070;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.fa-eye {
+  margin: 4px;
+  background: #32bea5;
+}
+
+.fa-edit {
+  margin: 4px;
+  background: #63b4f4;
+}
+.fa-trash-alt {
+  margin: 4px;
   background: #ed5564;
 }
 
@@ -194,92 +213,99 @@
     
 } */
 
-@media(max-width:2000px){
-    .card_heading{
-        width: 400px;
-      }
+@media (max-width: 2000px) {
+  .card_heading {
+    width: 400px;
+  }
 }
 
-@media(max-width:860px){
-      .cardsds{
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .tablesds{
-        grid-template-columns: 1fr ;
-      }
-      .card_heading{
-        width: 400px;
-      }
+@media (max-width: 860px) {
+  .cardsds {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tablesds {
+    grid-template-columns: 1fr;
+  }
+  .card_heading {
+    width: 400px;
+  }
 }
-@media(max-width:600px){
-      .cardsds{
-        grid-template-columns: 1fr;
-      }
-    
-      .last-appointments td:nth-child(4){
-        display: none;
-      }
-      .card_heading{
-        width: 300px;
-      }
-}
-@media(max-width:420px){
-    .last-appointments, .doctor-visiting{
-        font-size: 70%;
-        padding: 10px;
-        min-height: 200px;
-    }
+@media (max-width: 600px) {
+  .cardsds {
+    grid-template-columns: 1fr;
+  }
 
-    .cardsds , .tablesds{
-        padding: 10px;
-    }
-    .card_heading{
-        width: 250px;
-      }
+  .last-appointments td:nth-child(4) {
+    display: none;
+  }
+  .card_heading {
+    width: 300px;
+  }
 }
-@media(max-width:350px){
-    .card_heading{
-        width: 219px;
-      }
-}
+@media (max-width: 420px) {
+  .last-appointments,
+  .doctor-visiting {
+    font-size: 70%;
+    padding: 10px;
+    min-height: 200px;
+  }
 
-a{
-    text-decoration: none;
-    color: black;
+  .cardsds,
+  .tablesds {
+    padding: 10px;
+  }
+  .card_heading {
+    width: 250px;
+  }
+}
+@media (max-width: 350px) {
+  .card_heading {
+    width: 219px;
+  }
 }
 
-a:hover{
-    cursor: pointer;
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 h2 {
- 
-    position: relative;
-    font-size: 30px;
-    color: rgb(161, 142, 142);
-    -webkit-text-stroke: 0.1vw black;
-    text-transform: uppercase;
-   }
-   h2::before{
-    content: '';
-    position: absolute;
-    
+  position: relative;
+  font-size: 30px;
+  color: rgb(161, 142, 142);
+  -webkit-text-stroke: 0.1vw black;
+  text-transform: uppercase;
+}
+h2::before {
+  content: "";
+  position: absolute;
+
+  width: 50px;
+  height: 3px;
+  background-color: rgb(235, 34, 78);
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: animate 4s linear infinite;
+}
+@keyframes animate {
+  0% {
     width: 50px;
-    height: 3px;
-    background-color: rgb(235, 34, 78);
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: animate 4s linear infinite;
-   } 
-   @keyframes animate{
-    0%{
-        width: 50px;
-    }
-    50%{
-        width: 130px;
-    }
-    100%{
-        width: 50px;
-    }
-   } 
+  }
+  50% {
+    width: 130px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+
+/* .Animate_scores {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+} */
