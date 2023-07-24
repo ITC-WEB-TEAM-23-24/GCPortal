@@ -13,13 +13,14 @@ class GC_Genre1 extends React.Component {
     this.config = {
       headers: {
         "Content-Type": "application/json",
+        'Authorization': 'Token ' + '3af5accdebeb5b899e6f9197b0b822f657af008f'
       },
     };
   }
 
   componentDidMount() {
     axios // loading backend data
-      .get("http://localhost:8000/gc/genre1/")
+      .get("http://localhost:8000/gc/genre1/", this.config)
       .then((res) => {
         this.setState({
           Mydata: res.data,
@@ -115,13 +116,14 @@ class GC_Genre2 extends React.Component {
     this.config = {
       headers: {
         "Content-Type": "application/json",
+        'Authorization': 'Token ' + '3af5accdebeb5b899e6f9197b0b822f657af008f'
       },
     };
   }
 
   componentDidMount() {
     axios // loading backend data
-      .get("http://localhost:8000/gc/genre2/")
+      .get("http://localhost:8000/gc/genre2/", this.config)
       .then((res) => {
         this.setState({
           Mydata: res.data,
@@ -208,13 +210,14 @@ class GC_Genre3 extends React.Component {
     this.config = {
       headers: {
         "Content-Type": "application/json",
+        'Authorization': 'Token ' + '3af5accdebeb5b899e6f9197b0b822f657af008f'
       },
     };
   }
 
   componentDidMount() {
     axios // loading backend data
-      .get("http://localhost:8000/gc/genre3/")
+      .get("http://localhost:8000/gc/genre3/", this.config)
       .then((res) => {
         this.setState({
           Mydata: res.data,
@@ -224,13 +227,14 @@ class GC_Genre3 extends React.Component {
         console.error(err);
       });
 
-    import("../assets/js/gclist.js") //importing script
+      import("../assets/js/gclist.js") //importing script
       .then((module) => {
         console.log("gclist.js loaded successfully");
       })
       .catch((error) => {
         console.error("Error loading gclist.js:", error);
       });
+    
   }
   render() {
     const { Mydata } = this.state;

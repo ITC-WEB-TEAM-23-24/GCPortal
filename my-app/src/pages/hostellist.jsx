@@ -13,6 +13,7 @@ class Hostlellist extends React.Component {
     this.config = {
       headers: {
         "Content-Type": "application/json",
+        'Authorization': 'Token ' + '3af5accdebeb5b899e6f9197b0b822f657af008f'
         // Add any other custom headers here
       },
     };
