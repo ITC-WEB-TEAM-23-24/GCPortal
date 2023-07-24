@@ -37,11 +37,11 @@ const routes = [
     name: "Discussion forum",
     icon: <MdMessage />,
   },
-  {
-    path: "/s",
-    name: "Logout",
-    icon: <BiLogOut />,
-  },
+  // {
+  //   path: "/s",
+  //   name: "Logout",
+  //   icon: <BiLogOut />,
+  // },
 ];
 
 const SideBar = ({ children }) => {
@@ -78,7 +78,7 @@ const SideBar = ({ children }) => {
               damping: 10,
             },
           }}
-          className={`sidebar `}
+          className={`sidebar ${isOpen ? "sidebar_open" : ""}`}
         >
           <div className="top_section">
             <AnimatePresence>
