@@ -150,7 +150,8 @@ def hostel_scorecard(request, name):
     details = {}
     overall_rank = overall_score = 0
     overall_url = 'http://127.0.0.1:8000/overall/'
-    overall_scorecard = requests.get(overall_url).json()
+    overall_scorecard = requests.get(overall_url, headers={
+                                     'Authorization': 'Token 3af5accdebeb5b899e6f9197b0b822f657af008f'}).json()
     for rank, item in enumerate(overall_scorecard, start=1):
         if item['name'] == name:
             details["overall_score"] = item['total_score']
@@ -159,7 +160,8 @@ def hostel_scorecard(request, name):
     genres = GCEvent.objects.distinct().values('genre')
     for genre in genres:
         genre_url = 'http://127.0.0.1:8000/genre' + genre['genre'] + '/'
-        genre_scorecard = requests.get(genre_url).json()
+        genre_scorecard = requests.get(genre_url, headers={
+            'Authorization': 'Token 3af5accdebeb5b899e6f9197b0b822f657af008f'}).json()
         for rank, item in enumerate(genre_scorecard, start=1):
             if item['name'] == name:
                 details[genre['genre'] + "_rank"] = rank
@@ -180,10 +182,12 @@ def gc_events(request, genre):
     serializer = gcserializer(events, many=True)
     return Response(serializer.data)
 
+
 class HostelList(ListAPIView):
     queryset = Hostel.objects.all()
     serializer_class = hostelserializer
-    
+
+
 class GCList(ListAPIView):
     queryset = GCEvent.objects.all()
     serializer_class = gcserializer
