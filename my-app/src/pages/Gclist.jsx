@@ -180,16 +180,16 @@ class GC_Genre2 extends React.Component {
             {Mydata.map((post) => {
               const { id, name, description, poster } = post;
               return (
-                <motion.div
-                  key={id}
-                  className="cards"
-                  whileHover={{ scale: 1.07 }}
-                  whileTap={{ scale: 2, opacity: 0 }}
-                  transition={{
-                    duration: 0.3,
-                  }}
-                >
-                  <li className="card" key={id}>
+                <li className="card" key={id}>
+                  <motion.div
+                    key={id}
+                    className="cards"
+                    whileHover={{ scale: 1.07 }}
+                    whileTap={{ scale: 2, opacity: 0 }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                  >
                     <div className="img">
                       <Link to={`/GC/Genre1/${id}`}>
                         <img
@@ -199,8 +199,8 @@ class GC_Genre2 extends React.Component {
                         />
                       </Link>
                     </div>
-                  </li>
-                </motion.div>
+                  </motion.div>
+                </li>
               );
             })}
           </ul>
@@ -284,27 +284,34 @@ class GC_Genre3 extends React.Component {
             {Mydata.map((post) => {
               const { id, name, description, poster } = post;
               return (
-                <motion.div
-                  key={id}
-                  className="cards"
-                  whileHover={{ scale: 1.07 }}
-                  whileTap={{ scale: 2, opacity: 0 }}
-                  transition={{
-                    duration: 0.3,
-                  }}
-                >
-                  <li className="card" key={id}>
-                    <div className="img">
-                      <Link to={`/GC/Genre1/${id}`}>
-                        <img
-                          src={"http://127.0.0.1:8000" + poster}
-                          alt="img"
-                          draggable="false"
-                        />
-                      </Link>
-                    </div>
-                  </li>
-                </motion.div>
+                <li className="card" key={id}>
+                  {/* <motion.div
+                    key={id}
+                    className="cards"
+                    whileHover={{ scale: 1.07 }}
+                    whileTap={{ scale: 2, opacity: 0 }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                  > */}
+                  <motion.div
+                    className="img"
+                    whileHover={{ scale: 1.07 }}
+                    whileTap={{ scale: 2, opacity: 0 }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                  >
+                    <Link to={`/GC/Genre1/${id}`}>
+                      <img
+                        src={"http://127.0.0.1:8000" + poster}
+                        alt="img"
+                        draggable="false"
+                      />
+                    </Link>
+                  </motion.div>
+                  {/* </motion.div> */}
+                </li>
               );
             })}
           </ul>
