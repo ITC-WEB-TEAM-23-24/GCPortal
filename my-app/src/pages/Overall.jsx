@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Leaderboards.css";
+import "../assets/css/leaderboard.css";
 import ScoreboardAnimation from "../Animation";
 import axios from "axios";
 
@@ -10,7 +10,10 @@ class Overall extends React.Component {
     this.state = {
       details: [],
       hostel: "",
-      hostelData: [], // Initialize the state variable to store hostel data
+      hostelData: [], 
+      first: [],
+      second : [],
+      third: []// Initialize the state variable to store hostel data
     };
     this.config = {
       headers: {
@@ -36,6 +39,10 @@ class Overall extends React.Component {
         console.log(data);
         this.setState({
           details: data,
+          first : data[0],
+          second : data[1],
+          third : data[2],
+          
         });
       })
       .catch((err) => {
@@ -58,13 +65,17 @@ class Overall extends React.Component {
   }
 
   render() {
-    // const { hostel } = this.state;
-    const { hostelData } = this.state; // Retrieve the hostel data from the state
+    const { hostelData, first,second,third} = this.state;
 
-    // Check if hostelData is not fetched yet
-    // if (hostelData.length === 0) {
-    //   return <div>Loading...</div>; // You can show a loading message or a spinner here
-    // }
+    const firstdata = hostelData.find(
+      (firstdata) => firstdata.name === first.name
+    );
+    const seconddata = hostelData.find(
+      (seconddata) => seconddata.name === second.name
+    );
+    const thirddata = hostelData.find(
+      (thirddata) => thirddata.name === third.name
+    );
     return (
       <div className="bg">
         <div className="leaderboard_heading">
@@ -87,6 +98,72 @@ class Overall extends React.Component {
               </li>
             </ul>
           </div>
+        </div>
+        <dir className="leaderboard-cards-container">
+          <div className="leaderboard-cards leaderboard-card-first">
+            <div className="leaderboard-card_heading">
+              <div className="image">
+                  <img src={firstdata?.image} alt="Hostel Image" />
+              </div>
+              <div className="card-contents">
+                <div className="numberds">{first.name}</div>
+                <div className="nameds">{firstdata?.tittle}</div>
+              </div>
+            </div>
+            <div className="leaderboard-card_heading">
+              <div className="card-contents">
+                <div className="numberds">1st</div>
+                <div className="nameds">Rank</div>
+              </div>
+              <div className="card-contents">
+                <div className="numberds">{first.total_score}</div>
+                <div className="nameds">Total Score</div>
+              </div>
+            </div>  
+          </div>
+          <div className="leaderboard-cards leaderboard-card-second">
+            <div className="leaderboard-card_heading">
+              <div className="image">
+                  <img src={seconddata?.image} alt="Hostel Image" />
+              </div>
+              <div className="card-contents">
+                <div className="numberds">{second.name}</div>
+                <div className="nameds">{seconddata?.tittle}</div>
+              </div>
+            </div>
+            <div className="leaderboard-card_heading">
+              <div className="card-contents">
+                <div className="numberds">2nd</div>
+                <div className="nameds">Rank</div>
+              </div>
+              <div className="card-contents">
+                <div className="numberds">{second.total_score}</div>
+                <div className="nameds">Total Score</div>
+              </div>
+            </div>  
+          </div>
+          <div className="leaderboard-cards leaderboard-card-third">
+            <div className="leaderboard-card_heading">
+              <div className="image">
+                  <img src={thirddata?.image} alt="Hostel Image" />
+              </div>
+              <div className="card-contents">
+                <div className="numberds">{third.name}</div>
+                <div className="nameds">{thirddata?.tittle}</div>
+              </div>
+            </div>
+            <div className="leaderboard-card_heading">
+              <div className="card-contents">
+                <div className="numberds">3rd</div>
+                <div className="nameds">Rank</div>
+              </div>
+              <div className="card-contents">
+                <div className="numberds">{third.total_score}</div>
+                <div className="nameds">Total Score</div>
+              </div>
+            </div>  
+          </div>
+        </dir>
 
           <div className="name_score">
             <ul className="name_score_listing">
@@ -98,6 +175,9 @@ class Overall extends React.Component {
           </div>
 
           {this.state.details.map((output, id) => {
+            if (id==0 || id==1 || id==2){
+              return null
+            }
             // Find the corresponding hostel data based on hostel name
             const hostelInfo = hostelData.find(
               (hostelInfo) => hostelInfo.name === output.name
@@ -133,7 +213,6 @@ class Overall extends React.Component {
             );
           })}
         </div>
-      </div>
     );
   }
 }

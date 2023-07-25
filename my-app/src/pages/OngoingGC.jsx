@@ -17,6 +17,7 @@ function Gctimeline() {
           <Link to="/OngoingGC">Upcoming</Link>
         </li>
       </ul>
+      
       <div class="container_GC">
         <div class="card_GC">
           <h3 class="title_GC">Card_timeline 1 </h3>
