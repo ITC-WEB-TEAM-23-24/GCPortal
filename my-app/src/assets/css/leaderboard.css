@@ -1,5 +1,5 @@
 .bg {
-  background-image: url(../src/assets/meetings-page-bg.jpg);
+  background-image: url(../meetings-page-bg.jpg);
   padding: 10px;
   min-height: 100vh;
   /* min-width: 100vh; */
@@ -17,7 +17,6 @@
 .leaderboard_heading h2::before {
   content: "";
   position: absolute;
-
   width: 50px;
   height: 3px;
   background-color: rgb(235, 34, 78);
@@ -37,6 +36,51 @@
     width: 50px;
   }
 }
+
+/*---------------------------------------------------*/
+.leaderboard-card-first{
+  background-image: linear-gradient(180deg, #ffcc00 20%, #ffa500 80%);
+}
+
+.leaderboard-card-second{
+  background-image: linear-gradient(180deg, #fefefe 20%, #9f9f9f 80%);
+}
+
+.leaderboard-card-third{
+  background-image: linear-gradient(180deg, #d58d45 20%, #9a4e17 80%);
+}
+
+.leaderboard-cards-container{
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+.leaderboard-cards{
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  min-height: 120px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.leaderboard-card_heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+.leaderboard-card_heading .numberds {
+  font-size: 35px;
+  font-weight: 500;
+  color: #000;
+}
+
+.leaderboard-card_heading .nameds{
+  color: #000;
+}
+/*--------------------------------------------------------------------------*/
 .leaderboard_heading {
   /* color: black; */
   text-align: center;

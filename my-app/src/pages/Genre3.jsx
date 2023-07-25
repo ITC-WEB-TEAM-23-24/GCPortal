@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Leaderboards.css";
+import "../assets/css/leaderboard.css";
 import ScoreboardAnimation from "../Animation";
 import axios from "axios";
 
