@@ -10,8 +10,8 @@
 .leaderboard_heading h2 {
   position: relative;
   font-size: 30px;
-  color: rgb(161, 142, 142);
-  -webkit-text-stroke: 0.1vw black;
+  color: rgb(255, 255, 255);
+  /* -webkit-text-stroke: 0.1vw black; */
   text-transform: uppercase;
 }
 .leaderboard_heading h2::before {
@@ -38,24 +38,28 @@
 }
 
 /*---------------------------------------------------*/
-.leaderboard-card-first{
+.leaderboard-card-first {
+  /* background-image: linear-gradient(180deg, #ffcc00 20%, #ffa500 80%); */
+  background-color: rgba(255, 215, 0, 0);
   background-image: linear-gradient(180deg, #ffcc00 20%, #ffa500 80%);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.8) !important;
+  transition: all 0.5s ease;
 }
 
-.leaderboard-card-second{
+.leaderboard-card-second {
   background-image: linear-gradient(180deg, #fefefe 20%, #9f9f9f 80%);
 }
 
-.leaderboard-card-third{
+.leaderboard-card-third {
   background-image: linear-gradient(180deg, #d58d45 20%, #9a4e17 80%);
 }
 
-.leaderboard-cards-container{
+.leaderboard-cards-container {
   display: flex;
   justify-content: space-around;
   margin: 50px 0;
 }
-.leaderboard-cards{
+.leaderboard-cards {
   width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   min-height: 120px;
@@ -68,16 +72,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-
 }
 
 .leaderboard-card_heading .numberds {
   font-size: 35px;
   font-weight: 500;
-  color: #000;
+  /* color: #07070; */
 }
 
-.leaderboard-card_heading .nameds{
+.leaderboard-card_heading .nameds {
   color: #000;
 }
 /*--------------------------------------------------------------------------*/
