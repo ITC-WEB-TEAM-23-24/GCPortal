@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../assets/css/leaderboard.css";
 import ScoreboardAnimation from "../Animation";
 import axios from "axios";
-
 class Overall extends React.Component {
   constructor(props) {
     super(props);

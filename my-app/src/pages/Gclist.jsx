@@ -80,7 +80,7 @@ class GC_Genre1 extends React.Component {
               return (
                 <motion.div
                   key={id}
-                  className="cards"
+                  className="card"
                   whileHover={{ scale: 1.07 }}
                   whileTap={{ scale: 2, opacity: 0 }}
                   transition={{
