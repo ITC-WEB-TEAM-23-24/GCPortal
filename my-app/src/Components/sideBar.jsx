@@ -80,6 +80,7 @@ const SideBar = ({ children }) => {
           }}
           className={`sidebar ${isOpen ? "sidebar_open" : ""}`}
         >
+        {/* <div className="overall" style={{position: 'fixed'}}> */}
           <div className="top_section">
             <AnimatePresence>
               {isOpen && (
@@ -137,6 +138,7 @@ const SideBar = ({ children }) => {
               );
             })}
           </section>
+          {/* </div> */}
         </motion.div>
 
         <main>{children}</main>
