@@ -100,7 +100,7 @@ class Overall extends React.Component {
           </div>
         </div>
         <dir className="leaderboard-cards-container">
-        <Link to={`/dashboard/${first.name}`}>
+        <Link to={`/dashboard/${first.name}`} className="leaderboard-items">
           <div className="leaderboard-cards leaderboard-card-first">
             <div className="leaderboard-card_heading">
               <div className="image">
@@ -123,7 +123,7 @@ class Overall extends React.Component {
             </div>  
           </div>
         </Link>
-        <Link to={`/dashboard/${second.name}`}>
+        <Link to={`/dashboard/${second.name}`} className="leaderboard-items">
           <div className="leaderboard-cards leaderboard-card-second">
             <div className="leaderboard-card_heading">
               <div className="image">
@@ -146,7 +146,7 @@ class Overall extends React.Component {
             </div>  
           </div>
         </Link>
-        <Link to={`/dashboard/${third.name}`}>
+        <Link to={`/dashboard/${third.name}`} className="leaderboard-items">
           <div className="leaderboard-cards leaderboard-card-third">
             <div className="leaderboard-card_heading">
               <div className="image">
