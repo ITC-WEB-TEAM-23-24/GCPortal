@@ -13,6 +13,7 @@ class gcserializer(serializers.ModelSerializer):
         model = GCEvent
         fields = '__all__'
 
+
 class hostelserializer(serializers.ModelSerializer):
     class Meta:
         model = Hostel

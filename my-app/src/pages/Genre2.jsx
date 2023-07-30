@@ -33,7 +33,7 @@ class Overall extends React.Component {
   componentDidMount() {
     // Fetch data for leaderboard
     axios
-      .get("http://localhost:8000/overall/", this.config)
+      .get("http://localhost:8000/genregenre2/", this.config)
       .then((res) => {
         const data = res.data;
         console.log(data);
@@ -84,13 +84,13 @@ class Overall extends React.Component {
         <div className="animation">
           <div className="list">
             <ul className="listing">
-              <li className="list_item_on">
+              <li className="list_items">
                 <Link to="/Overall">Overall</Link>
               </li>
               <li className="list_items">
                 <Link to="/Genre1">Genre1</Link>
               </li>
-              <li className="list_items">
+              <li className="list_item_on">
                 <Link to="/Genre2">Genre2</Link>
               </li>
               <li className="list_items">
