@@ -100,6 +100,7 @@ class Overall extends React.Component {
           </div>
         </div>
         <dir className="leaderboard-cards-container">
+        <Link to={`/dashboard/${first.name}`}>
           <div className="leaderboard-cards leaderboard-card-first">
             <div className="leaderboard-card_heading">
               <div className="image">
@@ -121,6 +122,8 @@ class Overall extends React.Component {
               </div>
             </div>  
           </div>
+        </Link>
+        <Link to={`/dashboard/${second.name}`}>
           <div className="leaderboard-cards leaderboard-card-second">
             <div className="leaderboard-card_heading">
               <div className="image">
@@ -142,6 +145,8 @@ class Overall extends React.Component {
               </div>
             </div>  
           </div>
+        </Link>
+        <Link to={`/dashboard/${third.name}`}>
           <div className="leaderboard-cards leaderboard-card-third">
             <div className="leaderboard-card_heading">
               <div className="image">
@@ -163,16 +168,8 @@ class Overall extends React.Component {
               </div>
             </div>  
           </div>
+        </Link>
         </dir>
-
-          <div className="name_score">
-            <ul className="name_score_listing">
-              <li className="name_score_style">Position</li>
-              {/* <li className="name_score_style">Hostel image</li> */}
-              <li className="name_score_style">Hostel</li>
-              <li className="name_score_style">Score</li>
-            </ul>
-          </div>
 
           {this.state.details.map((output, id) => {
             if (id==0 || id==1 || id==2){
