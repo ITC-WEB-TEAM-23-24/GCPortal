@@ -1,7 +1,17 @@
 /* Sidebar */
 
 .sidebar {
-  background: #2B3035;
+  background: #2b3035;
+  /* background: rgb(0, 7, 61); */
+  color: white;
+  min-height: 100vh;
+
+  /* overflow-y: auto; */
+
+  /* min-height: 100%; */
+}
+.sidebar_open {
+  background: #2b3035;
   /* background: rgb(0, 7, 61); */
   color: white;
   min-height: 100vh;
@@ -20,7 +30,7 @@
 }
 .logo {
   font-size: 18px;
- 
+
   line-height: 0;
   display: flex;
   align-items: center;
@@ -31,7 +41,6 @@
 .hide {
   display: none;
 }
-
 
 .routes {
   margin-top: 15px;
@@ -82,4 +91,11 @@
 .menu_container .link {
   padding-left: 20px;
   border-bottom: #fff 0.5px solid;
+}
+
+@media only screen and (max-width: 650px) {
+  .sidebar_open {
+    position: fixed;
+    z-index: 999;
+  }
 }

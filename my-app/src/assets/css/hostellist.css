@@ -16,6 +16,7 @@
 }
 
 .cards-container {
+  padding-bottom: 2rem;
   width: 100%;
   display: flex;
   display: -webkit-box;
