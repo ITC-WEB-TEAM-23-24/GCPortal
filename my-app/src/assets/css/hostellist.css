@@ -38,7 +38,7 @@
   float: left;
   max-width: 40%;
   min-width: max(20%, 300px);
-  height: 400px;
+  height: 340px;
   margin: 10px 20px;
   background-color: #2b3035;
   border-radius: 10px;
@@ -48,7 +48,7 @@
   width: 90%;
   margin: 10px 0 0 5%;
   border-radius: 10px;
-  height: 300px;
+  height: 270px;
 }
 
 .hostel_ids {
