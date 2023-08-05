@@ -160,6 +160,10 @@
     padding: 0 27px;
   }
 
+  .gclist .wrapper{
+    margin-top: 10%;
+  }
+
   .gclist .sidebarhs ul li a i {
     font-size: 20px;
   }
@@ -177,6 +181,10 @@
     font-size: 16px;
   }
 
+  .gclist .wrapper{
+    margin-top: 20%;
+  }
+
   .gclist .sidebarhs .titles {
     font-size: 14px;
   }
@@ -192,7 +200,7 @@
 
 @media screen and (max-width: 480px) {
   .gclist {
-    padding: 0 10px;
+    padding: 10% 0;
   }
 
   .gclist .wrapper .carousel {
@@ -208,6 +216,10 @@
 
   .gclist .sidebarhs ul li a {
     height: 1.5rem;
+  }
+
+  .gclist .wrapper{
+    margin-top: 40%;
   }
 
   .gclist .sidebarhs ul li {

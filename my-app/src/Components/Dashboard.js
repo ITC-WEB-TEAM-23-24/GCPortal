@@ -104,11 +104,11 @@ class Dashboard extends React.Component {
             <div className="card">
               <div className="card-contents">
                 {/* <div className="numberds">{details.overall_rank}</div> */}
-                {/* <CountUp */}
+                <CountUp
                   className="numberds"
                   end={details.overall_rank}
                   duration={4}
-                {/* // />{" "} */}
+                />{" "}
                 {/* Count up the overall rank */}
                 <div className="cardds-name">Overall Rank</div>
               </div>
@@ -120,11 +120,11 @@ class Dashboard extends React.Component {
             <div className="card">
               <div className="card-contents">
                 {/* <div className="numberds">{details.overall_score}</div> */}
-                {/* <CountUp */}
+                <CountUp
                   className="numberds"
                   end={details.overall_score}
                   duration={4}
-                {/* />{" "} */}
+                />{" "}
                 {/* Count up the total score */}
                 <div className="cardds-name">Total Score</div>
               </div>

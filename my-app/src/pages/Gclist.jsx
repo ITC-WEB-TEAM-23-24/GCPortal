@@ -73,7 +73,7 @@ class GC_Genre1 extends React.Component {
           </ul>
         </div>
         <div className="wrapper">
-          <i id="left" className="fa-solid fa-angle-left"></i>
+          {/* <i id="left" className="fa-solid fa-angle-left"></i> */}
           <ul className="carousel">
             {Mydata.map((post) => {
               const { id, name, description, poster } = post;
@@ -102,7 +102,7 @@ class GC_Genre1 extends React.Component {
               );
             })}
           </ul>
-          <i id="right" className="fa-solid fa-angle-right"></i>
+          {/* <i id="right" className="fa-solid fa-angle-right"></i> */}
         </div>
       </div>
     );
@@ -175,15 +175,15 @@ class GC_Genre2 extends React.Component {
           </ul>
         </div>
         <div className="wrapper">
-          <i id="left" className="fa-solid fa-angle-left"></i>
+          {/* <i id="left" className="fa-solid fa-angle-left"></i> */}
           <ul className="carousel">
             {Mydata.map((post) => {
               const { id, name, description, poster } = post;
               return (
-                <li className="card" key={id}>
+                // <li className="card" key={id}>
                   <motion.div
                     key={id}
-                    className="cards"
+                    className="card"
                     whileHover={{ scale: 1.07 }}
                     whileTap={{ scale: 2, opacity: 0 }}
                     transition={{
@@ -200,11 +200,11 @@ class GC_Genre2 extends React.Component {
                       </Link>
                     </div>
                   </motion.div>
-                </li>
+                // </li>
               );
             })}
           </ul>
-          <i id="right" className="fa-solid fa-angle-right"></i>
+          {/* <i id="right" className="fa-solid fa-angle-right"></i> */}
         </div>
       </div>
     );
@@ -279,7 +279,7 @@ class GC_Genre3 extends React.Component {
           </ul>
         </div>
         <div className="wrapper">
-          <i id="left" className="fa-solid fa-angle-left"></i>
+          {/* <i id="left" className="fa-solid fa-angle-left"></i> */}
           <ul className="carousel">
             {Mydata.map((post) => {
               const { id, name, description, poster } = post;
@@ -315,7 +315,7 @@ class GC_Genre3 extends React.Component {
               );
             })}
           </ul>
-          <i id="right" className="fa-solid fa-angle-right"></i>
+          {/* <i id="right" className="fa-solid fa-angle-right"></i> */}
         </div>
       </div>
     );
