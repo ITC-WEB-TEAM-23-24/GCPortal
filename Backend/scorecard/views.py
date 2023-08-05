@@ -8,11 +8,15 @@ from django.shortcuts import render, redirect
 from .models import GCEvent, Hostel, Score
 from .forms import gcForm
 from django.utils.timezone import now
-from django.db.models import Value, IntegerField
-from django.core import serializers
 import requests
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.admin.views.decorators import staff_member_required
 
 
+@staff_member_required
+@api_view(['GET', 'POST'])
 def creategc(request):
     myform = gcForm(request.POST, request.FILES or None)
     if myform.is_valid():
@@ -24,12 +28,16 @@ def creategc(request):
     return render(request, "creategc.html", context)
 
 
+@staff_member_required
+@api_view(['GET'])
 def backendgc(request):
     events = GCEvent.objects.all()
     context = {'events': events}
     return render(request, "backendgc.html", context)
 
 
+@staff_member_required
+@api_view(['GET', 'POST'])
 def backendgcscore(request, id):
     event = GCEvent.objects.get(id=id)
     hostels = Hostel.objects.all()
@@ -46,6 +54,8 @@ def backendgcscore(request, id):
 
 
 @api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def overall(request):
     scorecard = list(Hostel.objects.all().values('name'))
 
@@ -58,13 +68,20 @@ def overall(request):
         item['total_score'] = total
 
     scorecard = sorted(scorecard, key=lambda x: x['total_score'], reverse=True)
-    for rank, item in enumerate(scorecard, start=1):
+    rank = 0
+    previous_total_score = None
+    for item in scorecard:
+        total_score = item['total_score']
+        if total_score != previous_total_score:
+            rank = rank + 1
         item['rank'] = rank
-    print(scorecard)
+        previous_total_score = total_score
     return Response(scorecard)
 
 
 @api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def genrewise_scorecard(request, genre):  # Don't Return individual GC details
     Genre = GCEvent.objects.filter(genre=genre)
     scorecard = list(Hostel.objects.all().values('name'))
@@ -80,13 +97,21 @@ def genrewise_scorecard(request, genre):  # Don't Return individual GC details
 
     scorecard = sorted(scorecard, key=lambda x: x['total_score'], reverse=True)
 
-    for rank, item in enumerate(scorecard, start=1):
+    rank = 0
+    previous_total_score = None
+    for item in scorecard:
+        total_score = item['total_score']
+        if total_score != previous_total_score:
+            rank = rank + 1
         item['rank'] = rank
+        previous_total_score = total_score
 
     return Response(scorecard)
 
 
 @api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def individualgc(request, id):  # GC ke details return
     gc = GCEvent.objects.get(id=id)
     GCnew = GCEvent.objects.filter(id=id)
@@ -107,6 +132,8 @@ def individualgc(request, id):  # GC ke details return
 
 
 @api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def hostel_scorecard(request, name):
     hostel = Hostel.objects.get(name=name)
     scores = Score.objects.filter(hostel=hostel)
@@ -123,7 +150,8 @@ def hostel_scorecard(request, name):
     details = {}
     overall_rank = overall_score = 0
     overall_url = 'http://127.0.0.1:8000/overall/'
-    overall_scorecard = requests.get(overall_url).json()
+    overall_scorecard = requests.get(overall_url, headers={
+                                     'Authorization': 'Token 3af5accdebeb5b899e6f9197b0b822f657af008f'}).json()
     for rank, item in enumerate(overall_scorecard, start=1):
         if item['name'] == name:
             details["overall_score"] = item['total_score']
@@ -132,7 +160,8 @@ def hostel_scorecard(request, name):
     genres = GCEvent.objects.distinct().values('genre')
     for genre in genres:
         genre_url = 'http://127.0.0.1:8000/genre' + genre['genre'] + '/'
-        genre_scorecard = requests.get(genre_url).json()
+        genre_scorecard = requests.get(genre_url, headers={
+            'Authorization': 'Token 3af5accdebeb5b899e6f9197b0b822f657af008f'}).json()
         for rank, item in enumerate(genre_scorecard, start=1):
             if item['name'] == name:
                 details[genre['genre'] + "_rank"] = rank
@@ -146,15 +175,19 @@ def hostel_scorecard(request, name):
 
 # an api to return all events in a particular genre
 @api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def gc_events(request, genre):
     events = GCEvent.objects.filter(genre=genre)
     serializer = gcserializer(events, many=True)
     return Response(serializer.data)
 
+
 class HostelList(ListAPIView):
     queryset = Hostel.objects.all()
     serializer_class = hostelserializer
-    
+
+
 class GCList(ListAPIView):
     queryset = GCEvent.objects.all()
     serializer_class = gcserializer

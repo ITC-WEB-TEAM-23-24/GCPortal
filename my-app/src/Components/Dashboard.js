@@ -1,6 +1,8 @@
 import React from "react";
 import "./Dashboard.css";
 import axios from "axios";
+import ScoreboardAnimation from "../Animation";
+import CountUp from "react-countup";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -14,6 +16,7 @@ class Dashboard extends React.Component {
     this.config = {
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Token " + "3af5accdebeb5b899e6f9197b0b822f657af008f",
         // Add any other custom headers here
       },
     };
@@ -43,7 +46,7 @@ class Dashboard extends React.Component {
       .get("http://localhost:8000/hostels/", this.config)
       .then((res) => {
         const hostelData = res.data; // Save the hostel data
-        console.log(hostelData );
+        console.log(hostelData);
         this.setState({
           hostelData, // Set the hostelData state once
         });
@@ -52,14 +55,14 @@ class Dashboard extends React.Component {
         console.error(err);
       });
 
-      // fetch gc data
-      axios
+    // fetch gc data
+    axios
       .get("http://localhost:8000/gclist/", this.config)
       .then((res) => {
         const gcData = res.data; // Save the hostel data
         console.log(gcData);
         this.setState({
-          gcData // Set the hostelData state once
+          gcData, // Set the hostelData state once
         });
       })
 
@@ -69,18 +72,15 @@ class Dashboard extends React.Component {
   }
 
   render() {
-
-
-    const { details, scores, gcData} = this.state;
+    const { details, scores, gcData } = this.state;
     const link_url = window.location.href;
     const gc_id = link_url.split("/"); // Retrieve the hostel value from navigation param
-    const hostel = gc_id[gc_id.length - 1]
+    const hostel = gc_id[gc_id.length - 1];
     // Find the corresponding hostel data based on hostel name
     const { hostelData } = this.state; // Retrieve the hostel data from the state
     const hostelInfo = hostelData.find(
       (hostelInfo) => hostelInfo.name === hostel
     ); // Access the hostel prop
-    
 
     const getGc = (gcid) => {
       const item = gcData.find((item) => item.id === gcid);
@@ -88,99 +88,125 @@ class Dashboard extends React.Component {
     };
     return (
       <div className="bg">
-        <div className="cardsds">
-          <div className="card_heading">
-            <div className="image">
-              <img src={hostelInfo?.image} alt="Hostel Image" />
-            </div>
-            <div className="card-contents">
-              <div className="numberds">
-                Hostel {hostel.slice(1)}
+        <div className="top_grid">
+          <div className="cardsds_head">
+            <div className="card_heading">
+              <div className="image">
+                <img src={hostelInfo?.image} alt="Hostel Image" />
               </div>
-              <div className="nameds">
-                {hostelInfo?.tittle}
+              <div className="card-contents">
+                <div className="numberds_heading">Hostel {hostel.slice(1)}</div>
+                <div className="nameds">{hostelInfo?.tittle}</div>
+              </div>
+            </div>
+          </div>
+          <div className="cardsds_head">
+            <div className="card">
+              <div className="card-contents">
+                {/* <div className="numberds">{details.overall_rank}</div> */}
+                {/* <CountUp */}
+                  className="numberds"
+                  end={details.overall_rank}
+                  duration={4}
+                {/* // />{" "} */}
+                {/* Count up the overall rank */}
+                <div className="cardds-name">Overall Rank</div>
+              </div>
+              <div className="icon-boxds">
+                <i className="fa-solid fa-trophy"></i>
+              </div>
+            </div>
+
+            <div className="card">
+              <div className="card-contents">
+                {/* <div className="numberds">{details.overall_score}</div> */}
+                {/* <CountUp */}
+                  className="numberds"
+                  end={details.overall_score}
+                  duration={4}
+                {/* />{" "} */}
+                {/* Count up the total score */}
+                <div className="cardds-name">Total Score</div>
+              </div>
+              <div className="icon-boxds">
+                <i className="fa-brands fa-grunt"></i>
               </div>
             </div>
           </div>
         </div>
-        <div className="cardsds">
+        <div className="cardsds_genre">
           <div className="card">
             <div className="card-contents">
-              <div className="numberds">{details.overall_rank}</div>
-              <div className="cardds-name">Overall Rank</div>
-            </div>
-            <div className="icon-boxds">
-              <i className="fa-solid fa-trophy"></i>
+              <div className="numberds_genre">Genre-1</div>
+              <div className="cardds-name-genre">
+                Score - {details.genre1_score}
+              </div>
+              <div className="cardds-name-genre">
+                Rank - {details.genre1_rank}
+              </div>
             </div>
           </div>
           <div className="card">
             <div className="card-contents">
-              <div className="numberds">{details.overall_score}</div>
-              <div className="cardds-name">Total Score</div>
+              <div className="numberds_genre">Genre-2</div>
+              <div className="cardds-name-genre">
+                Score - {details.genre2_score}
+              </div>
+              <div className="cardds-name-genre">
+                Rank - {details.genre2_rank}
+              </div>
             </div>
-            <div className="icon-boxds">
-              <i className="fa-brands fa-grunt"></i>
+          </div>
+          <div className="card">
+            <div className="card-contents">
+              <div className="numberds_genre">Genre-3</div>
+              <div className="cardds-name-genre">
+                Score - {details.genre3_score}
+              </div>
+              <div className="cardds-name-genre">
+                Rank - {details.genre3_rank}
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="card-contents">
+              <div className="numberds_genre">Genre-4</div>
+              <div className="cardds-name-genre">
+                Score - {details.genre4_score}
+              </div>
+              <div className="cardds-name-genre">
+                Rank - {details.genre4_rank}
+              </div>
             </div>
           </div>
         </div>
-        <div className="tablesds">
-          <div className="last-appointments">
-            <div className="headingds">
-              <h2 style={{ margin: 7 }}>Results</h2>
-            </div>
-            <table className="appointments">
-              <thead>
-                <tr id="tableheading2"> 
-                  <td>GC Event</td>
-                  <td>Rank</td>
-                  <td>Score</td>
-                </tr>
-              </thead>
-              <tbody>
-                {scores.map((output, index) => (
-                    
-                  <tr key={index}>
-                    <td>
-                      {getGc(output.event).name}
-                    </td>
-                    <td>{output.rank}</td>
-                    <td>{output.score}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {/* <div className="tablesds"> */}
+        <div className="last-appointments">
+          <div className="headingds">
+            <h2 style={{ margin: 7 }}>Results</h2>
           </div>
-          <div className="doctor-visiting">
-            <div className="headingds">
-              <h2 style={{ margin: 7 }}>Genre Results</h2>
-            </div>
-            <table className="visiting">
-              <thead>
-                <tr id="tableheading1">
-                  <td>Name</td> 
-                  <td>Score</td>    
-                  <td>Genre Rank</td>
+          <table className="appointments">
+            <thead>
+              <tr className="tableheading2">
+                <td>GC Event</td>
+                <td>Rank</td>
+                <td>Score</td>
+              </tr>
+            </thead>
+            <tbody>
+              {scores.map((output, index) => (
+                // <ScoreboardAnimation id={output.id}>
+                // <div className="Animate_scores">
+                <tr key={index}>
+                  <td>{getGc(output.event).name}</td>
+                  <td>{output.rank}</td>
+                  <td>{output.score}</td>
                 </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Genre1</td>
-                  <td>{details.genre1_score}</td>
-                  <td>{details.genre1_rank}</td>
-                </tr>
-                <tr>
-                  <td>Genre2</td>
-                  <td>{details.genre2_score}</td>
-                  <td>{details.genre2_rank}</td>
-                </tr>
-                <tr>
-                  <td>Genre3</td>
-                  <td>{details.genre3_score}</td>
-                  <td>{details.genre3_rank}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                /* </div> */
+                /* </ScoreboardAnimation> */
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     );

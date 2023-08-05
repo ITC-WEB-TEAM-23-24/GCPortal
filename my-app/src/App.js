@@ -8,6 +8,7 @@ import Overall from "./pages/Overall";
 import Genre1 from "./pages/Genre1";
 import Genre2 from "./pages/Genre2";
 import Genre3 from "./pages/Genre3";
+import Footer from "./Components/footer";
 
 import Gc from "./pages/Gc";
 import Dashboard from "./Components/Dashboard";
@@ -46,6 +47,7 @@ function App() {
             <Route path="/Dashboard/:name" element={<Dashboard />} />
           </Routes>
         </SideBar>
+        <Footer/>
       </div>
     </Router>
   );
