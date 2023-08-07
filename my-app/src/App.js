@@ -2,7 +2,7 @@
 import React from "react";
 import "./App.css";
 import SideBar from "./Components/sideBar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./Components/header";
 import Overall from "./pages/Overall";
 import Genre1 from "./pages/Genre1";
@@ -21,7 +21,7 @@ import Instuctions from "./pages/instuctions";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/TechGC">
       <div>
         <Header />
         <SideBar>
@@ -49,7 +49,8 @@ function App() {
         </SideBar>
         <Footer/>
       </div>
-    </Router>
+    </BrowserRouter>
+    // </BrowserRouter>
   );
 }
 
