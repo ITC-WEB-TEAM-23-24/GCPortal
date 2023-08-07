@@ -50,11 +50,11 @@ const SideBar = ({ children }) => {
 
   return (
     <div className="main-container">
-    <motion.div
-      className={`sidebar ${isOpen ? "sidebar_open" : ""}`}
-      animate={isOpen ? "open" : "closed"}
-      variants={sidebarVariants}
-    >
+      <motion.div
+        className={`sidebar ${isOpen ? "sidebar_open" : ""}`}
+        animate={isOpen ? "open" : "closed"}
+        variants={sidebarVariants}
+      >
         <div className="top_section">
           {isOpen && <h1 className="logo">Tech GC</h1>}
           <motion.div
@@ -78,9 +78,13 @@ const SideBar = ({ children }) => {
               // activeStyle={{ backgroundColor: "yellow", color: "black" }} // Add your custom active styles here
               onClick={() => setIsOpen(false)}
             >
-                <div className="icon">{route.icon}</div>
-                {isOpen && (
-                <div className={`link_text ${window.location.pathname === route.path ? "active" : ""}`}>
+              <div className="icon">{route.icon}</div>
+              {isOpen && (
+                <div
+                  className={`link_text ${
+                    window.location.pathname === route.path ? "" : ""
+                  }`}
+                >
                   {route.name}
                 </div>
               )}

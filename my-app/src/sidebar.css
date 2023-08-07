@@ -101,9 +101,7 @@
   }
 }
 
-
 /* add some code */
-
 
 /* Add this to your sidebar.css file */
 /* Add this to your sidebar.css file */
@@ -113,12 +111,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 20px;
-  width: 30px;
+  height: 14px;
+  width: 21px;
   cursor: pointer;
   position: relative;
   color: #fff;
-  opacity: 2!important;
+  opacity: 2 !important;
 }
 
 .link_text.active {
@@ -160,4 +158,3 @@
 .sidebar_open .bar:nth-child(3) {
   transform: rotate(-45deg) translateY(-7px);
 }
-

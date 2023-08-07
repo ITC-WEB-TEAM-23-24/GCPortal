@@ -359,13 +359,13 @@ a {
   color: black;
 }
 
-h2 {
+.headingds h2 {
   position: relative;
   font-size: 30px;
   color: rgb(0, 0, 0);
   text-transform: uppercase;
 }
-h2::before {
+.headingds h2::before {
   content: "";
   position: absolute;
 
