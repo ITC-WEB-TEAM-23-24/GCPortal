@@ -76,7 +76,7 @@ class Gc extends React.Component {
                                     <td className="hostname">Hostel {output.hostel_id}</td>
                                     <motion.div
                                         initial={{width:0}}
-                                        animate={{width:output.score*55/(maxscore.score)+"%"}}
+                                        animate={{width:output.score*50/(maxscore.score)+"%"}}
                                         transition={{duration:output.score*2/(maxscore.score)}}
                                         className="hosteldata"
                                     ></motion.div>
