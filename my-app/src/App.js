@@ -21,7 +21,7 @@ import Instuctions from "./pages/instuctions";
 
 function App() {
   return (
-    <BrowserRouter basename="/TechGC">
+    <Router basename="/TechGC">
       <div>
         <Header />
         <SideBar>
@@ -49,7 +49,7 @@ function App() {
         </SideBar>
         <Footer/>
       </div>
-    </BrowserRouter>
+    </Router>
     // </BrowserRouter>
   );
 }
