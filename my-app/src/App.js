@@ -21,7 +21,7 @@ import Instuctions from "./pages/instuctions";
 
 function App() {
   return (
-    <Router basename="/TechGC">
+    <Router basename="TechGC">
       <div>
         <Header />
         <SideBar>

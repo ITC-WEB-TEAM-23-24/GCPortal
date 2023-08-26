@@ -32,7 +32,7 @@ class GC_Genre1 extends React.Component {
 
     import("../assets/js/gclist.js") //importing script
       .then((module) => {
-        console.log("gclist.js loaded successfully");
+        // console.log("gclist.js loaded successfully");
       })
       .catch((error) => {
         console.error("Error loading gclist.js:", error);
@@ -41,7 +41,7 @@ class GC_Genre1 extends React.Component {
 
   render() {
     const { Mydata } = this.state;
-    console.log(Mydata);
+    // console.log(Mydata);
     return (
       <div className="gclist">
         <div className="sidebarhs">
@@ -135,7 +135,7 @@ class GC_Genre2 extends React.Component {
 
     import("../assets/js/gclist.js") //importing script
       .then((module) => {
-        console.log("gclist.js loaded successfully");
+        // console.log("gclist.js loaded successfully");
       })
       .catch((error) => {
         console.error("Error loading gclist.js:", error);
@@ -143,7 +143,7 @@ class GC_Genre2 extends React.Component {
   }
   render() {
     const { Mydata } = this.state;
-    console.log(Mydata);
+    // console.log(Mydata);
     return (
       <div className="gclist">
         <div className="sidebarhs">
@@ -239,7 +239,7 @@ class GC_Genre3 extends React.Component {
 
     import("../assets/js/gclist.js") //importing script
       .then((module) => {
-        console.log("gclist.js loaded successfully");
+        // console.log("gclist.js loaded successfully");
       })
       .catch((error) => {
         console.error("Error loading gclist.js:", error);
@@ -247,7 +247,7 @@ class GC_Genre3 extends React.Component {
   }
   render() {
     const { Mydata } = this.state;
-    console.log(Mydata);
+    // console.log(Mydata);
     return (
       <div className="gclist">
         <div className="sidebarhs">
