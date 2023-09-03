@@ -52,7 +52,7 @@ input{
     margin: auto;
     cursor: pointer;
     transition:  transform .55s ease;
-    height: 670px;
+    height: 500px;
 }
 
 .cards .card{

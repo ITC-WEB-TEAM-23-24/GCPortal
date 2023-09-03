@@ -1,5 +1,5 @@
 import React from 'react'
-import './Hostel.css';
+// import './Hostel.css';
 // import hostel3 from '.images/hostel3.jpg'
 // import pluto from './images/pluto.jpg'
 import hostel6  from './hostel6.jpg'
@@ -7,7 +7,6 @@ import hostel2 from './hostel2.jpg'
 import hostel3 from './hostel3.jpg'
 import hostel5 from './hostel5.jpg'
 import pluto from './pluto.jpg'
-import { Link } from 'react-router-dom';
 
 export default function Hostel() {
   return (
@@ -31,10 +30,10 @@ export default function Hostel() {
                         </div>
                     </div>
                     <div className="infos">
-                        <span className='name'>Hostel 6 let go</span>
+                        
                         <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
 
-                        <Link to="/Dashboard" className='btn-details'>details</Link>
+                       
                         <div className="actions">
                             <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
@@ -56,10 +55,10 @@ export default function Hostel() {
                         </div>
                     </div>
                     <div className="infos">
-                        <span className='name'>Hostel 2 let go</span>
+                       
                         <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
 
-                        <a href="/" className='btn-details'>details</a>
+                        
                         <div className="actions">
                             <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
@@ -80,10 +79,10 @@ export default function Hostel() {
                         </div>
                     </div>
                     <div className="infos">
-                        <span className='name'>Hostel 5 let go</span>
+                        
                         <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
 
-                        <a href="/" className='btn-details'>details</a>
+                        
                         <div className="actions">
                             <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
@@ -104,10 +103,10 @@ export default function Hostel() {
                         </div>
                     </div>
                     <div className="infos">
-                        <span className='name'>Hostel 9 Let go</span>
+                      
                         <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
 
-                        <a href="/" className='btn-details'>details</a>
+                        
                         <div className="actions">
                             <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
@@ -128,10 +127,10 @@ export default function Hostel() {
                         </div>
                     </div>
                     <div className="infos">
-                        <span className='name'>Hostel 3 Let go</span>
+                       
                         <span className="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eos odit non sint omnis! Deleniti corrupti impedit autem excepturi, expedita quod, nam doloremque ipsa quibusdam cupiditate laudantium dignissimos sit temporibus.</span>
 
-                        <a href="/" className='btn-details'>details</a>
+                        
                         <div className="actions">
                             <i className='fa-solid fa-cart-shopping'></i>
                             <i className='fa-regular fa-heart'></i>
