@@ -2,7 +2,7 @@
 import React from "react";
 import "./App.css";
 import SideBar from "./Components/sideBar";
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Components/header";
 import Overall from "./pages/Overall";
 import Genre1 from "./pages/Genre1";
@@ -12,7 +12,7 @@ import Footer from "./Components/footer";
 
 import Gc from "./pages/Gc";
 import Dashboard from "./Components/Dashboard";
-import Card from "./Components/Card";
+// import Card from "./Components/Card";
 import Card2 from "./Components/Card2";
 import Nav from './Components/Nav';
 import {GC_Genre1, GC_Genre2, GC_Genre3} from "./pages/Gclist";
@@ -21,7 +21,7 @@ import Instuctions from "./pages/instuctions";
 
 function App() {
   return (
-    <Router basename="TechGC">
+    <Router>
       <div>
         <Header />
         <SideBar>
@@ -37,8 +37,8 @@ function App() {
             <Route path="/GC/Genre1" element={<GC_Genre1 />} />
             <Route path="/GC/Genre2" element={<GC_Genre2 />} />
             <Route path="/GC/Genre3" element={<GC_Genre3 />} />
-            <Route path="/Card" element={<Card />} />
-            <Route path="/Card2" element={<Card2 />} />
+            {/* <Route path="/Card" element={<Card />} /> */}
+            {/* <Route path="/Card2" element={<Card2 />} /> */}
             <Route path="/Nav" element={<Nav />} />
             <Route path="/instuctions" element={<Instuctions/>}/>
             <Route path="/hostels" element={<Hostlellist />} />
@@ -50,7 +50,6 @@ function App() {
         <Footer/>
       </div>
     </Router>
-    // </BrowserRouter>
   );
 }
 

@@ -26,17 +26,17 @@ class Overall extends React.Component {
 
   handleClick = (hostel) => {
     this.setState({ hostel });
-    // console.log("Selected hostel:", hostel);
+    console.log("Selected hostel:", hostel);
     // this.props.navigation.navigate("/Dashboard", {hostel: hostel});
   };
 
   componentDidMount() {
     // Fetch data for leaderboard
     axios
-      .get("https://itc.gymkhana.iitb.ac.in/gcbackend/overall/", this.config)
+      .get("http://localhost:8000/overall/", this.config)
       .then((res) => {
         const data = res.data;
-        // console.log(data);
+        console.log(data);
         this.setState({
           details: data,
           first: data[0],
@@ -50,10 +50,10 @@ class Overall extends React.Component {
 
     // Fetch data for hostel images and names
     axios
-      .get("https://itc.gymkhana.iitb.ac.in/gcbackend/hostels/", this.config) // Replace the URL with the actual API endpoint for hostel data
+      .get("http://localhost:8000/hostels/", this.config) // Replace the URL with the actual API endpoint for hostel data
       .then((res) => {
         const hostelData = res.data;
-        // console.log(hostelData);
+        console.log(hostelData);
         this.setState({
           hostelData,
         });

@@ -21,10 +21,10 @@ class Hostlellist extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`https://itc.gymkhana.iitb.ac.in/gcbackend/hostels/`, this.config)
+      .get(`http://localhost:8000/hostels/`, this.config)
       .then((res) => {
         const data = res.data;
-        // console.log(data);
+        console.log(data);
         this.setState({
           data: data,
         });
