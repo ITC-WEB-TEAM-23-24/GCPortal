@@ -17,6 +17,9 @@ class GCEvent(models.Model):
     start_timeline = models.DateTimeField(default=now)
     end_timeline = models.DateTimeField(default=now)
     genre = models.CharField(max_length=50, null=True, blank=True)
+    club = models.CharField(max_length=100, null=True, blank=True)
+    prep = models.CharField(max_length=100, null=True, blank=True)
+    gc_genre = models.CharField(max_length=50, null=True, blank=True)
     
 
     def __str__(self):
