@@ -76,11 +76,11 @@ class Gc extends React.Component {
                                     <td className="hostname">Hostel {output.hostel_id}</td>
                                     <motion.div
                                         initial={{width:0}}
-                                        animate={{width:output.score*50/(maxscore.score)+"%"}}
+                                        animate={{width:output.score*65/(maxscore.score)+"%"}}
                                         transition={{duration:output.score*2/(maxscore.score)}}
                                         className="hosteldata"
                                     ></motion.div>
-                                    <div className="hostelscore">{output.score} Points</div>
+                                    <div className="hostelscore">{output.score}</div>
                                 </tr>
                             ))}
                             </table>
@@ -91,10 +91,9 @@ class Gc extends React.Component {
                     <img src={imgurl} alt="" srcSet=""/>
                     <div className="gc-details p-text">
                         <ul>
-                            <li><span>Maths n Physics Club</span></li>
-                            <li>High Prep GC</li>
-                            <li>Hardware Probably</li>
-                            <li>{gcdata.genre}</li>
+                            <li><span>{gcdata.club}</span></li>
+                            <li>{gcdata.prep}</li>
+                            <li>{gcdata.gc_genre}</li>
                         </ul>
                     </div>
                 </div>

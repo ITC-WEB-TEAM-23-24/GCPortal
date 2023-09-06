@@ -82,18 +82,26 @@ class Overall extends React.Component {
         </div>
         <div className="animation">
           <div className="list">
-            <ul className="listing">
-              <li className="list_items button-2">
+            <ul className="listing_overall">
+              <li className="list_items button-2 button-3">
                 <Link to="/Overall">Overall</Link>
               </li>
+            </ul>
+            <ul className="listing">
+              {/* <li className="list_items button-2">
+                <Link to="/Overall">Overall</Link>
+              </li> */}
               <li className="list_items button-2">
-                <Link to="/Genre1">Genre1</Link>
+                <Link to="/Genre1">Software</Link>
               </li>
               <li className="list_item_on button-1">
-                <Link to="/Genre2">Genre2</Link>
+                <Link to="/Genre2">Hardware</Link>
               </li>
               <li className="list_items button-2">
-                <Link to="/Genre3">Genre3</Link>
+                <Link to="/Genre3">Pure Sciences</Link>
+              </li>
+              <li className="list_items button-2">
+                <Link to="/Genre4">Non Core</Link>
               </li>
             </ul>
           </div>

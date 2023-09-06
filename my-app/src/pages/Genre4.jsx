@@ -33,7 +33,7 @@ class Overall extends React.Component {
   componentDidMount() {
     // Fetch data for leaderboard
     axios
-      .get("http://localhost:8000/overall/", this.config)
+      .get("http://localhost:8000/genregenre4/", this.config)
       .then((res) => {
         const data = res.data;
         console.log(data);
@@ -83,7 +83,7 @@ class Overall extends React.Component {
         <div className="animation">
           <div className="list">
             <ul className="listing_overall">
-              <li className="list_item_on button-1 button-3">
+              <li className="list_items button-2 button-3">
                 <Link to="/Overall">Overall</Link>
               </li>
             </ul>
@@ -94,13 +94,14 @@ class Overall extends React.Component {
               <li className="list_items button-2">
                 <Link to="/Genre1">Software</Link>
               </li>
+
               <li className="list_items button-2">
                 <Link to="/Genre2">Hardware</Link>
               </li>
               <li className="list_items button-2">
                 <Link to="/Genre3">Pure Sciences</Link>
               </li>
-              <li className="list_items button-2">
+              <li className="list_item_on button-1">
                 <Link to="/Genre4">Non Core</Link>
               </li>
             </ul>
@@ -177,6 +178,7 @@ class Overall extends React.Component {
             </div>
           </Link>
         </dir>
+
         {this.state.details.map((output, id) => {
           if (id == 0 || id == 1 || id == 2) {
             return null;
