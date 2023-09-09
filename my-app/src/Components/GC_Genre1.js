@@ -10,7 +10,7 @@ const GC_Genre1 = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/gc/genre2/")
+      .get("https://itc.gymkhana.iitb.ac.in/gcbackend/gc/genre2/")
       .then((res) => {
         setMydata(res.data);
       })

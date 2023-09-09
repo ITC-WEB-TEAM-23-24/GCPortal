@@ -20,7 +20,6 @@ class GCEvent(models.Model):
     club = models.CharField(max_length=100, null=True, blank=True)
     prep = models.CharField(max_length=100, null=True, blank=True)
     gc_genre = models.CharField(max_length=50, null=True, blank=True)
-    
 
     def __str__(self):
         return self.name
