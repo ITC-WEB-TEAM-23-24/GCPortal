@@ -78,7 +78,7 @@ class Overall extends React.Component {
     return (
       <div className="bg">
         <div className="leaderboard_heading">
-          <h2 data-text="Leaderboards">Leaderboards</h2>
+          <h2 data-text="Leaderboards">Leaderboards 22-23</h2>
         </div>
         <div className="animation">
           <div className="list">
@@ -178,7 +178,7 @@ class Overall extends React.Component {
           </Link>
         </dir>
         {this.state.details.map((output, id) => {
-          if (id == 0 || id == 1 || id == 2) {
+          if (id == 0 || id == 1 || id == 2 || output.total_score == 0) {
             return null;
           }
           // Find the corresponding hostel data based on hostel name
